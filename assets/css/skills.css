@@ -62,10 +62,22 @@
   cursor: default;
 }
 
-/* Give tags alternating colors */
-.skills__list li:nth-child(odd) { background: var(--clr-accent); }
-.skills__list li:nth-child(3n) { background: var(--clr-pink); }
-.skills__list li:nth-child(4n) { background: var(--clr-green); }
+/* Brand-specific Badge Colors */
+.skill--python { background: var(--clr-python) !important; color: #fff; }
+.skill--cpp { background: var(--clr-cpp) !important; color: #fff; }
+.skill--heroku { background: var(--clr-heroku) !important; color: #fff; }
+.skill--render { background: var(--clr-render) !important; color: #000; }
+.skill--koyeb { background: var(--clr-koyeb) !important; color: #000; }
+.skill--vercel { background: var(--clr-vercel) !important; color: #fff; }
+.skill--netlify { background: var(--clr-netlify) !important; color: #000; }
+.skill--github { background: var(--clr-github) !important; color: #fff; }
+.skill--mongodb { background: var(--clr-mongodb) !important; color: #fff; }
+.skill--redis { background: var(--clr-redis) !important; color: #fff; }
+.skill--docker { background: var(--clr-docker) !important; color: #fff; }
+.skill--openai { background: var(--clr-openai) !important; color: #fff; }
+.skill--anthropic { background: var(--clr-anthropic) !important; color: #fff; }
+.skill--google { background: var(--clr-google) !important; color: #fff; }
+.skill--deepseek { background: var(--clr-deepseek) !important; color: #fff; }
 
 .skills__list li:hover {
   transform: translate(2px, 2px);

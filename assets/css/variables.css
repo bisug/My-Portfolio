@@ -78,6 +78,23 @@
   /* Motion - faster, snappier transitions for brutalism */
   --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast:  100ms;
-  --dur-base:  200ms;
-  --dur-slow:  400ms;
+  --dur-fast: 0.15s;
+  --dur-slow: 0.3s;
+
+  /* Brand Colors */
+  --clr-python: #3776ab;
+  --clr-cpp: #00599c;
+  --clr-heroku: #430098;
+  --clr-render: #00d2b4;
+  --clr-koyeb: #ffde1a;
+  --clr-vercel: #000000;
+  --clr-netlify: #00c7b7;
+  --clr-github: #181717;
+  --clr-mongodb: #47a248;
+  --clr-redis: #ff4438;
+  --clr-docker: #2496ed;
+  --clr-openai: #10a37f;
+  --clr-anthropic: #d97757;
+  --clr-google: #4285f4;
+  --clr-deepseek: #3d78ff;
 }
