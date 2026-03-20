@@ -77,9 +77,9 @@
 .skill--heroku { background: var(--clr-heroku) !important; color: #fff; }
 .skill--render { background: var(--clr-render) !important; color: #111; }
 .skill--koyeb { background: var(--clr-koyeb) !important; color: #111; }
-.skill--vercel { background: var(--clr-vercel) !important; color: #fff; } 
+.skill--vercel { background: #eeeeee !important; color: #111; } 
 .skill--netlify { background: var(--clr-netlify) !important; color: #111; }
-.skill--github { background: var(--clr-github) !important; color: #fff; } 
+.skill--github { background: #eeeeee !important; color: #111; } 
 .skill--mongodb { background: var(--clr-mongodb) !important; color: #fff; }
 .skill--redis { background: var(--clr-redis) !important; color: #fff; }
 .skill--docker { background: var(--clr-docker) !important; color: #fff; }
