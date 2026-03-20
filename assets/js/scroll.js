@@ -40,8 +40,6 @@ const ScrollEffects = (() => {
     );
 
     items.forEach((el, i) => {
-      // Stagger siblings that share a parent
-      el.style.transitionDelay = `${(i % 6) * 80}ms`;
       observer.observe(el);
     });
   }

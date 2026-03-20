@@ -104,20 +104,6 @@
   margin-top: var(--space-sm);
 }
 
-.cursor {
-  display: inline-block;
-  color: var(--clr-text);
-  background: var(--clr-accent);
-  width: 0.6em;
-  height: 1em;
-  vertical-align: bottom;
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
 
 .hero__links {
   display: flex;

@@ -31,12 +31,6 @@
   --clr-green:       #00FF66;   /* Neon Green */
   --clr-orange:      #FF6D00;   /* Bright Orange */
 
-  /* ---- End Colors ---- */
-}
-
-
-:root {
-
   /* Typography */
   --font-display: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
   --font-mono:    'JetBrains Mono', 'Fira Code', Consolas, monospace;
@@ -77,9 +71,9 @@
 
   /* Motion - faster, snappier transitions for brutalism */
   --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-fast:  100ms;
-  --dur-fast: 0.15s;
-  --dur-slow: 0.3s;
+  --dur-fast:  150ms;
+  --dur-base:  200ms;
+  --dur-slow:  300ms;
 
   /* Brand Colors */
   --clr-python: #3776ab;

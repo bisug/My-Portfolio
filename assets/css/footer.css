@@ -38,6 +38,6 @@
 .footer__note {
   margin-top: 1.5rem;
   font-size: var(--text-sm);
-  color: var(--clr-muted);
+  color: var(--clr-bg);
   font-family: var(--font-mono);
 }

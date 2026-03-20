@@ -3,7 +3,7 @@
  * Entry point. Initialises all modules after DOM is ready.
  */
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Navigation Logic (Hamburger Menu) ----
   const navToggle = document.getElementById('navToggle');

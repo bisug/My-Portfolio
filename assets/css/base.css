@@ -12,10 +12,6 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* ---- Grain overlay (reduced or removed for brutalism) ---- */
-.grain {
-  display: none; /* Brutalism prefers flat, clean noise-less solids */
-}
 
 /* ---- Container ---- */
 /* Accessibility Skip Link */
