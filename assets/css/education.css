@@ -1,0 +1,52 @@
+/* ============================================================
+   EDUCATION - NEO BRUTALISM
+   ============================================================ */
+
+.edu__meta {
+  background: var(--clr-surface);
+  border: var(--border-thick);
+  box-shadow: 8px 8px 0px var(--clr-shadow);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.edu__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.edu__table td {
+  padding: var(--space-md);
+  border-bottom: var(--border-thick);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.edu__table tr:last-child td {
+  border-bottom: none;
+}
+
+.edu__table tr:nth-child(even) {
+  background: var(--clr-bg);
+}
+
+.edu__table b {
+  color: var(--clr-pink);
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.edu__table a {
+  color: var(--clr-cyan);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: var(--text-base);
+}
+
+.edu__table a:hover {
+  text-decoration: underline;
+}

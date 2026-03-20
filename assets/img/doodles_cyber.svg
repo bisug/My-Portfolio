@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" stroke="#e0dcd3" stroke-width="4" stroke-linejoin="round" stroke-linecap="square" fill="none">
+  <!-- Padlock -->
+  <path d="M40 60v30h40v-30z M50 60v-20h20v20 M60 70v10" />
+  <!-- Eye -->
+  <path d="M130 50l20-15 20 15-20 15z M145 45h10v10h-10z" />
+  <!-- Bug (Malware) -->
+  <path d="M140 140h20v30h-20z M130 145h10 M130 155h10 M130 165h10 M160 145h10 M160 155h10 M160 165h10 M145 140v-10 M155 140v-10" />
+  <!-- Brutalist Key -->
+  <path d="M20 140h20v20h-20z M40 150h50v10h-10v-10 M60 150v10 M30 150v-5" />
+</svg>

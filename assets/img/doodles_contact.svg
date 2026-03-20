@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" stroke="#e0dcd3" stroke-width="4" stroke-linejoin="round" stroke-linecap="square" fill="none">
+  <!-- Envelope -->
+  <path d="M30 40h60v40h-60z M30 40l30 20 30-20" />
+  <!-- Smart Phone -->
+  <path d="M140 30h30v50h-30z M150 70h10 M140 40h30 M140 60h30" />
+  <!-- Paper Plane -->
+  <path d="M130 140l50-30-40 50-5-20 15-15-20 5z M120 150l5-5 M160 170l-5-5" />
+  <!-- Brutalist @ Symbol -->
+  <path d="M60 150v-20h-20v20h30v-30h-40v40h50v-15 M50 140h10" />
+</svg>

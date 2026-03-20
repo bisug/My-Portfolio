@@ -1,0 +1,272 @@
+/* ============================================================
+   BASE
+   Global typography, body, shared layout utilities.
+   ============================================================ */
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Grain overlay (reduced or removed for brutalism) ---- */
+.grain {
+  display: none; /* Brutalism prefers flat, clean noise-less solids */
+}
+
+/* ---- Container ---- */
+/* Accessibility Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--clr-pink);
+  color: var(--clr-text);
+  padding: 1rem;
+  z-index: 9999;
+  font-weight: 800;
+  border: var(--border-thick);
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+/* ---- Section shared ---- */
+.section {
+  padding-block: var(--space-xl);
+  border-top: var(--border-thick);
+  position: relative;
+  background-color: var(--clr-bg);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.section__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--clr-text);
+  font-weight: 800;
+  background: var(--clr-accent);
+  padding: 0.3em 0.8em;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  border-radius: var(--radius-pill);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  color: var(--clr-text);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.8em 1.8em;
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  
+  border: var(--border-thick);
+  color: var(--clr-text);
+  background: var(--clr-green);
+  box-shadow: var(--shadow-hard);
+  border-radius: var(--radius-md);
+  
+  transition: transform var(--dur-fast), 
+              box-shadow var(--dur-fast),
+              background var(--dur-fast);
+}
+
+.btn:hover {
+  background: var(--clr-accent);
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-hard-hover);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.btn--ghost {
+  background: var(--clr-cyan);
+}
+
+.btn--ghost:hover {
+  background: var(--clr-pink);
+}
+
+/* ---- Scroll-reveal (make it snappy and less floating) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--dur-base) ease-out,
+              transform var(--dur-base) ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---- Custom Scrollbar (Neo-Brutalism) ---- */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+  border-left: var(--border-thin);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-accent);
+  border: 2px solid var(--clr-border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-pink);
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-accent) var(--clr-bg);
+}
+
+/* ---- Back to Top Button ---- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--clr-text);
+  background: var(--clr-accent);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-base),
+              transform var(--dur-fast),
+              box-shadow var(--dur-fast),
+              background var(--dur-fast);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--clr-pink);
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-hard-hover);
+}
+
+.back-to-top:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+/* ============================================================
+   FULL-SCREEN SECTION CANVAS BACKGROUNDS
+   Gives each 100svh section a massively distinct brutalist vibe as you scroll.
+   ============================================================ */
+
+#about {
+  background-color: var(--clr-bg);
+  background-image: url('../img/doodles_about.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+#education {
+  background-color: var(--clr-bg);
+  /* Brutalist SVG Student & Tech Doodles */
+  background-image: url('../img/doodles.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  border-top: var(--border-thick);
+}
+
+#skills {
+  background-color: var(--clr-bg);
+  background-image: url('../img/doodles_skills.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+#projects {
+  background-color: var(--clr-bg);
+  background-image: url('../img/doodles_projects.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+#career-goals {
+  background-color: var(--clr-bg);
+  background-image: url('../img/doodles_cyber.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+#contact {
+  background-color: var(--clr-bg);
+  background-image: url('../img/doodles_contact.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}

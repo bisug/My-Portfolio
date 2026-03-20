@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bisu — CS Student, Bot Developer & Aspiring Cybersecurity Professional based in Nepal." />
+  <meta name="theme-color" content="#FFFAF0" />
+  <meta name="author" content="Bisu Ghalan" />
+  <link rel="canonical" href="https://bisug.github.io/" />
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Bisu Ghalan — Portfolio" />
+  <meta property="og:description" content="CS Student, Bot Developer & Aspiring Cybersecurity Professional based in Nepal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bisug.github.io/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Bisu Ghalan Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bisu Ghalan — Portfolio" />
+  <meta name="twitter:description" content="CS Student, Bot Developer & Aspiring Cybersecurity Professional based in Nepal." />
+
+  <title>Bisu Ghalan &mdash; Portfolio</title>
+
+
+
+  <!-- Preconnect to external image domains -->
+  <link rel="preconnect" href="https://img.shields.io" crossorigin />
+
+  <!-- Favicons -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%237c6aef%22>B.</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%237c6aef%22>B.</text></svg>">
+
+  <!-- Google Fonts (Self-hosted) -->
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+
+  <!-- Stylesheets (order matters with @layer) -->
+  <style>
+    @layer reset, tokens, base, components, responsive;
+  </style>
+  <link rel="stylesheet" href="assets/css/reset.css" layer="reset" />
+  <link rel="stylesheet" href="assets/css/variables.css" layer="tokens" />
+  <link rel="stylesheet" href="assets/css/base.css" layer="base" />
+  <link rel="stylesheet" href="assets/css/nav.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/hero.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/about.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/education.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/projects.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/skills.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/career-goals.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/contact.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/footer.css" layer="components" />
+  <link rel="stylesheet" href="assets/css/responsive.css" layer="responsive" />
+</head>
+<body id="top">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Animated grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════
+       NAV
+  ════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#home" class="nav__brand" aria-label="Back to home">B.</a>
+
+    <button
+      class="nav__toggle"
+      id="navToggle"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav__links" id="navLinks" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- ════════════════════════════════════
+         HERO
+    ════════════════════════════════════ -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <div class="hero__inner">
+        <h1 class="hero__name">Bisu Ghalan.</h1>
+        <p class="hero__title" aria-live="polite">
+          <span id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
+        
+        <a href="#about" class="hero__scroll" aria-label="Explore About Page">
+          <span>explore</span>
+          <div class="hero__line"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         ABOUT
+    ════════════════════════════════════ -->
+    <section class="about section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__num">01</span>
+          <h2 class="section__title" id="about-heading">About</h2>
+        </div>
+        <div class="about__bio reveal">
+          <p>
+            I am a <b>Computer Science Student</b> at Lincoln International College, 
+            Nepal, currently focusing on <em>Cybersecurity & Networking</em>.
+          </p>
+          <p>
+            I specialize in building feature-rich <b>Telegram bots</b> and 
+            backend infrastructures using Python and C++. I'm passionate about 
+            automating complex workflows and exploring offensive security.
+          </p>
+          <p>
+            My philosophy is simple: <strong>Always learning, always building.</strong>
+            I'm constantly exploring new AI tools and security domains to stay 
+            at the edge of modern technology.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         EDUCATION
+    ════════════════════════════════════ -->
+    <section class="education section" id="education" aria-labelledby="edu-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__num">02</span>
+          <h2 class="section__title" id="edu-heading">Education</h2>
+        </div>
+
+        <div class="edu__meta reveal">
+          <table class="edu__table">
+            <tr>
+              <td><b>Institution</b></td>
+              <td><a href="https://licnepal.edu.np/" target="_blank" rel="noopener noreferrer">Lincoln International College</a></td>
+            </tr>
+            <tr>
+              <td><b>Program</b></td>
+              <td><a href="https://licnepal.edu.np/bcs-csnt" target="_blank" rel="noopener noreferrer">BCs. (Hons) Cyber Security &amp; Networking</a></td>
+            </tr>
+            <tr>
+              <td><b>Status</b></td>
+              <td>Semester-1 (Active)</td>
+            </tr>
+            <tr>
+              <td><b>Location</b></td>
+              <td>Kathmandu, Nepal</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         SKILLS
+    ════════════════════════════════════ -->
+    <section class="skills section" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__num">03</span>
+          <h2 class="section__title" id="skills-heading">Tech Stack</h2>
+        </div>
+        <div class="skills__grid">
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title">Languages</h3>
+            <ul class="skills__list" role="list">
+              <li>Python</li>
+              <li>C++</li>
+            </ul>
+          </div>
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title">Cloud & Deployment</h3>
+            <ul class="skills__list" role="list">
+              <li>Heroku</li>
+              <li>Render</li>
+              <li>Koyeb</li>
+              <li>Vercel</li>
+              <li>Netlify</li>
+              <li>GitHub</li>
+            </ul>
+          </div>
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title">Databases & Storage</h3>
+            <ul class="skills__list" role="list">
+              <li>MongoDB Atlas</li>
+              <li>Upstash Redis</li>
+            </ul>
+          </div>
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title">Containerization</h3>
+            <ul class="skills__list" role="list">
+              <li>Docker</li>
+            </ul>
+          </div>
+          <div class="skills__group reveal">
+            <h3 class="skills__group-title">AI Workflow</h3>
+            <div class="skills__workflow">
+              <p>Developing with:</p>
+              <ul class="skills__list" role="list">
+                <li>Claude</li>
+                <li>GPT-4</li>
+                <li>Gemini</li>
+                <li>DeepSeek</li>
+              </ul>
+              <p>Dev Tools:</p>
+              <ul class="skills__list" role="list">
+                <li>Antigravity</li>
+                <li>Cursor</li>
+                <li>GitHub Copilot</li>
+                <li>Vercel v0</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         PROJECTS
+    ════════════════════════════════════ -->
+    <section class="projects section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__num">04</span>
+          <h2 class="section__title" id="projects-heading">Projects</h2>
+        </div>
+        <div class="projects__list">
+
+          <!-- SumiVibesBot -->
+          <div class="project-item reveal">
+            <h3 class="project-item__title">
+              <a href="https://t.me/SumiVibesBot" target="_blank" rel="noopener noreferrer">SumiVibesBot ↗</a>
+            </h3>
+            <p class="project-item__tagline">AI-Powered Group Chatbot with Gaming Features</p>
+            <details class="project-details">
+              <summary class="btn btn--ghost">View details, stack, and status...</summary>
+              <div class="project-details__content">
+                <div class="project-badges">
+                  <img src="https://img.shields.io/badge/Status-Username_Stolen-red?style=flat-square" alt="Status" loading="lazy" />
+                  <img src="https://img.shields.io/badge/Repository-Private-red?style=flat-square" alt="Repository" loading="lazy" />
+                  <img src="https://img.shields.io/badge/Peak_Users-2,900+-7B68EE?style=flat-square" alt="Peak Users" loading="lazy" />
+                </div>
+                <div class="alert alert--warning">
+                  <strong>WARNING:</strong> The original username @SumiVibesBot was accidentally deleted and has been taken by someone else. The current bot at that handle is <b>not</b> managed by me.
+                </div>
+                <p>A feature-rich Telegram chatbot designed to bring life to group chats. Powered by Google's Gemini API for conversational AI, and packed with interactive gaming features built around a virtual currency system.</p>
+                <div class="project-stack">
+                  <code>Pyrogram</code> · <code>MongoDB Atlas</code> · <code>Gemini API</code> · <code>Docker</code> · <code>Heroku</code> · <code>Render</code> · <code>Koyeb</code>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- DearMocoBot -->
+          <div class="project-item reveal">
+            <h3 class="project-item__title">
+              <a href="https://t.me/DearMocoBot" target="_blank" rel="noopener noreferrer">DearMocoBot ↗</a>
+            </h3>
+            <p class="project-item__tagline">Free Fire Companion Bot with AI & Game Stats</p>
+            <details class="project-details">
+              <summary class="btn btn--ghost">View details, stack, and status...</summary>
+              <div class="project-details__content">
+                <div class="project-badges">
+                  <img src="https://img.shields.io/badge/Status-Username_Stolen-red?style=flat-square" alt="Status" loading="lazy" />
+                  <img src="https://img.shields.io/badge/Repository-Private-red?style=flat-square" alt="Repository" loading="lazy" />
+                  <img src="https://img.shields.io/badge/Peak_Users-4,000+-7B68EE?style=flat-square" alt="Peak Users" loading="lazy" />
+                </div>
+                <div class="alert alert--warning">
+                  <strong>WARNING:</strong> The original username @DearMocoBot was accidentally deleted and has been taken by someone else. The current bot at that handle is <b>not</b> managed by me.
+                </div>
+                <p>A Telegram chatbot tailored for the Free Fire gaming community. Integrated with unofficial Free Fire APIs to serve in-game stats, player data, and more.</p>
+                <div class="project-stack">
+                  <code>Pyrogram</code> · <code>MongoDB Atlas</code> · <code>Gemini API</code> · <code>Unofficial FF APIs</code> · <code>Docker</code> · <code>Heroku</code> · <code>Render</code> · <code>Koyeb</code>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- Seal_Your_Waifu_Bot -->
+          <div class="project-item reveal">
+            <h3 class="project-item__title">
+              <a href="https://t.me/Seal_Your_Waifu_Bot" target="_blank" rel="noopener noreferrer">Seal_Your_Waifu_Bot ↗</a>
+            </h3>
+            <p class="project-item__tagline">Anime Character Collection Game Bot</p>
+            <details class="project-details">
+              <summary class="btn btn--ghost">View details, stack, and status...</summary>
+              <div class="project-details__content">
+                <div class="project-badges">
+                  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" loading="lazy" />
+                  <img src="https://img.shields.io/badge/Repository-Private-red?style=flat-square" alt="Repository" loading="lazy" />
+                </div>
+                <p>A Telegram collection game where users catch and collect anime waifus/husbandos in group chats. Currently being heavily revamped and extended with new features.</p>
+                <div class="project-stack">
+                  <code>Kurigram</code> · <code>MongoDB Atlas</code> · <code>Redis</code> · <code>Telegram WebApp</code>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- ChainNoKizunaBot -->
+          <div class="project-item reveal">
+            <h3 class="project-item__title">
+              <a href="https://t.me/ChainNoKizunaBot" target="_blank" rel="noopener noreferrer">ChainNoKizunaBot ↗</a>
+            </h3>
+            <p class="project-item__tagline">Word Chain Game Bot</p>
+            <details class="project-details">
+              <summary class="btn btn--ghost">View details, stack, and status...</summary>
+              <div class="project-details__content">
+                <div class="project-badges">
+                  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" loading="lazy" />
+                  <img src="https://img.shields.io/badge/Repository-Private-red?style=flat-square" alt="Repository" loading="lazy" />
+                </div>
+                <p>A word-chain party game bot for Telegram groups. Refactored from on9wordchainbot — migrated PostgreSQL to MongoDB Atlas, added Redis caching, and containerized the deployment.</p>
+                <div class="project-stack">
+                  <code>aiogram</code> · <code>MongoDB Atlas</code> · <code>Redis</code> · <code>Docker</code> · <code>Heroku</code>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- xHydraMusicBot -->
+          <div class="project-item reveal">
+            <h3 class="project-item__title">
+              <a href="https://t.me/xHydraMusicBot" target="_blank" rel="noopener noreferrer">xHydraMusicBot ↗</a>
+            </h3>
+            <p class="project-item__tagline">Voice Chat Music Streaming Bot</p>
+            <details class="project-details">
+              <summary class="btn btn--ghost">View details, stack, and status...</summary>
+              <div class="project-details__content">
+                <div class="project-badges">
+                  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" loading="lazy" />
+                  <img src="https://img.shields.io/badge/Repository-Private-red?style=flat-square" alt="Repository" loading="lazy" />
+                </div>
+                <p>A music bot that streams audio directly into Telegram voice chats using unofficial YouTube APIs with cookie-based authentication.</p>
+                <div class="project-stack">
+                  <code>Pyrogram</code> · <code>yt-dlp</code> · <code>youtube-search</code> · <code>String Session</code> · <code>pytgcalls</code>
+                </div>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         CAREER GOALS
+    ════════════════════════════════════ -->
+    <section class="section" id="career-goals" aria-labelledby="career-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__num">05</span>
+          <h2 class="section__title" id="career-heading">Career Goals</h2>
+        </div>
+
+        <div class="cyber__grid">
+          <div class="cyber__card reveal">
+            <h3 class="cyber__card-title">Foundations</h3>
+            <table class="cyber__table">
+              <tr>
+                <td>Networking & Protocols</td>
+                <td><span class="badge badge--learning">Learning</span></td>
+              </tr>
+              <tr>
+                <td>Operating Systems & Linux</td>
+                <td><span class="badge badge--learning">Learning</span></td>
+              </tr>
+              <tr>
+                <td>Python for Security</td>
+                <td><span class="badge badge--learning">Learning</span></td>
+              </tr>
+              <tr>
+                <td>C++ & Low-Level</td>
+                <td><span class="badge badge--learning">Learning</span></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="cyber__card reveal">
+            <h3 class="cyber__card-title">Security Domains</h3>
+            <table class="cyber__table">
+              <tr>
+                <td>Ethical Hacking</td>
+                <td><span class="badge badge--exploring">Exploring</span></td>
+              </tr>
+              <tr>
+                <td>CTF Challenges</td>
+                <td><span class="badge badge--exploring">Exploring</span></td>
+              </tr>
+              <tr>
+                <td>Web App Security</td>
+                <td><span class="badge badge--exploring">Exploring</span></td>
+              </tr>
+              <tr>
+                <td>Cryptography</td>
+                <td><span class="badge badge--exploring">Exploring</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         CONTACT
+    ════════════════════════════════════ -->
+    <section class="contact section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__num">06</span>
+          <h2 class="section__title" id="contact-heading">Contact</h2>
+        </div>
+        <div class="contact__inner reveal">
+          <p class="contact__line">
+            Open to collaborations, cybersecurity discussions,&nbsp;and bot projects.
+          </p>
+          <nav class="contact__links" aria-label="Contact links">
+            <a
+              href="mailto:bisughalan@gmail.com"
+            >Email ↗</a>
+            <a
+              href="https://github.com/bisug"
+              target="_blank"
+              rel="noopener noreferrer"
+            >GitHub ↗</a>
+            <a
+              href="https://www.linkedin.com/in/bisug/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >LinkedIn ↗</a>
+            <a
+              href="https://t.me/DevVibeCoder" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >Telegram ↗</a>
+            <a
+              href="https://www.instagram.com/oyeee.bisu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Instagram ↗</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="footer__note"><em>Early stage — building the foundation one concept at a time.</em></p>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    ↑
+  </a>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bisu Ghalan",
+    "url": "https://bisug.github.io/",
+    "jobTitle": "CS Student & Bot Developer",
+    "description": "Computer Science student specializing in Telegram bot development and aspiring cybersecurity professional based in Nepal.",
+    "knowsAbout": ["Python", "C++", "Telegram Bots", "Cybersecurity", "Docker"],
+    "sameAs": [
+      "https://github.com/bisug",
+      "https://www.linkedin.com/in/bisug/",
+      "https://www.instagram.com/oyeee.bisu/",
+      "https://t.me/DevVibeCoder"
+    ]
+  }
+  </script>
+
+  <!-- Scripts (modules load in order) -->
+  <script src="assets/js/typewriter.js" defer></script>
+  <script src="assets/js/scroll.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

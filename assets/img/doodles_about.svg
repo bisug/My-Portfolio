@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" stroke="#e0dcd3" stroke-width="4" stroke-linejoin="round" stroke-linecap="square" fill="none">
+  <!-- Glasses -->
+  <path d="M30 50h30v20h-30z M60 60h20 M80 50h30v20h-30z M110 60h10" />
+  <!-- Coffee Cup -->
+  <path d="M130 130h40v40h-40z M170 140h15v20h-15" />
+  <!-- Brutalist Heart -->
+  <path d="M150 40l20-20 20 20-40 40-40-40 20-20z" />
+  <!-- Music Notes -->
+  <path d="M40 140v30 M70 140v30 M40 140h30v10h-30 M40 170h-10v10h20v-10 M70 170h-10v10h20v-10" />
+</svg>

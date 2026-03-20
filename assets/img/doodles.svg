@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" stroke="#e0dcd3" stroke-width="4" stroke-linejoin="round" stroke-linecap="square" fill="none">
+  <!-- Laptop -->
+  <rect x="25" y="25" width="50" height="35" />
+  <rect x="15" y="60" width="70" height="10" />
+  <line x1="45" y1="64" x2="55" y2="64" />
+  
+  <!-- Open Book -->
+  <path d="M120 40h30v50h-30z" />
+  <path d="M150 40h30v50h-30z" />
+  <path d="M125 50h20 M125 65h20 M155 50h20 M155 65h20" />
+  
+  <!-- Pencil -->
+  <path d="M30 150l40-40 10 10-40 40z" />
+  <path d="M80 120l15 15-10 5z" />
+  <line x1="30" y1="150" x2="40" y2="160" />
+  
+  <!-- Code Brackets / Stars -->
+  <path d="M130 130l-10 15 10 15 M160 130l10 15-10 15" />
+  <path d="M142 165l10-40" />
+</svg>

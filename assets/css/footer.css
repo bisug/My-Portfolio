@@ -1,0 +1,43 @@
+/* ============================================================
+   FOOTER - NEO BRUTALISM
+   ============================================================ */
+
+.footer {
+  border-top: var(--border-thick);
+  padding-block: var(--space-md);
+  background: var(--clr-text);
+  color: var(--clr-bg);
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+.footer p {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-bg);
+}
+
+.footer__stack {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  color: var(--clr-accent);
+}
+
+.footer__note {
+  margin-top: 1.5rem;
+  font-size: var(--text-sm);
+  color: var(--clr-muted);
+  font-family: var(--font-mono);
+}

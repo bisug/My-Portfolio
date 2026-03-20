@@ -1,0 +1,189 @@
+/* ============================================================
+   RESPONSIVE - NEO BRUTALISM
+   Breakpoints: xs=375, sm=480, md=600, lg=768, xl=1024
+   ============================================================ */
+
+/* ============================================================
+   LARGE — ≤1024px (Tablets landscape / smaller desktops)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   MEDIUM — ≤768px (Tablets portrait / large phones)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Nav: show hamburger, slide-in overlay */
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    position: fixed;
+    inset: 0;
+    top: var(--nav-h);
+    background: var(--clr-accent);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    transform: translateX(100%);
+    transition: transform var(--dur-base) cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-top: var(--border-thick);
+    border-left: var(--border-thick);
+    z-index: 90;
+  }
+
+  .nav__links.open {
+    transform: translateX(0);
+  }
+
+  .nav__links a {
+    font-size: var(--text-xl);
+    letter-spacing: 0.1em;
+    padding: 0.8em 1.6em;
+    box-shadow: 4px 4px 0px var(--clr-shadow);
+  }
+
+  /* Hero: reduce inner box padding, undo tilt to prevent clipping */
+  .hero__inner {
+    padding: var(--space-md);
+    transform: rotate(0deg);
+    animation: pop-in-mobile 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  /* About: single column */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .about__stat {
+    grid-template-columns: 110px 1fr;
+  }
+
+  /* Projects: single column */
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Career Goals: single column */
+  .cyber__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes pop-in-mobile {
+  0%   { transform: scale(0.9) rotate(0deg); opacity: 0; box-shadow: 0 0 0 var(--clr-shadow); }
+  100% { transform: scale(1)   rotate(0deg); opacity: 1; box-shadow: 12px 12px 0px var(--clr-shadow); }
+}
+
+/* ============================================================
+   COMPACT — ≤640px (Most phones landscape / large portrait)
+   ============================================================ */
+@media (max-width: 640px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   COMPACT — ≤600px
+   ============================================================ */
+@media (max-width: 600px) {
+  /* Education table: stack cells vertically so no horizontal scroll */
+  .edu__table,
+  .edu__table tbody,
+  .edu__table tr,
+  .edu__table td {
+    display: block;
+    width: 100%;
+  }
+
+  .edu__table tr {
+    border-bottom: var(--border-thick);
+    padding-block: var(--space-sm);
+  }
+
+  .edu__table tr:last-child {
+    border-bottom: none;
+  }
+
+  .edu__table td {
+    border-bottom: none;
+    padding: 0.4rem var(--space-md);
+  }
+
+  /* Contact: reduce padding and remove tilt to prevent edge overflow */
+  .contact__inner {
+    padding: var(--space-md);
+    transform: rotate(0deg);
+    box-shadow: 6px 6px 0px var(--clr-shadow);
+  }
+
+  .contact__line {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ============================================================
+   SMALL — ≤480px (Small phones portrait)
+   ============================================================ */
+@media (max-width: 480px) {
+  /* Tighten container and section vertical rhythm */
+  .container {
+    padding-inline: var(--space-sm);
+  }
+
+  .section {
+    padding-block: var(--space-lg);
+  }
+
+  /* Section heading: prevent long titles overflowing */
+  .section__title {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    word-break: break-word;
+  }
+
+  /* Hero buttons: stack full width */
+  .hero__links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__links .btn {
+    justify-content: center;
+  }
+
+  /* Skills: single column */
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer: stack left-aligned */
+  .footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   TOUCH DEVICES: press-down instead of brutal hover translate
+   ============================================================ */
+@media (hover: none) {
+  .project-card:hover,
+  .skills__group:hover,
+  .btn:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+
+  .project-card:active,
+  .skills__group:active,
+  .btn:active {
+    transform: translate(4px, 4px);
+  }
+}

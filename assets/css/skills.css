@@ -1,0 +1,83 @@
+/* ============================================================
+   SKILLS - NEO BRUTALISM
+   ============================================================ */
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+
+.skills__group {
+  padding: var(--space-md);
+  background: var(--clr-surface);
+  border: var(--border-thick);
+  border-radius: var(--radius-sm);
+  box-shadow: 6px 6px 0px var(--clr-shadow);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.skills__group:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px var(--clr-shadow);
+}
+
+.skills__group-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--clr-bg);
+  background: var(--clr-text);
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-sm);
+  transform: rotate(-2deg);
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8em;
+  margin-top: 1rem;
+}
+
+.skills__list li {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--clr-text);
+  padding: 0.4em 1em;
+  border: var(--border-thick);
+  border-radius: var(--radius-sm);
+  background: var(--clr-cyan);
+  box-shadow: 3px 3px 0px var(--clr-shadow);
+  transition: transform var(--dur-fast),
+              box-shadow var(--dur-fast),
+              background var(--dur-fast);
+  cursor: default;
+}
+
+/* Give tags alternating colors */
+.skills__list li:nth-child(odd) { background: var(--clr-accent); }
+.skills__list li:nth-child(3n) { background: var(--clr-pink); }
+.skills__list li:nth-child(4n) { background: var(--clr-green); }
+
+.skills__list li:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--clr-shadow);
+  filter: brightness(1.1);
+}
+
+.skills__workflow p {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--clr-muted);
+  margin-block: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}

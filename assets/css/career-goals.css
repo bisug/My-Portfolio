@@ -1,0 +1,72 @@
+/* ============================================================
+   CYBERSECURITY - NEO BRUTALISM
+   ============================================================ */
+
+.cyber__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+
+.cyber__card {
+  background: var(--clr-surface);
+  border: var(--border-thick);
+  padding: var(--space-md);
+  box-shadow: 8px 8px 0px var(--clr-shadow);
+}
+
+.cyber__card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 900;
+  text-transform: uppercase;
+  background: var(--clr-pink);
+  color: var(--clr-text);
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border: var(--border-thin);
+  margin-bottom: var(--space-md);
+  transform: rotate(1deg);
+}
+
+.cyber__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cyber__table td {
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed var(--clr-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.cyber__table tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.badge--learning {
+  background: var(--clr-green);
+  color: #000;
+}
+
+.badge--exploring {
+  background: var(--clr-cyan);
+  color: #000;
+}
+
+.cyber__footer {
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: var(--text-base);
+  color: var(--clr-muted);
+}
