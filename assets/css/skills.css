@@ -87,6 +87,8 @@
 .skill--anthropic { background: var(--clr-anthropic) !important; color: #fff; }
 .skill--google { background: var(--clr-google) !important; color: #fff; }
 .skill--deepseek { background: var(--clr-deepseek) !important; color: #fff; }
+.skill--windows { background: var(--clr-windows) !important; color: #fff; }
+.skill--kali { background: var(--clr-kali) !important; color: #fff; }
 
 .skills__list li:hover {
   transform: translate(2px, 2px);
