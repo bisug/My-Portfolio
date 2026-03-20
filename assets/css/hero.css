@@ -10,9 +10,10 @@
   padding-top: var(--nav-h);
   position: relative;
   overflow: hidden;
-  background: 
-    linear-gradient(90deg, var(--clr-grid) 1px, transparent 1px) 0 0 / 40px 40px,
-    linear-gradient(var(--clr-grid) 1px, transparent 1px) 0 0 / 40px 40px;
+  /* Custom Home Doodles Background */
+  background-image: url('../img/doodles_home.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
   background-color: var(--clr-bg);
   flex-direction: column;
 }

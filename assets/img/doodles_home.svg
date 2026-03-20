@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" stroke="#e0dcd3" stroke-width="4" stroke-linejoin="round" stroke-linecap="square" fill="none">
+  <!-- Terminal >_ -->
+  <path d="M40 40h40v30h-40z M45 50l10 5-10 5 M60 60h10" />
+  <!-- AI Bot Head -->
+  <path d="M140 60h30v30h-30z M155 45v15 M150 45h10 M145 70v5 M165 70v5 M135 70h5 M170 70h5" />
+  <!-- Server Rack -->
+  <path d="M45 130h30v40h-30z M45 150h30 M50 140h5 M65 140h5 M50 160h5 M65 160h5" />
+  <!-- Code Braces { } -->
+  <path d="M150 130c-10 0-10 10-20 10c10 0 10 10 20 10 M160 130c10 0 10 10 20 10c-10 0-10 10-20 10" />
+</svg>
