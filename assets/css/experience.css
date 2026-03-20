@@ -1,0 +1,46 @@
+/* ============================================================
+   EXPERIENCE - NEO BRUTALISM
+   ============================================================ */
+
+.exp__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.exp__card {
+  background: var(--clr-surface);
+  border: var(--border-thick);
+  box-shadow: 8px 8px 0px var(--clr-shadow);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.exp__card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--clr-grid);
+}
+
+.exp__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--clr-text);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.exp__date {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--clr-muted);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.exp__desc {
+  line-height: 1.6;
+}

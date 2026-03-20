@@ -243,6 +243,14 @@ html {
   border-top: var(--border-thick);
 }
 
+#experience {
+  background-color: var(--clr-bg);
+  background-image: url('../img/doodles_experience.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  border-top: var(--border-thick);
+}
+
 #skills {
   background-color: var(--clr-bg);
   background-image: url('../img/doodles_skills.svg');
