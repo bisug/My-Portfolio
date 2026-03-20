@@ -6,11 +6,11 @@
 
 const Typewriter = (() => {
   const STRINGS = [
-    'CS Student @ Lincoln College 🎓',
-    'Learning Python & C++ 🐍',
-    'Exploring Bot Development 🤖',
-    'Journey into Cybersecurity 🔑',
-    'Always learning, always building ✨',
+    'CS Student @ Lincoln College',
+    'Stepping into the world of cybersecurity',
+    'AI-Augmented Systems Architect',
+    'Securing Networks, One Prompt at a Time',
+    'Always learning, always building',
   ];
 
   const SPEED_TYPE   = 60;   // ms per character typed
