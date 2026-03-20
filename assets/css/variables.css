@@ -93,4 +93,9 @@
   --clr-deepseek: #3d78ff;
   --clr-windows: #0078d4;
   --clr-kali: #557c94;
+  --clr-supabase: #3ecf8e;
+  --clr-firebase: #ffca28;
+  --clr-mysql: #4479a1;
+  --clr-sqlite: #003b57;
+  --clr-postgresql: #4169e1;
 }

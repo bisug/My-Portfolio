@@ -89,6 +89,11 @@
 .skill--deepseek { background: var(--clr-deepseek) !important; color: #fff; }
 .skill--windows { background: var(--clr-windows) !important; color: #fff; }
 .skill--kali { background: var(--clr-kali) !important; color: #fff; }
+.skill--supabase { background: var(--clr-supabase) !important; color: #fff; }
+.skill--firebase { background: var(--clr-firebase) !important; color: #111; }
+.skill--mysql { background: var(--clr-mysql) !important; color: #fff; }
+.skill--sqlite { background: var(--clr-sqlite) !important; color: #fff; }
+.skill--postgresql { background: var(--clr-postgresql) !important; color: #fff; }
 
 .skills__list li:hover {
   transform: translate(2px, 2px);
