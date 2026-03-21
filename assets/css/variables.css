@@ -62,12 +62,13 @@
   --radius-pill: 999px;
   
   --shadow-hard:        4px 4px 0px var(--clr-shadow);
+  --shadow-hard-sm:     3px 3px 0px var(--clr-shadow);
   --shadow-hard-hover:  2px 2px 0px var(--clr-shadow); /* "pressed" state */
   --shadow-hard-lg:     8px 8px 0px var(--clr-shadow);
 
   /* Layout */
   --container: 1140px;
-  --nav-h:     80px;
+  --nav-h:     clamp(56px, 8vw, 80px);
 
   /* Motion - faster, snappier transitions for brutalism */
   --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);

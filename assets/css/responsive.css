@@ -1,7 +1,18 @@
 /* ============================================================
    RESPONSIVE - NEO BRUTALISM
-   Breakpoints: xs=375, sm=480, md=600, lg=768, xl=1024
+   Mobile-first rewriting + Max-width breakpoints
    ============================================================ */
+
+/* ============================================================
+   ULTRA-WIDE — ≥1440px
+   ============================================================ */
+@media (min-width: 1440px) {
+  main {
+    max-width: 1600px;
+    margin-inline: auto;
+    position: relative;
+  }
+}
 
 /* ============================================================
    LARGE — ≤1024px (Tablets landscape / smaller desktops)
@@ -55,6 +66,16 @@
     animation: pop-in-mobile 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   }
 
+  /* Remove forced 100svh on mobile to avoid massive blank spaces */
+  .section {
+    min-height: auto;
+  }
+
+  /* Scale down massive background doodles */
+  #about, #education, #experience, #skills, #projects, #career-goals, #contact, .hero {
+    background-size: 150px 150px;
+  }
+
   /* Projects: single column */
   .projects__grid {
     grid-template-columns: 1fr;
@@ -68,7 +89,7 @@
 
 @keyframes pop-in-mobile {
   0%   { transform: scale(0.9) rotate(0deg); opacity: 0; box-shadow: 0 0 0 var(--clr-shadow); }
-  100% { transform: scale(1)   rotate(0deg); opacity: 1; box-shadow: 12px 12px 0px var(--clr-shadow); }
+  100% { transform: scale(1)   rotate(0deg); opacity: 1; box-shadow: 8px 8px 0px var(--clr-shadow); }
 }
 
 /* ============================================================
@@ -117,6 +138,25 @@
   .contact__line {
     font-size: var(--text-xl);
   }
+
+  /* Ensure contact links don't awkwardly wrap alone */
+  .contact__links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .contact__links a {
+    text-align: center;
+  }
+
+  /* Experience card adjustments */
+  .exp__card {
+    padding: var(--space-md);
+  }
+  .exp__title {
+    font-size: var(--text-xl);
+  }
 }
 
 /* ============================================================
@@ -138,6 +178,26 @@
     word-break: break-word;
   }
 
+  /* Hero: Scale text shadow to prevent overflow off-card */
+  .hero__name {
+    text-shadow: 2px 2px 0px var(--clr-accent), 4px 4px 0px var(--clr-pink);
+  }
+
+  /* Pull the explore button inside the flow to avoid bottom clipping */
+  .hero__scroll {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    translate: none;
+    display: inline-flex;
+    margin-top: var(--space-md);
+    transform: rotate(0deg);
+  }
+  .hero__scroll:hover {
+    translate: 0 4px;
+    transform: scale(1.05);
+  }
+
   /* Hero buttons: stack full width */
   .hero__links {
     flex-direction: column;
@@ -148,9 +208,27 @@
     justify-content: center;
   }
 
-  /* Skills: single column */
-  .skills__grid {
-    grid-template-columns: 1fr;
+  /* Skills badges: padding and font reduction */
+  .skills__list li {
+    padding: 0.3em 0.8em;
+    font-size: var(--text-sm);
+  }
+
+  .skills__group {
+    padding: var(--space-sm);
+  }
+
+  /* Background doodles further scaled */
+  #about, #education, #experience, #skills, #projects, #career-goals, #contact, .hero {
+    background-size: 120px 120px;
+  }
+
+  /* Back-to-top repositioning out of the way */
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 40px;
+    height: 40px;
   }
 
   /* Footer: stack left-aligned */
@@ -161,19 +239,47 @@
 }
 
 /* ============================================================
+   EXTRA SMALL — ≤375px (iPhone SE, small Androids)
+   ============================================================ */
+@media (max-width: 375px) {
+  /* Remove rotating on smaller components to save edge bleed */
+  .nav__brand {
+    transform: rotate(0deg);
+    font-size: clamp(1.2rem, 5vw, var(--text-2xl));
+  }
+  .cyber__card-title, .hero__kicker {
+    transform: rotate(0deg);
+  }
+  .about__bio p:nth-child(even), .about__bio p:nth-child(odd) {
+    transform: rotate(0deg);
+  }
+
+  /* General text tightness */
+  .hero__title {
+    font-size: var(--text-lg);
+  }
+}
+
+/* ============================================================
    TOUCH DEVICES: press-down instead of brutal hover translate
    ============================================================ */
 @media (hover: none) {
   .project-card:hover,
   .skills__group:hover,
-  .btn:hover {
+  .btn:hover,
+  .nav__brand:hover,
+  .contact__links a:hover,
+  .hero__scroll:hover,
+  .nav__links a:hover {
     transform: none;
     box-shadow: inherit;
   }
-
+  
+  /* Retain base transform for some elements on active */
   .project-card:active,
   .skills__group:active,
-  .btn:active {
-    transform: translate(4px, 4px);
+  .btn:active,
+  .contact__links a:active {
+    transform: translate(2px, 2px);
   }
 }
