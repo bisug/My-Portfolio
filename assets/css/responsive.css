@@ -35,7 +35,7 @@
   .nav__links {
     position: fixed;
     inset: 0;
-    top: var(--nav-h);
+    top: calc(var(--nav-h) + 10px);
     background: var(--clr-accent);
     flex-direction: column;
     justify-content: center;
