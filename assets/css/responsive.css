@@ -213,7 +213,10 @@
   }
 
   /* Hero: Scale text shadow to prevent overflow off-card */
+    transform: rotate(0deg);
+  }
   .hero__name {
+    font-size: clamp(2.2rem, 8vw, 3rem);
     text-shadow: 2px 2px 0px var(--clr-accent), 4px 4px 0px var(--clr-pink);
   }
 
@@ -289,6 +292,9 @@
   }
 
   /* General text tightness */
+  .hero__inner {
+    padding: var(--space-sm);
+  }
   .hero__title {
     font-size: clamp(1rem, 5vw, var(--text-lg));
     min-height: 3em; /* Give typewriter more vertical breathing room if wrapping */
