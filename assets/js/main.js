@@ -31,34 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Initialize Modules ----
+  // Typewriter is visual and high-priority for the hero section
   if (typeof Typewriter !== 'undefined') Typewriter.init();
+  
+  // ScrollEffects sets up the observer and initial scroll state
   if (typeof ScrollEffects !== 'undefined') ScrollEffects.init();
 
-  // ---- Universal Helper Logic ----
-  // Smooth scroll polyfill fallback
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const href = anchor.getAttribute('href');
-      if (href === '#' || !href.startsWith('#')) return;
-      const target = document.querySelector(href);
-      if (target) {
+  // ---- Non-Critical Initialization ----
+  // Use requestIdleCallback to avoid blocking the main thread for non-visual helpers
+  const initNonCritical = () => {
+    // Universal Helper Logic (Smooth Scroll)
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (href === '#' || !href.startsWith('#')) return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Email Obfuscation
+    const emailLink = document.getElementById('emailLink');
+    if (emailLink) {
+      emailLink.addEventListener('click', (e) => {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+        const u = emailLink.dataset.u;
+        const d = emailLink.dataset.d;
+        window.location.href = `mailto:${u}@${d}`;
+      });
+    }
+  };
 
-
-
-  // ---- Email Obfuscation ----
-  const emailLink = document.getElementById('emailLink');
-  if (emailLink) {
-    emailLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      const u = emailLink.dataset.u;
-      const d = emailLink.dataset.d;
-      window.location.href = `mailto:${u}@${d}`;
-    });
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initNonCritical);
+  } else {
+    setTimeout(initNonCritical, 100);
   }
 
 });

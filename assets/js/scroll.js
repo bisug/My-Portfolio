@@ -13,6 +13,13 @@ const ScrollEffects = (() => {
     const backToTop = document.getElementById('backToTop');
     
     let ticking = false;
+    let cachedHeight = 0;
+    let cachedViewportHeight = 0;
+
+    function updateDimensions() {
+      cachedHeight = document.documentElement.scrollHeight;
+      cachedViewportHeight = document.documentElement.clientHeight;
+    }
 
     function onScroll() {
       if (ticking) return;
@@ -32,8 +39,8 @@ const ScrollEffects = (() => {
         
         // Progress bar
         if (progressBar) {
-          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          progressBar.style.width = (height > 0 ? (scrollY / height) * 100 : 0) + '%';
+          const depth = cachedHeight - cachedViewportHeight;
+          progressBar.style.width = (depth > 0 ? (scrollY / depth) * 100 : 0) + '%';
         }
         
         ticking = false;
@@ -41,6 +48,12 @@ const ScrollEffects = (() => {
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+      // Small debounce not strictly needed for just height-caching, but good practice
+      updateDimensions();
+    });
+
+    updateDimensions(); // initial state
     onScroll(); // initial state
   }
 
