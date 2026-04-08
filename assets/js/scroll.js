@@ -5,22 +5,43 @@
  */
 
 const ScrollEffects = (() => {
-  const NAV_THRESHOLD = 40;
 
-  function initNavScroll() {
+  function initScrollHandler() {
     const nav = document.getElementById('nav');
     const heroScroll = document.querySelector('.hero__scroll');
-    if (!nav) return;
+    const progressBar = document.getElementById('scrollProgress');
+    const backToTop = document.getElementById('backToTop');
+    
+    let ticking = false;
 
-    const update = () => {
-      nav.classList.toggle('scrolled', window.scrollY > NAV_THRESHOLD);
-      if (heroScroll) {
-        heroScroll.classList.toggle('hidden', window.scrollY > 150);
-      }
-    };
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        
+        // Nav state
+        if (nav) nav.classList.toggle('scrolled', scrollY > 40);
+        
+        // Hero explore button
+        if (heroScroll) heroScroll.classList.toggle('hidden', scrollY > 150);
+        
+        // Back to top
+        if (backToTop) backToTop.classList.toggle('visible', scrollY > 400);
+        
+        // Progress bar
+        if (progressBar) {
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          progressBar.style.width = (height > 0 ? (scrollY / height) * 100 : 0) + '%';
+        }
+        
+        ticking = false;
+      });
+    }
 
-    window.addEventListener('scroll', update, { passive: true });
-    update(); // run once on load
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // initial state
   }
 
   function initReveal() {
@@ -39,7 +60,7 @@ const ScrollEffects = (() => {
       { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
 
-    items.forEach((el, i) => {
+    items.forEach((el) => {
       observer.observe(el);
     });
   }
@@ -63,32 +84,16 @@ const ScrollEffects = (() => {
         }
       });
     }, {
-      rootMargin: '-50% 0px -50% 0px' // Trigger when section is in middle of viewport
+      rootMargin: '-50% 0px -50% 0px' 
     });
 
     sections.forEach(section => observer.observe(section));
   }
 
-  function initScrollProgress() {
-    const progressBar = document.getElementById('scrollProgress');
-    if (!progressBar) return;
-
-    const updateProgress = () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-      progressBar.style.width = scrolled + '%';
-    };
-
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-  }
-
   function init() {
-    initNavScroll();
+    initScrollHandler();
     initReveal();
     initActiveNav();
-    initScrollProgress();
   }
 
   return { init };

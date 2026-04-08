@@ -100,15 +100,19 @@
   border: 1px solid var(--clr-border);
 }
 
-.alert {
-  padding: 0.8rem;
-  border: var(--border-thin);
-  margin-bottom: 1rem;
-  font-size: var(--text-sm);
+
+
+/* Placeholder state (until real project cards are built) */
+.projects__placeholder p {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--clr-muted);
+  line-height: 1.6;
+  max-width: 600px;
 }
 
-.alert--warning {
-  background: #fff3cd;
-  color: #856404;
-  border-color: #ffeeba;
+.projects__placeholder a {
+  color: var(--clr-text);
+  text-decoration: underline;
+  font-weight: 800;
 }

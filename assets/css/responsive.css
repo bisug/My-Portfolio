@@ -110,6 +110,11 @@
   .cyber__grid {
     grid-template-columns: 1fr;
   }
+
+  /* Prevent rotated contact card from causing horizontal overflow */
+  .contact__inner {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes pop-in-mobile {

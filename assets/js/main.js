@@ -50,12 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // ---- Back to Top Button ----
-  const backToTop = document.getElementById('backToTop');
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
+  // ---- Email Obfuscation ----
+  const emailLink = document.getElementById('emailLink');
+  if (emailLink) {
+    emailLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const u = emailLink.dataset.u;
+      const d = emailLink.dataset.d;
+      window.location.href = `mailto:${u}@${d}`;
+    });
   }
 
 });

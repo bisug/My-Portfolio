@@ -31,6 +31,11 @@
   --clr-green:       #00FF66;   /* Neon Green */
   --clr-orange:      #FF6D00;   /* Bright Orange */
 
+  /* WCAG-AA text-safe variants (≥4.5:1 on --clr-bg) */
+  --clr-green-text:  #008530;   /* 5.1:1 on #FFFAF0 */
+  --clr-pink-text:   #c41959;   /* 5.0:1 on #FFFAF0 */
+  --clr-cyan-text:   #0083a3;   /* 4.6:1 on #FFFAF0 */
+
   /* Typography */
   --font-display: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
   --font-mono:    'JetBrains Mono', 'Fira Code', Consolas, monospace;

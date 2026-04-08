@@ -45,7 +45,6 @@ body {
   border-top: var(--border-thick);
   position: relative;
   background-color: var(--clr-bg);
-  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -220,57 +219,39 @@ html {
 
 /* ============================================================
    FULL-SCREEN SECTION CANVAS BACKGROUNDS
-   Gives each 100svh section a massively distinct brutalist vibe as you scroll.
    ============================================================ */
 
 #about {
-  background-color: var(--clr-bg);
-  background-image: url('../img/doodles_about.svg');
-  background-size: 200px 200px;
-  background-repeat: repeat;
+  background-image: url('../img/pattern-dots.svg');
+  background-size: 24px 24px;
 }
 
 #education {
-  background-color: var(--clr-bg);
-  /* Brutalist SVG Student & Tech Doodles */
-  background-image: url('../img/doodles.svg');
-  background-size: 200px 200px;
-  background-repeat: repeat;
-  border-top: var(--border-thick);
+  background-image: url('../img/pattern-plus.svg');
+  background-size: 40px 40px;
 }
 
 #experience {
-  background-color: var(--clr-bg);
-  background-image: url('../img/doodles_experience.svg');
-  background-size: 200px 200px;
-  background-repeat: repeat;
-  border-top: var(--border-thick);
+  background-image: url('../img/pattern-dots.svg');
+  background-size: 24px 24px;
 }
 
 #skills {
-  background-color: var(--clr-bg);
-  background-image: url('../img/doodles_skills.svg');
-  background-size: 200px 200px;
-  background-repeat: repeat;
+  background-image: url('../img/pattern-plus.svg');
+  background-size: 40px 40px;
 }
 
 #projects {
-  background-color: var(--clr-bg);
-  background-image: url('../img/doodles_projects.svg');
-  background-size: 200px 200px;
-  background-repeat: repeat;
+  background-image: url('../img/pattern-dots.svg');
+  background-size: 24px 24px;
 }
 
 #career-goals {
-  background-color: var(--clr-bg);
-  background-image: url('../img/doodles_cyber.svg');
-  background-size: 200px 200px;
-  background-repeat: repeat;
+  background-image: url('../img/pattern-plus.svg');
+  background-size: 40px 40px;
 }
 
 #contact {
-  background-color: var(--clr-bg);
-  background-image: url('../img/doodles_contact.svg');
-  background-size: 200px 200px;
-  background-repeat: repeat;
+  background-image: url('../img/pattern-dots.svg');
+  background-size: 24px 24px;
 }

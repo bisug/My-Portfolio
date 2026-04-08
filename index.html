@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://bisug.github.io/" />
 
   <!-- Open Graph / Social Meta Tags -->
-  <meta property="og:title" content="Bisu Ghalan — Portfolio" />
+  <meta property="og:title" content="Bisu Ghalan | Portfolio" />
   <meta property="og:description"
     content="AI-Augmented Systems Architect & Aspiring Cybersecurity Professional based in Nepal." />
   <meta property="og:type" content="website" />
@@ -21,17 +21,24 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bisu Ghalan — Portfolio" />
+  <meta name="twitter:title" content="Bisu Ghalan | Portfolio" />
   <meta name="twitter:description"
     content="AI-Augmented Systems Architect & Aspiring Cybersecurity Professional based in Nepal." />
 
-  <title>Bisu Ghalan &mdash; Portfolio</title>
+  <title>Bisu Ghalan | Portfolio</title>
 
 
+
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data: https://cdn.simpleicons.org https://img.shields.io; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self';">
 
   <!-- Preconnect to external image domains -->
   <link rel="preconnect" href="https://img.shields.io" crossorigin />
   <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
+
+  <!-- Preload critical font files (hero name + body text) -->
+  <link rel="preload" href="assets/css/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/css/fonts/jetbrains-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Favicons -->
   <link rel="icon"
@@ -42,24 +49,8 @@
   <!-- Google Fonts (Self-hosted) -->
   <link rel="stylesheet" href="assets/css/fonts.css" />
 
-  <!-- Stylesheets (order matters with @layer) -->
-  <style>
-    @layer reset, tokens, base, components, responsive;
-  </style>
-  <link rel="stylesheet" href="assets/css/reset.css" layer="reset" />
-  <link rel="stylesheet" href="assets/css/variables.css" layer="tokens" />
-  <link rel="stylesheet" href="assets/css/base.css" layer="base" />
-  <link rel="stylesheet" href="assets/css/nav.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/hero.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/about.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/education.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/experience.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/projects.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/skills.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/career-goals.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/contact.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/footer.css" layer="components" />
-  <link rel="stylesheet" href="assets/css/responsive.css" layer="responsive" />
+  <!-- Bundled Stylesheet (Includes layers) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body id="top">
@@ -68,9 +59,9 @@
     <div class="scroll-progress-bar" id="scrollProgress"></div>
   </div>
 
-  <!-- ════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        NAV
-  ════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <a href="#home" class="nav__brand" aria-label="Back to home">BG</a>
 
@@ -93,9 +84,9 @@
 
   <main id="main">
 
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          HERO
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="hero" id="home" aria-label="Introduction">
       <div class="hero__inner">
         <h1 class="hero__name">Bisu Ghalan</h1>
@@ -110,9 +101,9 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          ABOUT
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="about section" id="about" aria-labelledby="about-heading">
       <div class="container">
         <div class="section__header reveal">
@@ -133,9 +124,9 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          EDUCATION
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="education section" id="education" aria-labelledby="edu-heading">
       <div class="container">
         <div class="section__header reveal">
@@ -171,9 +162,9 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          EXPERIENCE
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="experience section" id="experience" aria-labelledby="exp-heading">
       <div class="container">
         <div class="section__header reveal">
@@ -188,7 +179,7 @@
             <p class="exp__desc">
               I am actively seeking an internship or entry-level role in the <b>Cybersecurity</b> field.
               While I don't have formal professional experience yet, I have structured my own self-taught
-              curriculum—diving into
+              curriculumâ€”diving into
               network protocols, ethical hacking, and automating security concepts through AI-driven hobby projects.
               <br><br>
               I bring a highly adaptable, <b>AI-Augmented</b> approach to problem-solving. I am eager to join a security
@@ -201,9 +192,9 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          SKILLS
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="skills section" id="skills" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section__header reveal">
@@ -215,11 +206,11 @@
             <h3 class="skills__group-title">Languages</h3>
             <ul class="skills__list" role="list">
               <li class="skill--python">
-                <img src="https://cdn.simpleicons.org/python/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-python"/></svg>
                 Python
               </li>
               <li class="skill--cpp">
-                <img src="https://cdn.simpleicons.org/cplusplus/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-cplusplus"/></svg>
                 C++
               </li>
             </ul>
@@ -228,27 +219,27 @@
             <h3 class="skills__group-title">Cloud & Deployment</h3>
             <ul class="skills__list" role="list">
               <li class="skill--heroku">
-                <img src="https://cdn.simpleicons.org/heroku/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-heroku"/></svg>
                 Heroku
               </li>
               <li class="skill--render">
-                <img src="https://cdn.simpleicons.org/render/000000" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-render"/></svg>
                 Render
               </li>
               <li class="skill--koyeb">
-                <img src="https://cdn.simpleicons.org/koyeb/000000" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-koyeb"/></svg>
                 Koyeb
               </li>
               <li class="skill--vercel">
-                <img src="https://cdn.simpleicons.org/vercel/000000" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-vercel"/></svg>
                 Vercel
               </li>
               <li class="skill--netlify">
-                <img src="https://cdn.simpleicons.org/netlify/000000" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-netlify"/></svg>
                 Netlify
               </li>
               <li class="skill--github">
-                <img src="https://cdn.simpleicons.org/github/000000" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-github"/></svg>
                 GitHub
               </li>
             </ul>
@@ -257,31 +248,31 @@
             <h3 class="skills__group-title">Databases & Storage</h3>
             <ul class="skills__list" role="list">
               <li class="skill--mongodb">
-                <img src="https://cdn.simpleicons.org/mongodb/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-mongodb"/></svg>
                 MongoDB Atlas
               </li>
               <li class="skill--redis">
-                <img src="https://cdn.simpleicons.org/redis/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-redis"/></svg>
                 Upstash Redis
               </li>
               <li class="skill--supabase">
-                <img src="https://cdn.simpleicons.org/supabase/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-supabase"/></svg>
                 Supabase
               </li>
               <li class="skill--firebase">
-                <img src="https://cdn.simpleicons.org/firebase/000000" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-firebase"/></svg>
                 Firebase
               </li>
               <li class="skill--mysql">
-                <img src="https://cdn.simpleicons.org/mysql/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-mysql"/></svg>
                 MySQL (Basic)
               </li>
               <li class="skill--sqlite">
-                <img src="https://cdn.simpleicons.org/sqlite/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-sqlite"/></svg>
                 SQLite (Basic)
               </li>
               <li class="skill--postgresql">
-                <img src="https://cdn.simpleicons.org/postgresql/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-postgresql"/></svg>
                 PostgreSQL (Basic)
               </li>
             </ul>
@@ -290,7 +281,7 @@
             <h3 class="skills__group-title">Containerization</h3>
             <ul class="skills__list" role="list">
               <li class="skill--docker">
-                <img src="https://cdn.simpleicons.org/docker/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-docker"/></svg>
                 Docker
               </li>
             </ul>
@@ -299,11 +290,11 @@
             <h3 class="skills__group-title">Operating Systems</h3>
             <ul class="skills__list" role="list">
               <li class="skill--windows">
-                <img src="https://cdn.simpleicons.org/windows/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-windows"/></svg>
                 Windows
               </li>
               <li class="skill--kali">
-                <img src="https://cdn.simpleicons.org/kalilinux/FFFFFF" alt="" class="skill-icon">
+                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-kalilinux"/></svg>
                 Kali Linux (Basic)
               </li>
             </ul>
@@ -314,7 +305,7 @@
               <p>Developing with:</p>
               <ul class="skills__list" role="list">
                 <li class="skill--anthropic">
-                  <img src="https://cdn.simpleicons.org/claude/FFFFFF" alt="" class="skill-icon">
+                  <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-claude"/></svg>
                   Claude
                 </li>
                 <li class="skill--chatgpt">
@@ -351,11 +342,11 @@
                   Cursor
                 </li>
                 <li class="skill--github">
-                  <img src="https://cdn.simpleicons.org/github/000000" alt="" class="skill-icon">
+                  <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-github"/></svg>
                   GitHub Copilot
                 </li>
                 <li class="skill--vercel">
-                  <img src="https://cdn.simpleicons.org/vercel/000000" alt="" class="skill-icon">
+                  <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-vercel"/></svg>
                   Vercel v0
                 </li>
               </ul>
@@ -364,9 +355,9 @@
         </div>
       </div>
     </section>
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          PROJECTS
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="projects section" id="projects" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section__header reveal">
@@ -374,21 +365,19 @@
           <h2 class="section__title" id="projects-heading">Projects</h2>
         </div>
         <div class="projects__placeholder reveal">
-          <p
-            style="font-family: var(--font-mono); font-size: var(--text-base); color: var(--clr-muted); line-height: 1.6; max-width: 600px;">
+          <p>
             Currently revamping my project showcase to align with my cybersecurity focus.
             In the meantime, you may explore my <a href="https://github.com/bisug" target="_blank"
-              rel="noopener noreferrer"
-              style="color: var(--clr-text); text-decoration: underline; font-weight: 800;">GitHub repository ↗</a>
+              rel="noopener noreferrer">GitHub repository â†—</a>
             to see my latest work and research!
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          CAREER GOALS
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="section" id="career-goals" aria-labelledby="career-heading">
       <div class="container">
         <div class="section__header reveal">
@@ -448,9 +437,9 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          CONTACT
-    ════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="contact section" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section__header reveal">
@@ -462,11 +451,11 @@
             Open to collaborations, cybersecurity discussions,&nbsp;and bot projects.
           </p>
           <nav class="contact__links" aria-label="Contact links">
-            <a href="mailto:bisu.ghlan@gmail.com">Email ↗</a>
-            <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="https://t.me/DevVibeCoder" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
-            <a href="https://www.instagram.com/oyeee.bisu/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a href="#" id="emailLink" data-u="bisu.ghlan" data-d="gmail.com" aria-label="Send email">Email ↗</a>
+            <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">GitHub â†—</a>
+            <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">LinkedIn â†—</a>
+            <a href="https://t.me/DevVibeCoder" target="_blank" rel="noopener noreferrer">Telegram â†—</a>
+            <a href="https://www.instagram.com/oyeee.bisu/" target="_blank" rel="noopener noreferrer">Instagram â†—</a>
           </nav>
         </div>
       </div>
@@ -474,18 +463,18 @@
 
   </main>
 
-  <!-- ════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        FOOTER
-  ════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <p class="footer__note"><em>Early stage — building the foundation one concept at a time.</em></p>
+      <p class="footer__note"><em>Early stage â€” building the foundation one concept at a time.</em></p>
     </div>
   </footer>
 
   <!-- Scroll-to-top button -->
   <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
-    ↑
+    â†‘
   </a>
 
   <!-- JSON-LD Structured Data -->

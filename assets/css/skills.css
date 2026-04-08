@@ -72,28 +72,28 @@
 }
 
 /* Brand-specific Badge Colors */
-.skill--python { background: var(--clr-python) !important; color: #fff; }
-.skill--cpp { background: var(--clr-cpp) !important; color: #fff; }
-.skill--heroku { background: var(--clr-heroku) !important; color: #fff; }
-.skill--render { background: var(--clr-render) !important; color: #111; }
-.skill--koyeb { background: var(--clr-koyeb) !important; color: #111; }
-.skill--vercel { background: #eeeeee !important; color: #111; } 
-.skill--netlify { background: var(--clr-netlify) !important; color: #111; }
-.skill--github { background: #eeeeee !important; color: #111; } 
-.skill--mongodb { background: var(--clr-mongodb) !important; color: #fff; }
-.skill--redis { background: var(--clr-redis) !important; color: #fff; }
-.skill--docker { background: var(--clr-docker) !important; color: #fff; }
-.skill--chatgpt { background: var(--clr-openai) !important; color: #fff; }
-.skill--anthropic { background: var(--clr-anthropic) !important; color: #fff; }
-.skill--google { background: var(--clr-google) !important; color: #fff; }
-.skill--deepseek { background: var(--clr-deepseek) !important; color: #fff; }
-.skill--windows { background: var(--clr-windows) !important; color: #fff; }
-.skill--kali { background: var(--clr-kali) !important; color: #fff; }
-.skill--supabase { background: var(--clr-supabase) !important; color: #fff; }
-.skill--firebase { background: var(--clr-firebase) !important; color: #111; }
-.skill--mysql { background: var(--clr-mysql) !important; color: #fff; }
-.skill--sqlite { background: var(--clr-sqlite) !important; color: #fff; }
-.skill--postgresql { background: var(--clr-postgresql) !important; color: #fff; }
+li.skill--python { background: var(--clr-python); color: #fff; }
+li.skill--cpp { background: var(--clr-cpp); color: #fff; }
+li.skill--heroku { background: var(--clr-heroku); color: #fff; }
+li.skill--render { background: var(--clr-render); color: #111; }
+li.skill--koyeb { background: var(--clr-koyeb); color: #111; }
+li.skill--vercel { background: #eeeeee; color: #111; } 
+li.skill--netlify { background: var(--clr-netlify); color: #111; }
+li.skill--github { background: #eeeeee; color: #111; } 
+li.skill--mongodb { background: var(--clr-mongodb); color: #fff; }
+li.skill--redis { background: var(--clr-redis); color: #fff; }
+li.skill--docker { background: var(--clr-docker); color: #fff; }
+li.skill--chatgpt { background: var(--clr-openai); color: #fff; }
+li.skill--anthropic { background: var(--clr-anthropic); color: #fff; }
+li.skill--google { background: var(--clr-google); color: #fff; }
+li.skill--deepseek { background: var(--clr-deepseek); color: #fff; }
+li.skill--windows { background: var(--clr-windows); color: #fff; }
+li.skill--kali { background: var(--clr-kali); color: #fff; }
+li.skill--supabase { background: var(--clr-supabase); color: #fff; }
+li.skill--firebase { background: var(--clr-firebase); color: #111; }
+li.skill--mysql { background: var(--clr-mysql); color: #fff; }
+li.skill--sqlite { background: var(--clr-sqlite); color: #fff; }
+li.skill--postgresql { background: var(--clr-postgresql); color: #fff; }
 
 .skills__list li:hover {
   transform: translate(2px, 2px);

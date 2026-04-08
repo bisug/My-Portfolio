@@ -2,6 +2,8 @@
    CONTACT - NEO BRUTALISM
    ============================================================ */
 
+.contact { min-height: 100svh; }
+
 .contact__inner {
   display: flex;
   flex-direction: column;

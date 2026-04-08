@@ -2,12 +2,7 @@
    ABOUT
    ============================================================ */
 
-.about__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  align-items: start;
-}
+
 
 .about__bio p {
   color: var(--clr-text);
@@ -38,39 +33,15 @@
 }
 
 .about__bio b {
-  color: var(--clr-green);
+  color: var(--clr-green-text);
 }
 
 .about__bio em {
-  color: var(--clr-pink);
+  color: var(--clr-pink-text);
   font-style: normal;
   font-weight: 800;
 }
 
 .about__bio strong {
   color: var(--clr-accent);
-}
-
-.about__stat:nth-child(odd) {
-  background: var(--clr-bg);
-}
-
-.about__stat:hover {
-  background: var(--clr-green);
-}
-
-.about__stat-label {
-  font-size: var(--text-xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--clr-text);
-  font-family: var(--font-mono);
-  font-weight: 800;
-  flex-shrink: 0;
-}
-
-.about__stat-value {
-  font-size: var(--text-base);
-  font-weight: 600;
-  color: var(--clr-text);
 }
