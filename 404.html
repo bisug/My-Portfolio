@@ -6,7 +6,7 @@
   <meta name="description" content="Page not found — Bisu Ghalan Portfolio" />
   <title>404 — Page Not Found</title>
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%237c6aef%22>B.</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%237c6aef%22>BG</text></svg>">
 
   <!-- Reuse the same design system -->
   <link rel="stylesheet" href="assets/css/fonts.css" />
@@ -17,47 +17,132 @@
   <link rel="stylesheet" href="assets/css/variables.css" layer="tokens" />
 
   <style>
+    :root {
+      --mouse-x: 0.5;
+      --mouse-y: 0.5;
+    }
+
     body {
+      margin: 0;
+      background-color: var(--clr-bg);
+      color: var(--clr-text);
+      font-family: var(--font-mono);
+      overflow: hidden; /* Prevent scroll when dragging */
+    }
+
+    main {
+      position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--clr-bg);
-      color: var(--clr-text);
-      font-family: var(--font-mono);
+      /* Background pattern for depth */
+      background-image: radial-gradient(var(--clr-grid) 2px, transparent 2px);
+      background-size: 30px 30px;
+      padding: var(--space-md);
+      box-sizing: border-box;
+      overflow: hidden; /* Contains the card if dragged out */
     }
 
     .error-card {
       text-align: center;
+      width: 100%;
       max-width: 520px;
-      padding: clamp(2rem, 5vw, 4rem);
+      padding: clamp(1.5rem, 4vw, 4rem);
       background: var(--clr-surface);
       border: 4px solid var(--clr-border);
-      box-shadow: 12px 12px 0px var(--clr-shadow);
+      /* Interactive shadow based on mouse position, centers at 12px 12px */
+      box-shadow: 
+        calc((0.5 - var(--mouse-x)) * 40px + 12px) 
+        calc((0.5 - var(--mouse-y)) * 40px + 12px) 
+        0px var(--clr-shadow);
       transform: rotate(-1deg);
+      cursor: grab;
+      position: relative; /* relative + flexbox centers it perfectly without breaking */
+      user-select: none; /* Prevent text selection while dragging */
+      touch-action: none; /* Better touch handling, prevents scrolling */
+      transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
+      box-sizing: border-box;
+    }
+
+    .error-card:active {
+      cursor: grabbing;
+      transform: scale(1.02) rotate(1deg);
+      box-shadow: 
+        calc((0.5 - var(--mouse-x)) * 60px + 16px) 
+        calc((0.5 - var(--mouse-y)) * 60px + 16px) 
+        0px var(--clr-shadow);
     }
 
     .error-code {
       font-family: var(--font-display);
-      font-size: clamp(5rem, 15vw, 10rem);
+      font-size: clamp(4rem, 15vw, 10rem); /* slightly smaller base size on mobile */
       font-weight: 900;
       line-height: 1;
       color: var(--clr-text);
-      text-shadow: 4px 4px 0px var(--clr-accent), 8px 8px 0px var(--clr-pink);
+      /* Multiple shadows for 3D effect + interactive */
+      text-shadow: 
+        calc((0.5 - var(--mouse-x)) * 20px + 4px) calc((0.5 - var(--mouse-y)) * 20px + 4px) 0px var(--clr-accent), 
+        calc((0.5 - var(--mouse-x)) * 40px + 8px) calc((0.5 - var(--mouse-y)) * 40px + 8px) 0px var(--clr-pink);
       margin-bottom: 0.2em;
+      position: relative;
+    }
+
+    /* Glitch effect on hover */
+    .error-code:hover {
+      animation: glitch 300ms infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch {
+      0% {
+        text-shadow: 
+          4px 4px 0px var(--clr-accent), 
+          -4px -4px 0px var(--clr-cyan);
+        transform: translate(2px, -2px);
+      }
+      20% {
+        text-shadow: 
+          -4px 4px 0px var(--clr-pink), 
+          4px -4px 0px var(--clr-green);
+        transform: translate(-2px, 2px);
+      }
+      40% {
+        text-shadow: 
+          4px -4px 0px var(--clr-green), 
+          -4px 4px 0px var(--clr-accent);
+        transform: translate(2px, 2px);
+      }
+      60% {
+        text-shadow: 
+          -4px -4px 0px var(--clr-cyan), 
+          4px 4px 0px var(--clr-pink);
+        transform: translate(-2px, -2px);
+      }
+      80% {
+        text-shadow: 
+          4px 4px 0px var(--clr-pink), 
+          -4px -4px 0px var(--clr-accent);
+        transform: translate(0px, 2px);
+      }
+      100% {
+        text-shadow: 
+          -4px -4px 0px var(--clr-green), 
+          4px 4px 0px var(--clr-cyan);
+        transform: translate(2px, 0px);
+      }
     }
 
     .error-msg {
-      font-size: var(--text-xl);
+      font-size: var(--text-lg);
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       color: var(--clr-muted);
     }
 
     .error-desc {
-      font-size: var(--text-base);
+      font-size: var(--text-sm);
       color: var(--clr-faint);
       margin-bottom: 2rem;
       line-height: 1.6;
@@ -66,10 +151,11 @@
     .error-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5em;
-      padding: 0.8em 1.8em;
+      padding: 0.8em 1.5em;
       font-family: var(--font-mono);
-      font-size: var(--text-base);
+      font-size: var(--text-sm);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -78,6 +164,28 @@
       background: var(--clr-green);
       box-shadow: 4px 4px 0px var(--clr-shadow);
       transition: transform 100ms, box-shadow 100ms, background 100ms;
+      text-decoration: none;
+      /* Prevent dragging the card when clicking the button */
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 250px; /* Looks better on mobile if it doesn't span out too widely but fits */
+    }
+
+    @media (min-width: 480px) {
+      .error-link {
+        width: auto;
+        font-size: var(--text-base);
+        padding: 0.8em 1.8em;
+      }
+      .error-msg {
+        font-size: var(--text-xl);
+        margin-bottom: 1.5rem;
+      }
+      .error-desc {
+        font-size: var(--text-base);
+      }
     }
 
     .error-link:hover {
@@ -104,19 +212,124 @@
       transform: rotate(3deg);
       margin-bottom: 1.5rem;
     }
+
+    /* Small subtle floating message */
+    .drag-hint {
+      position: absolute;
+      bottom: 2rem;
+      font-size: var(--text-sm);
+      color: var(--clr-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.5;
+      text-align: center;
+      width: 100%;
+      pointer-events: none; /* Don't interfere with interaction */
+    }
   </style>
 </head>
 <body>
   <main>
-    <div class="error-card">
+    <div class="error-card" id="draggable-card">
       <span class="error-decor">ERROR</span>
       <h1 class="error-code">404</h1>
       <p class="error-msg">Page Not Found</p>
       <p class="error-desc">
         The page you're looking for doesn't exist or has been moved.
       </p>
-      <a href="/" class="error-link">← Back to Home</a>
+      <a href="/" class="error-link" id="home-link">← Back to Home</a>
     </div>
+    <div class="drag-hint">Grab & Drag The Box</div>
   </main>
+
+  <script>
+    // Parallax mouse effect
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      document.documentElement.style.setProperty('--mouse-x', x);
+      document.documentElement.style.setProperty('--mouse-y', y);
+    });
+
+    // Draggable card logic
+    const card = document.getElementById('draggable-card');
+    const homeLink = document.getElementById('home-link');
+    
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    // Prevent link click starting drag, but still allow navigation
+    homeLink.addEventListener('mousedown', (e) => {
+      e.stopPropagation();
+    });
+    
+    homeLink.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+    }, {passive: false});
+
+    card.addEventListener('mousedown', dragStart);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', dragEnd);
+    
+    // Touch support
+    card.addEventListener('touchstart', dragStart, {passive: false});
+    document.addEventListener('touchmove', drag, {passive: false});
+    document.addEventListener('touchend', dragEnd);
+
+    // Reset position on window resize to prevent alignment bugs
+    window.addEventListener('resize', () => {
+      xOffset = 0;
+      yOffset = 0;
+      setTranslate(0, 0, card);
+    });
+
+    function dragStart(e) {
+      if (e.type === 'touchstart') {
+        initialX = e.touches[0].clientX - xOffset;
+        initialY = e.touches[0].clientY - yOffset;
+      } else {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+      }
+      if (e.target === card || card.contains(e.target)) {
+        isDragging = true;
+      }
+    }
+
+    function drag(e) {
+      if (isDragging) {
+        e.preventDefault(); // Prevents default scrolling on touch devices
+        
+        if (e.type === 'touchmove') {
+          currentX = e.touches[0].clientX - initialX;
+          currentY = e.touches[0].clientY - initialY;
+        } else {
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, card);
+      }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) rotate(-1deg)`;
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      initialY = currentY;
+      isDragging = false;
+    }
+  </script>
 </body>
 </html>

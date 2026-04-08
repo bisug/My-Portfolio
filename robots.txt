@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bisug.github.io/sitemap.xml
+Sitemap: https://bisu.com.np/sitemap.xml
