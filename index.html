@@ -38,9 +38,7 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; img-src 'self' data: https://cdn.simpleicons.org https://img.shields.io; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self';">
 
-  <link rel="preconnect" href="https://img.shields.io" crossorigin />
-  <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
-
+  <link rel="preload" href="assets/css/style.css" as="style" />
   <link rel="preload" href="assets/css/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/css/fonts/jetbrains-var.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -49,7 +47,8 @@
   <link rel="apple-touch-icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%237c6aef%22>BG</text></svg>">
 
-  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/fonts.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/fonts.css"></noscript>
 
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>

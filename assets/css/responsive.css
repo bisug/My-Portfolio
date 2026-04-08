@@ -118,8 +118,8 @@
 }
 
 @keyframes pop-in-mobile {
-  0%   { transform: scale(0.9) rotate(0deg); opacity: 0; box-shadow: 0 0 0 var(--clr-shadow); }
-  100% { transform: scale(1)   rotate(0deg); opacity: 1; box-shadow: 8px 8px 0px var(--clr-shadow); }
+  0%   { transform: scale(0.9) rotate(0deg); opacity: 0; }
+  100% { transform: scale(1)   rotate(0deg); opacity: 1; }
 }
 
 /* ============================================================
