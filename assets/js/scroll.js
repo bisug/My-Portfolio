@@ -53,8 +53,17 @@ const ScrollEffects = (() => {
       updateDimensions();
     });
 
-    updateDimensions(); // initial state
-    onScroll(); // initial state
+    // Postpone initial layout reads to avoid "Forced Synchronous Layout" warnings during bootup
+    const finalizeInit = () => {
+      updateDimensions();
+      onScroll();
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(finalizeInit);
+    } else {
+      setTimeout(finalizeInit, 150);
+    }
   }
 
   function initReveal() {
@@ -104,9 +113,21 @@ const ScrollEffects = (() => {
   }
 
   function init() {
+    // initScrollHandler sets up dimensions and scroll listener
     initScrollHandler();
-    initReveal();
-    initActiveNav();
+    
+    // We defer the rest of the observations to ensure the browser has finished its initial paint
+    // and calculation of style/layout for the hero section.
+    const deferInit = () => {
+      initReveal();
+      initActiveNav();
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(deferInit);
+    } else {
+      setTimeout(deferInit, 200);
+    }
   }
 
   return { init };
