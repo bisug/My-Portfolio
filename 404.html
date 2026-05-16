@@ -23,9 +23,9 @@
   <link rel="stylesheet" href="assets/css/fonts.css" />
   <style>
     @layer reset, tokens, base;
+    @import url('assets/css/reset.css') layer(reset);
+    @import url('assets/css/variables.css') layer(tokens);
   </style>
-  <link rel="stylesheet" href="assets/css/reset.css" layer="reset" />
-  <link rel="stylesheet" href="assets/css/variables.css" layer="tokens" />
 
   <style>
     :root {
@@ -337,8 +337,8 @@
     }
 
     function dragEnd(e) {
-      initialX = currentX;
-      initialY = currentY;
+      if (currentX !== undefined) initialX = currentX;
+      if (currentY !== undefined) initialY = currentY;
       isDragging = false;
     }
   </script>

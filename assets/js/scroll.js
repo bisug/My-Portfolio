@@ -93,20 +93,23 @@ const ScrollEffects = (() => {
     
     if (!sections.length || !navLinks.length) return;
 
+    const setActive = (id) => {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+      });
+    };
+
+    // Default: highlight About on initial load
+    setActive('about');
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            }
-          });
+          setActive(entry.target.getAttribute('id'));
         }
       });
     }, {
-      rootMargin: '-50% 0px -50% 0px' 
+      rootMargin: '-50% 0px -50% 0px'
     });
 
     sections.forEach(section => observer.observe(section));

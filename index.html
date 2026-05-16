@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DMS6BKK3N"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-3DMS6BKK3N');
@@ -15,7 +15,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Portfolio of Bisu Ghalan — BSc Cybersecurity student at Lincoln College Nepal, building Python tools, Docker deployments &amp; security projects with an AI-augmented workflow." />
-  <meta name="keywords" content="Bisu Ghalan, cybersecurity student, Nepal developer, Python, Docker, AI-augmented, portfolio, Lincoln International College, ethical hacking, CTF" />
+  <meta name="keywords"
+    content="Bisu Ghalan, cybersecurity student, Nepal developer, Python, Docker, AI-augmented, portfolio, Lincoln International College, ethical hacking, CTF" />
   <meta name="geo.region" content="NP" />
   <meta name="geo.placename" content="Kathmandu, Nepal" />
   <meta name="theme-color" content="#FFFAF0" />
@@ -58,7 +59,15 @@
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%237c6aef%22>BG</text></svg>">
 
   <link rel="stylesheet" href="assets/css/fonts.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="assets/css/fonts.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <style>
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
 
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -85,6 +94,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#career-goals">Goals</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -113,13 +123,11 @@
         </div>
         <div class="about__bio reveal">
           <p>
-            I am a <b>Computer Science Student</b> at Lincoln International College,
-            Nepal, currently focusing on <em>Cybersecurity & Networking</em>.
+            I am a <b>BSc. (Hons) Cybersecurity & Networking Student</b> at Lincoln International College,
+            Nepal, currently focusing on <em>network security, ethical hacking & systems</em>.
           </p>
           <p>
-            I leverage an <b>AI-Augmented</b> workflow to dissect, understand, and build complex systems.
-            Using modern LLMs and Agentic IDEs (Cursor, Antigravity), I rapid-prototype security tools,
-            explore networking protocols, and adapt open-source repos without getting bogged down by traditional syntax.
+            My passion lies in dissecting complex networks, uncovering vulnerabilities, and building robust digital defenses. Beyond academic coursework, I actively explore ethical hacking, cryptography, and modern network protocols. I also develop production-grade automation tools and secure backend systems using Python, combining theoretical knowledge with hands-on technical execution.
           </p>
         </div>
       </div>
@@ -198,11 +206,15 @@
             <h3 class="skills__group-title">Languages</h3>
             <ul class="skills__list" role="list">
               <li class="skill--python">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-python"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-python" />
+                </svg>
                 Python
               </li>
               <li class="skill--cpp">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-cplusplus"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-cplusplus" />
+                </svg>
                 C++
               </li>
             </ul>
@@ -211,27 +223,39 @@
             <h3 class="skills__group-title">Cloud & Deployment</h3>
             <ul class="skills__list" role="list">
               <li class="skill--heroku">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-heroku"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-heroku" />
+                </svg>
                 Heroku
               </li>
               <li class="skill--render">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-render"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-render" />
+                </svg>
                 Render
               </li>
               <li class="skill--koyeb">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-koyeb"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-koyeb" />
+                </svg>
                 Koyeb
               </li>
               <li class="skill--vercel">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-vercel"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-vercel" />
+                </svg>
                 Vercel
               </li>
               <li class="skill--netlify">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-netlify"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-netlify" />
+                </svg>
                 Netlify
               </li>
               <li class="skill--github">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-github"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-github" />
+                </svg>
                 GitHub
               </li>
             </ul>
@@ -240,31 +264,45 @@
             <h3 class="skills__group-title">Databases & Storage</h3>
             <ul class="skills__list" role="list">
               <li class="skill--mongodb">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-mongodb"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-mongodb" />
+                </svg>
                 MongoDB Atlas
               </li>
               <li class="skill--redis">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-redis"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-redis" />
+                </svg>
                 Upstash Redis
               </li>
               <li class="skill--supabase">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-supabase"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-supabase" />
+                </svg>
                 Supabase
               </li>
               <li class="skill--firebase">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-firebase"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-firebase" />
+                </svg>
                 Firebase
               </li>
               <li class="skill--mysql">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-mysql"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-mysql" />
+                </svg>
                 MySQL (Basic)
               </li>
               <li class="skill--sqlite">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-sqlite"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-sqlite" />
+                </svg>
                 SQLite (Basic)
               </li>
               <li class="skill--postgresql">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-postgresql"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-postgresql" />
+                </svg>
                 PostgreSQL (Basic)
               </li>
             </ul>
@@ -273,7 +311,9 @@
             <h3 class="skills__group-title">Containerization</h3>
             <ul class="skills__list" role="list">
               <li class="skill--docker">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-docker"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-docker" />
+                </svg>
                 Docker
               </li>
             </ul>
@@ -282,15 +322,18 @@
             <h3 class="skills__group-title">Operating Systems</h3>
             <ul class="skills__list" role="list">
               <li class="skill--windows">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-windows"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-windows" />
+                </svg>
                 Windows
               </li>
               <li class="skill--kali">
-                <svg class="skill-icon" aria-hidden="true"><use href="assets/img/icons.svg#icon-kalilinux"/></svg>
+                <svg class="skill-icon" aria-hidden="true">
+                  <use href="assets/img/icons.svg#icon-kalilinux" />
+                </svg>
                 Kali Linux (Basic)
               </li>
             </ul>
-          </div>
           </div>
         </div>
       </div>
@@ -345,22 +388,24 @@
           <div class="cyber__card reveal">
             <h3 class="cyber__card-title">Security Domains</h3>
             <table class="cyber__table">
-              <tr>
-                <td>Ethical Hacking</td>
-                <td><span class="badge badge--exploring">Exploring</span></td>
-              </tr>
-              <tr>
-                <td>CTF Challenges</td>
-                <td><span class="badge badge--exploring">Exploring</span></td>
-              </tr>
-              <tr>
-                <td>Web App Security</td>
-                <td><span class="badge badge--exploring">Exploring</span></td>
-              </tr>
-              <tr>
-                <td>Cryptography</td>
-                <td><span class="badge badge--exploring">Exploring</span></td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Ethical Hacking</td>
+                  <td><span class="badge badge--exploring">Exploring</span></td>
+                </tr>
+                <tr>
+                  <td>CTF Challenges</td>
+                  <td><span class="badge badge--exploring">Exploring</span></td>
+                </tr>
+                <tr>
+                  <td>Web App Security</td>
+                  <td><span class="badge badge--exploring">Exploring</span></td>
+                </tr>
+                <tr>
+                  <td>Cryptography</td>
+                  <td><span class="badge badge--exploring">Exploring</span></td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -385,7 +430,6 @@
             <a href="#" id="emailLink" data-u="bisu.ghalan" data-d="gmail.com" aria-label="Send email">Email ↗</a>
             <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="https://t.me/DevVibeCoder" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
             <a href="https://www.instagram.com/oyeee.bisu/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
           </nav>
         </div>
@@ -429,8 +473,7 @@
     "sameAs": [
       "https://github.com/bisug",
       "https://www.linkedin.com/in/bisug/",
-      "https://www.instagram.com/oyeee.bisu/",
-      "https://t.me/DevVibeCoder"
+      "https://www.instagram.com/oyeee.bisu/"
     ]
   }
   </script>
