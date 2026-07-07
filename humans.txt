@@ -1,0 +1,9 @@
+/* TEAM */
+  Developer: Bisu Ghalan
+  Contact: bisu.ghalan@gmail.com
+  GitHub: @bisug
+  LinkedIn: @bisug
+
+/* SITE */
+  Language: English
+  Doctype: HTML5
