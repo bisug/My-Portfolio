@@ -120,6 +120,16 @@ body {
   background: var(--clr-pink);
 }
 
+.btn--dark {
+  background: var(--clr-text);
+  color: var(--clr-bg);
+}
+
+.btn--dark:hover {
+  background: var(--clr-pink);
+  color: var(--clr-text);
+}
+
 /* ---- Scroll-reveal (make it snappy and less floating) ---- */
 .reveal {
   opacity: 0;

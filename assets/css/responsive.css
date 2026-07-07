@@ -33,6 +33,10 @@
   .skills__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ============================================================
@@ -213,8 +217,6 @@
   }
 
   /* Hero: Scale text shadow to prevent overflow off-card */
-    transform: rotate(0deg);
-  }
   .hero__name {
     font-size: clamp(2.2rem, 8vw, 3rem);
     text-shadow: 2px 2px 0px var(--clr-accent), 4px 4px 0px var(--clr-pink);

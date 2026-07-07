@@ -15,6 +15,7 @@ const ScrollEffects = (() => {
     let ticking = false;
     let cachedHeight = 0;
     let cachedViewportHeight = 0;
+    let lastScrollY = window.scrollY || 0;
 
     function updateDimensions() {
       cachedHeight = document.documentElement.scrollHeight;
@@ -29,7 +30,15 @@ const ScrollEffects = (() => {
         const scrollY = window.scrollY;
         
         // Nav state
-        if (nav) nav.classList.toggle('scrolled', scrollY > 40);
+        if (nav) {
+          nav.classList.toggle('scrolled', scrollY > 40);
+          
+          if (scrollY > lastScrollY && scrollY > 100) {
+            nav.classList.add('nav-hidden');
+          } else {
+            nav.classList.remove('nav-hidden');
+          }
+        }
         
         // Hero explore button
         if (heroScroll) heroScroll.classList.toggle('hidden', scrollY > 150);
@@ -43,6 +52,7 @@ const ScrollEffects = (() => {
           progressBar.style.width = (depth > 0 ? (scrollY / depth) * 100 : 0) + '%';
         }
         
+        lastScrollY = scrollY;
         ticking = false;
       });
     }

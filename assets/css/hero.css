@@ -63,12 +63,31 @@
 
 .hero__title {
   font-family: var(--font-mono);
-  font-size: var(--text-xl);
+  font-size: var(--text-base);
   font-weight: 800;
-  color: var(--clr-text);
+  color: var(--clr-muted);
   min-height: 2em;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   margin-top: var(--space-sm);
+}
+
+.hero__summary {
+  max-width: 680px;
+  margin-inline: auto;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--clr-text);
+}
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 
