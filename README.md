@@ -27,7 +27,7 @@ This is my personal portfolio website designed to showcase my projects, skills, 
 
 ### Key Features
 
-- **Modern & Responsive Design:** Custom dark-themed UI matching the cybersecurity aesthetic.
+- **Modern & Responsive Design:** Custom Neo-Brutalist UI with bold contrast, thick borders, and vibrant accents. Typography is powered by **Inter** (sans-serif) and **JetBrains Mono** (monospace).
 - **Interactive UI Elements:** Dynamic typewriter effects, smooth scroll progress bar, and interactive glitchy drag-and-drop error pages.
 - **SEO Optimized:** Structured data (JSON-LD), localized metadata, `robots.txt`, `sitemap.xml`, and fully semantic HTML.
 - **Accessibility:** Keyboard navigable, screen-reader friendly, and respects `prefers-reduced-motion` settings.
@@ -54,10 +54,6 @@ This is my personal portfolio website designed to showcase my projects, skills, 
 
 **Tools & Practices**
 <br>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-<img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark">
-<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 
@@ -67,19 +63,19 @@ This is my personal portfolio website designed to showcase my projects, skills, 
 
 ```text
 Portfolio-prototype/
-├── index.html        # Main portfolio page
-├── 404.html          # Interactive Page Not Found
-├── 403.html          # Interactive Forbidden Access
-├── 500.html          # Interactive Server Error
-├── robots.txt        # Search engine directives
-├── sitemap.xml       # XML Sitemap for SEO
-├── humans.txt        # Developer credits
+├── index.html        # Main portfolio page (Single Page Application structure)
+├── 404.html          # Custom 'Page Not Found' error page (interactive drag-and-drop glitch card)
+├── 403.html          # Custom 'Forbidden' error page for unauthorized access
+├── 500.html          # Custom 'Internal Server Error' page for server faults
+├── robots.txt        # Directives for search engine crawlers (SEO)
+├── sitemap.xml       # XML Sitemap for better search engine indexing (SEO)
+├── humans.txt        # Developer credits and site metadata (for humans to read)
 ├── .well-known/
-│   └── security.txt  # Security vulnerability disclosure policy
+│   └── security.txt  # Standardized security vulnerability disclosure policy
 └── assets/
-    ├── css/          # Stylesheets (reset, variables, fonts, style)
-    ├── js/           # Scripts (main, scroll, typewriter)
-    └── img/          # Images, SVGs, and Icons
+    ├── css/          # Stylesheets (modular CSS architecture using @layer)
+    ├── js/           # Scripts (scroll logic, typewriter effect, interactivity)
+    └── img/          # Images, custom SVG favicon, and background patterns
 ```
 
 ---
