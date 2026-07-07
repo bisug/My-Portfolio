@@ -102,6 +102,42 @@ Want to run this project locally? It's completely static, so no build tools are 
 
 ---
 
+## <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/magnifying-glass-chart.svg" width="24" height="24" alt="SEO"> Google Search Console Setup
+
+This portfolio is configured to be easily verified by Google Search Console. There are two ways to verify ownership:
+
+### Method 1: URL Prefix (Recommended & Fastest)
+
+This method uses the HTML `<meta>` tag already included in the `index.html` file.
+
+1. Go to [Google Search Console](https://search.google.com/search-console).
+2. Click **"Add property"**.
+3. Choose **"URL prefix"** (do *NOT* choose "Domain").
+4. Enter `https://bisu.com.np/` (make sure to include `https://`).
+5. Under "Other verification methods", select **"HTML tag"**.
+6. The verification token is already integrated into the code. Simply click **"Verify"**.
+
+### Method 2: Domain Property (DNS Verification)
+
+If you prefer to verify the entire domain at the DNS level, you must add a TXT record via your domain registrar (e.g., Namecheap, GoDaddy).
+
+1. In Google Search Console, choose **"Domain"** when adding a property.
+2. Enter `bisu.com.np`.
+3. Copy the provided TXT record (e.g., `google-site-verification=JNqNZR3C99SgpeAhIoT7mEpOt7UZu89uLPq8KPJYCec`).
+4. Log into your domain registrar's DNS settings.
+5. Add a new **TXT record**:
+   - **Host/Name:** `@` (or leave blank)
+   - **Value:** Paste the verification string
+6. Save the record and wait a few hours for DNS changes to propagate before clicking **"Verify"** in Search Console.
+
+### Next Steps After Verification
+
+Once verified via either method:
+1. In the left sidebar, go to **Sitemaps**, enter `sitemap.xml`, and click **Submit**.
+2. Go to **URL Inspection**, enter `https://bisu.com.np/`, and click **"Request Indexing"**.
+
+---
+
 ## <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/envelope.svg" width="24" height="24" alt="Contact"> Let's Connect
 
 Open to cybersecurity internships, collaborations, or just a quick chat about Python and networking.
