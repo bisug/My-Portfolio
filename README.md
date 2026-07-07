@@ -2,7 +2,7 @@
   <img src="assets/img/favicon.svg" alt="Logo" width="80" height="80">
   <h1 align="center">Bisu Ghalan's Portfolio</h1>
   <p align="center">
-    <strong>BSc Cybersecurity & Networking Student | Ethical Hacker</strong>
+    <strong>BCS CSNT Student | Ethical Hacker | Kathmandu, Nepal</strong>
     <br />
     <br />
     <a href="https://bisu.com.np">
@@ -21,7 +21,9 @@
 
 ## <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/circle-info.svg" width="24" height="24" alt="Info"> About The Project
 
-This is my personal portfolio website designed to showcase my projects, skills, and journey as a Cybersecurity student based in Kathmandu, Nepal. It serves as a central hub for my technical workflows, automation tools, deployment practices, and networking labs.
+This is my personal portfolio website built to showcase my projects, skills, and journey as a **Bachelor of Computer Science — Cyber Security & Network Technology (BCS CSNT)** student based in Kathmandu, Nepal. It serves as a central hub for my technical workflows, automation tools, deployment practices, and networking labs.
+
+> **About BCS CSNT:** An undergraduate program that blends computing fundamentals with specialised knowledge in networking and cybersecurity. It prepares students to design, manage, and secure computer networks, with hands-on experience in ethical hacking, encryption, and system protection. Ideal for careers in IT security, network administration, or cyber defense.
 
 > **AI-Augmented Development:** As a Cybersecurity and Networking student rather than a traditional frontend developer, I built this entire portfolio from scratch by heavily leveraging AI coding assistants. This project serves as a testament to modern problem-solving, rapid prototyping, and the power of AI-augmented workflows.
 
