@@ -143,18 +143,18 @@
 
     <section class="hero" id="home" aria-label="Introduction">
       <div class="hero__inner">
-        <h1 class="hero__name">Hello, I'm Bisu Ghalan</h1>
+        <h1 class="hero__name">Bisu Ghalan - Cybersecurity Student</h1>
         <p class="hero__title" aria-hidden="true">
           <span id="typewriter"></span>
         </p>
         <div class="hero__links" aria-label="Primary actions">
-          <a href="#projects" class="btn">View Projects</a>
-          <a href="mailto:bisu.ghlan@gmail.com?subject=Portfolio%20Inquiry" class="btn btn--ghost">Contact</a>
-          <a href="https://github.com/bisug" class="btn btn--dark" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#projects" class="btn">Explore Work</a>
+          <a href="mailto:bisu.ghlan@gmail.com?subject=Portfolio%20Inquiry" class="btn btn--ghost">Get in Touch</a>
+          <a href="https://github.com/bisug" class="btn btn--dark" target="_blank" rel="noopener noreferrer">My GitHub Profile</a>
         </div>
 
         <a href="#about" class="hero__scroll" aria-label="Explore About Page">
-          <span>explore</span>
+          <span>discover</span>
           <span class="hero__line"></span>
         </a>
       </div>
@@ -170,12 +170,17 @@
           <meta itemprop="name" content="Bisu Ghalan" />
           <meta itemprop="jobTitle" content="Cybersecurity Student & Ethical Hacker" />
           <meta itemprop="url" content="https://bisu.com.np/" />
-          <p>
-            <b>Pursuing a career in Cybersecurity.</b> Currently studying <em>Cyber Security &amp; Network Technology (BCS CSNT)</em> at Lincoln International College.
-          </p>
-          <p>
-            I build Python tools, study real security concepts, and document hands-on learning. Based in <span itemprop="addressLocality">Kathmandu</span>, <span itemprop="addressCountry">Nepal</span>.
-          </p>
+          <div class="about__card">
+            <p>
+              Hello! I am <b>Bisu Ghalan</b>, a dedicated <b>Cybersecurity Student</b> deeply fascinated by the evolving world of digital defense and ethical hacking. My journey began with a curiosity about how networks operate beneath the surface, leading me to explore everything from vulnerability assessments to secure systems architecture.
+            </p>
+            <p>
+              Currently, I am pursuing my <em>Cyber Security &amp; Network Technology (BCS CSNT)</em> degree at Lincoln International College. This academic foundation has provided me with invaluable insights into cryptographic principles, threat modeling, and network infrastructure management. However, my passion drives me to go beyond traditional coursework. 
+            </p>
+            <p>
+              I spend a significant amount of my time building custom Python automation tools, exploring complex security concepts, and documenting my hands-on learning experiences. Whether I'm participating in Capture The Flag (CTF) challenges or analyzing network packets, I approach every technical problem with an analytical mindset and a strong commitment to continuous growth. Based in <span itemprop="addressLocality">Kathmandu</span>, <span itemprop="addressCountry">Nepal</span>, I am constantly seeking opportunities to apply theoretical knowledge to real-world security scenarios.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -211,6 +216,15 @@
               </tr>
             </tbody>
           </table>
+          
+          <div class="edu__description">
+            <p>
+              My academic curriculum within the Bachelor of Computer Science in Cyber Security & Network Technology has been rigorous and deeply enriching. During my studies, I have gained extensive hands-on experience in critical areas such as secure network design, modern cryptography, ethical hacking methodologies, and digital forensics.
+            </p>
+            <p>
+              Beyond passing exams, I actively engage with complex laboratory environments, configuring secure Linux servers, managing enterprise-grade firewalls, and deploying containerized applications. This comprehensive education bridges the gap between theoretical computing science and the practical application of cybersecurity strategies, preparing me to tackle the sophisticated cyber threats of tomorrow. I am also currently focusing on mastering low-level systems programming to better understand how vulnerabilities originate at the memory management level.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -219,15 +233,21 @@
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">03</span>
-          <h2 class="section__title" id="exp-heading">Experience</h2>
+          <h2 class="section__title" id="exp-heading">Experience & Practical Learning</h2>
         </div>
 
         <div class="exp__list">
           <div class="exp__card reveal">
-            <h3 class="exp__title">Aspiring Security Intern</h3>
-            <p class="exp__date">Open to Opportunities</p>
+            <h3 class="exp__title">Aspiring Security Intern & Homelab Enthusiast</h3>
+            <p class="exp__date">Open to Opportunities | Continuous Learning</p>
             <p class="exp__desc">
-              Seeking a cybersecurity internship where I can learn from real systems, contribute with Python, and grow through security-focused projects.
+              While my formal career is just beginning, my practical experience spans countless hours of independent study, homelab building, and proactive skill development. I am actively seeking a cybersecurity internship where I can immerse myself in real-world environments, contribute to security postures by writing Python automation scripts, and collaborate with seasoned professionals on complex security-focused projects.
+            </p>
+            <p class="exp__desc">
+              My daily routine involves engaging with platforms like TryHackMe and HackTheBox to hone my offensive and defensive security skills. I frequently set up virtualized environments using VMware and Docker to simulate enterprise networks, which allows me to safely practice exploitation techniques, analyze malware behaviors, and test intrusion detection systems without risking production environments.
+            </p>
+            <p class="exp__desc">
+              Furthermore, I regularly monitor packet traffic using Wireshark to deeply understand protocol vulnerabilities. By treating my home network as a live laboratory, I have cultivated a resilient, problem-solving mindset and a profound respect for the nuances of modern digital infrastructure. This hands-on approach ensures that I am not just learning concepts in theory, but mastering them in execution.
             </p>
           </div>
         </div>
@@ -433,42 +453,36 @@
           <article class="project-item reveal">
             <p class="project-item__status">In progress</p>
             <h3 class="project-item__title">
-              <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">Security Learning Lab ↗</a>
+              <a href="https://github.com/bisug?tab=repositories&q=lab" target="_blank" rel="noopener noreferrer">Security Learning Lab Environment</a>
             </h3>
-            <p class="project-item__tagline">Networking, Linux, web security, and CTF practice.</p>
-            <ul class="project-item__list" role="list">
-              <li>Repeatable labs</li>
-              <li>Security notes</li>
-              <li>Responsible practice</li>
-            </ul>
+            <p class="project-item__tagline">Networking, Linux administration, web security, and CTF sandbox.</p>
+            <p class="project-details__text">
+              A comprehensive and highly customizable virtual laboratory designed specifically for practicing advanced penetration testing and network defense strategies. This lab includes intentionally vulnerable machines, automated setup scripts using Vagrant and Docker, and a detailed repository of security notes and methodologies. It provides a secure, isolated space to responsibly practice web exploitation and analyze real-world vulnerabilities.
+            </p>
             <p class="project-stack">Focus: <code>Networking</code> <code>Linux</code> <code>Web Security</code> <code>CTF</code></p>
           </article>
 
           <article class="project-item reveal">
             <p class="project-item__status">Build track</p>
             <h3 class="project-item__title">
-              <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">Python Automation Tools ↗</a>
+              <a href="https://github.com/bisug?tab=repositories&q=python" target="_blank" rel="noopener noreferrer">Python Sec-Automation Tools</a>
             </h3>
-            <p class="project-item__tagline">Small CLI tools for technical workflows.</p>
-            <ul class="project-item__list" role="list">
-              <li>Parsing</li>
-              <li>Validation</li>
-              <li>Automation</li>
-            </ul>
+            <p class="project-item__tagline">Custom Command-Line Interfaces (CLI) for technical workflows.</p>
+            <p class="project-details__text">
+              A suite of lightweight, high-performance Python scripts built to streamline repetitive security tasks. These tools handle complex log parsing, automated endpoint validation, and intelligent data scraping. By leveraging Python's robust standard library, these utilities significantly reduce the time spent on manual reconnaissance and allow security practitioners to focus on high-level threat analysis and remediation.
+            </p>
             <p class="project-stack">Stack: <code>Python</code> <code>CLI</code> <code>Automation</code></p>
           </article>
 
           <article class="project-item reveal">
             <p class="project-item__status">Deployment practice</p>
             <h3 class="project-item__title">
-              <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">Cloud & Container Experiments ↗</a>
+              <a href="https://github.com/bisug?tab=repositories&q=docker" target="_blank" rel="noopener noreferrer">Cloud Architecture & Containers</a>
             </h3>
-            <p class="project-item__tagline">Deployment practice with hosting, containers, and databases.</p>
-            <ul class="project-item__list" role="list">
-              <li>Docker</li>
-              <li>Hosting</li>
-              <li>Config basics</li>
-            </ul>
+            <p class="project-item__tagline">Infrastructure as Code, orchestration, and managed databases.</p>
+            <p class="project-details__text">
+              An experimental project focused on modern cloud deployment methodologies. It features containerized applications managed via Docker, integrated with continuous deployment pipelines utilizing Render and Vercel. The project also explores secure database provisioning, emphasizing strict access controls, optimized configuration files, and the implementation of robust identity and access management (IAM) policies in distributed environments.
+            </p>
             <p class="project-stack">Stack: <code>Docker</code> <code>Render</code> <code>Vercel</code> <code>Databases</code></p>
           </article>
         </div>
@@ -479,7 +493,16 @@
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">06</span>
-          <h2 class="section__title" id="career-heading">Career Goals</h2>
+          <h2 class="section__title" id="career-heading">Career Goals & Aspirations</h2>
+        </div>
+        
+        <div class="career-text reveal">
+          <p>
+            My ultimate career objective is to become a highly skilled Security Analyst and, eventually, a professional Penetration Tester. In the short term, over the next twelve months, I am entirely dedicated to completing my degree with honors while simultaneously pursuing industry-recognized certifications such as the CompTIA Security+ and the Certified Ethical Hacker (CEH) credentials. These foundational milestones will validate my technical capabilities and demonstrate my commitment to professional excellence.
+          </p>
+          <p>
+            Looking further ahead, I envision myself architecting resilient security frameworks for large-scale enterprise networks, contributing to open-source security tools, and participating in global bug bounty programs. I firmly believe that the cybersecurity landscape requires constant vigilance and an unwavering desire to learn. By mastering advanced exploitation tactics and understanding the defensive engineering needed to mitigate those attacks, I aim to protect critical infrastructure and foster a safer digital ecosystem for everyone.
+          </p>
         </div>
 
         <div class="cyber__grid">
@@ -544,13 +567,13 @@
         </div>
         <div class="contact__inner reveal">
           <p class="contact__line">
-            Open to cybersecurity internships.
+            Open to cybersecurity internships and collaborative opportunities.
           </p>
           <nav class="contact__links" aria-label="Contact links">
-            <a href="mailto:bisu.ghlan@gmail.com?subject=Portfolio%20Inquiry" id="emailLink" data-u="bisu.ghlan" data-d="gmail.com" aria-label="Send email">Email ↗</a>
-            <a href="mailto:bisu.ghlan@gmail.com?subject=Resume%20Request" aria-label="Request resume by email">Resume ↗</a>
-            <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:bisu.ghlan@gmail.com?subject=Portfolio%20Inquiry" id="emailLink" data-u="bisu.ghlan" data-d="gmail.com" aria-label="Send email">Send an Email ↗</a>
+            <a href="mailto:bisu.ghlan@gmail.com?subject=Resume%20Request" aria-label="Request resume by email">Request Resume ↗</a>
+            <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
           </nav>
         </div>
       </div>
