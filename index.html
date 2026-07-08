@@ -8,577 +8,260 @@
   
   <meta name="description" content="Bisu Ghalan is a cybersecurity student in Nepal (BCS CSNT). Passionate about ethical hacking, and network security." />
 
-  <!-- Preconnect: establish connections before resources are discovered -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="dns-prefetch" href="https://stats.g.doubleclick.net">
 
-  <!-- Preload critical assets -->
-  <link rel="preload" href="assets/css/style.css" as="style" fetchpriority="high" />
-  <link rel="preload" href="assets/img/icons.svg" as="image" type="image/svg+xml" />
-
-  <!-- Google Analytics — loaded after page is interactive to avoid blocking critical path -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-3DMS6BKK3N');
-    const _loadGA = () => {
-      const s = document.createElement('script');
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-3DMS6BKK3N';
-      s.async = true;
-      document.head.appendChild(s);
-    };
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(_loadGA, { timeout: 4000 });
-    } else {
-      window.addEventListener('load', _loadGA, { once: true });
-    }
-  </script>
-
-  <!-- Google Search Console verification -->
-  <meta name="google-site-verification" content="JNqNZR3C99SgpeAhIoT7mEpOt7UZu89uLPq8KPJYCec" />
-  <meta name="msvalidate.01" content="74B90685A15771DEF736BCB94B334190" />
-  <meta name="keywords"
-    content="Bisu Ghalan, BCS CSNT, Bachelor of Computer Science Cyber Security Network Technology, cybersecurity student Nepal, Python developer Nepal, ethical hacking, CTF player, Docker, network security, Lincoln International College, Kathmandu, portfolio" />
-  <meta name="geo.region" content="NP" />
-  <meta name="geo.placename" content="Kathmandu, Nepal" />
-  <meta name="theme-color" content="#FFFAF0" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="author" content="Bisu Ghalan" />
-  <link rel="author" href="humans.txt" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="format-detection" content="telephone=no" />
-
-  <!-- Dublin Core metadata -->
-  <meta name="DC.title" content="Bisu Ghalan | Student from Nepal Pursuing a Career in Cybersecurity" />
-  <meta name="DC.creator" content="Bisu Ghalan" />
-  <meta name="DC.subject" content="Bisu Ghalan, Cybersecurity, BCS CSNT, Nepal, Portfolio" />
-  <meta name="DC.description" content="Bisu Ghalan is a student from Nepal pursuing a career in cybersecurity." />
-  <meta name="DC.language" content="en" />
-
-  <!-- rel=me and alternate links -->
-  <link rel="me" href="https://github.com/bisug" />
-  <link rel="me" href="https://www.linkedin.com/in/bisug/" />
-  <link rel="me" href="https://www.instagram.com/oyeee.bisu/" />
-  <link rel="me" href="mailto:bisu.ghlan@gmail.com" />
-  <link rel="canonical" href="https://bisu.com.np/" />
-  <link rel="alternate" hreflang="en" href="https://bisu.com.np/" />
-  <link rel="alternate" hreflang="x-default" href="https://bisu.com.np/" />
-
-  <!-- Open Graph metadata -->
-  <meta property="og:title" content="Bisu Ghalan | Cybersecurity Student from Nepal" />
-  <meta property="og:description"
-    content="Bisu Ghalan is a cybersecurity student in Nepal (BCS CSNT). Passionate about ethical hacking, and network security." />
-  <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://bisu.com.np/" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="Bisu Ghalan Portfolio" />
-  <meta property="profile:first_name" content="Bisu" />
-  <meta property="profile:last_name" content="Ghalan" />
-  <meta property="profile:username" content="bisug" />
-  <meta property="og:image" content="https://bisu.com.np/assets/img/og-preview.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Bisu Ghalan — Cybersecurity Student &amp; AI-Augmented Developer Portfolio" />
-
-  <!-- Twitter metadata -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@bisug" />
-  <meta name="twitter:creator" content="@bisug" />
-  <meta name="twitter:title" content="Bisu Ghalan | Cybersecurity Student from Nepal" />
-  <meta name="twitter:description"
-    content="Bisu Ghalan is a cybersecurity student in Nepal (BCS CSNT). Passionate about ethical hacking, and network security." />
-  <meta name="twitter:image" content="https://bisu.com.np/assets/img/og-preview.png" />
-
-  <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' data: https://cdn.simpleicons.org https://img.shields.io https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net;">
-
-  <!-- Icons -->
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/img/favicon.svg">
-
-  <!-- Google Fonts: loaded as non-render-blocking link (avoids the @import double-RTT penalty) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap">
-  </noscript>
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap">
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Responsive overrides: media-query breakpoints, touch fixes, overflow guards -->
+  <!-- Responsive overrides -->
   <link rel="stylesheet" href="assets/css/responsive.css" />
-  <noscript>
-    <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
-  </noscript>
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 </head>
 
 <body id="top">
-  <a href="#main" class="skip-link">Skip to main content</a>
-  <div class="scroll-progress-container" aria-hidden="true">
+
+  <div class="scroll-progress-container">
     <div class="scroll-progress-bar" id="scrollProgress"></div>
   </div>
 
-  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-    <a href="#home" class="nav__brand" aria-label="Back to home">BG</a>
-
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
-      aria-controls="navLinks">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <ul class="nav__links" id="navLinks" role="list">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#career-goals">Goals</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <nav class="nav" id="navbar">
+    <div class="container">
+      <a href="#top" class="nav__brand">Bisu Ghalan</a>
+      <button class="nav__toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav__links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
   <main id="main">
 
-    <section class="hero" id="home" aria-label="Introduction">
-      <div class="hero__inner">
-        <h1 class="hero__name">Bisu Ghalan - Cybersecurity Student</h1>
-        <p class="hero__title" aria-hidden="true">
-          <span id="typewriter"></span>
-        </p>
-        <div class="hero__links" aria-label="Primary actions">
-          <a href="#projects" class="btn">Explore Work</a>
-          <a href="mailto:bisu.ghlan@gmail.com?subject=Portfolio%20Inquiry" class="btn btn--ghost">Get in Touch</a>
-          <a href="https://github.com/bisug" class="btn btn--dark" target="_blank" rel="noopener noreferrer">My GitHub Profile</a>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__inner reveal">
+          <p class="hero__title">Cybersecurity Engineer</p>
+          <h1 class="hero__name">Bisu Ghalan</h1>
+          <p class="hero__summary">
+            Building secure digital systems. Network Technology Student from Nepal pursuing a career in ethical hacking and security automation.
+          </p>
+          <div class="hero__links">
+            <a href="#projects" class="btn btn--accent">View Projects</a>
+            <a href="#contact" class="btn">Get in touch</a>
+          </div>
         </div>
-
-        <a href="#about" class="hero__scroll" aria-label="Explore About Page">
-          <span>discover</span>
-          <span class="hero__line"></span>
-        </a>
       </div>
     </section>
 
-    <section class="about section" id="about" aria-labelledby="about-heading">
+    <section class="section" id="about" aria-labelledby="about-heading">
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">01</span>
           <h2 class="section__title" id="about-heading">About</h2>
         </div>
-        <div class="about__bio reveal" itemscope itemtype="https://schema.org/Person">
-          <meta itemprop="name" content="Bisu Ghalan" />
-          <meta itemprop="jobTitle" content="Cybersecurity Student & Ethical Hacker" />
-          <meta itemprop="url" content="https://bisu.com.np/" />
-          <div class="about__card">
+        <div class="about__grid reveal">
+          <div class="about__bio">
             <p>
-              Hello! I am <b>Bisu Ghalan</b>, a dedicated <b>Cybersecurity Student</b> deeply fascinated by the evolving world of digital defense and ethical hacking. My journey began with a curiosity about how networks operate beneath the surface, leading me to explore everything from vulnerability assessments to secure systems architecture.
+              I am a <b>student from Nepal</b> pursuing a Bachelor of Computer Science in <b>Cyber Security & Network Technology</b> at Lincoln International College, Kathmandu. My focus is on understanding the intersection of robust network infrastructure and defensive security protocols.
             </p>
             <p>
-              Currently, I am pursuing my <em>Cyber Security &amp; Network Technology (BCS CSNT)</em> degree at Lincoln International College. This academic foundation has provided me with invaluable insights into cryptographic principles, threat modeling, and network infrastructure management. However, my passion drives me to go beyond traditional coursework. 
+              Currently in my second semester, I spend my time building <em>Python automation tools</em>, managing <em>Docker deployments</em>, and exploring the intricacies of <strong>network security</strong>. I believe that technical excellence is built on a foundation of precision and continuous learning.
             </p>
-            <p>
-              I spend a significant amount of my time building custom Python automation tools, exploring complex security concepts, and documenting my hands-on learning experiences. Whether I'm participating in Capture The Flag (CTF) challenges or analyzing network packets, I approach every technical problem with an analytical mindset and a strong commitment to continuous growth. Based in <span itemprop="addressLocality">Kathmandu</span>, <span itemprop="addressCountry">Nepal</span>, I am constantly seeking opportunities to apply theoretical knowledge to real-world security scenarios.
-            </p>
+          </div>
+          <div class="about__sidebar">
+            <p class="text-muted mb-sm">Location</p>
+            <p class="mb-lg">Kathmandu, Nepal</p>
+            <p class="text-muted mb-sm">Focus</p>
+            <p>Security Analysis<br>Network Defense<br>Automation</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="education section" id="education" aria-labelledby="edu-heading">
+    <section class="section" id="education" aria-labelledby="education-heading">
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">02</span>
-          <h2 class="section__title" id="edu-heading">Education</h2>
+          <h2 class="section__title" id="education-heading">Education</h2>
         </div>
-
         <div class="edu__meta reveal">
-          <table class="edu__table">
-            <tbody>
+          <div class="edu__table-wrapper">
+            <table class="edu__table">
               <tr>
-                <td><b>Institution</b></td>
-                <td><a href="https://licnepal.edu.np/" target="_blank" rel="noopener noreferrer">Lincoln International
-                    College</a></td>
+                <td>2024 &mdash; Present</td>
+                <td>
+                  <p><strong>Bachelor of Computer Science &mdash; Cyber Security & Network Technology (Hons)</strong></p>
+                  <p><a href="https://licnepal.edu.np/" target="_blank" rel="noopener noreferrer">Lincoln International College (Lincoln University College)</a></p>
+                  <p class="text-muted">Kathmandu, Nepal</p>
+                </td>
               </tr>
               <tr>
-                <td><b>Program</b></td>
-                <td><a href="https://licnepal.edu.np/bcs-csnt" target="_blank" rel="noopener noreferrer"
-                    title="Bachelor of Computer Science Network Technology & Cyber Security (Hons) — blends computing fundamentals with specialised knowledge in networking and cybersecurity.">BCS CSNT
-                    (Hons)</a></td>
+                <td>2021 &mdash; 2023</td>
+                <td>
+                  <p><strong>Higher Secondary Education (+2 Science)</strong></p>
+                  <p>Pinnacle Academy, Lalitpur, Nepal</p>
+                </td>
               </tr>
-              <tr>
-                <td><b>Status</b></td>
-                <td>Semester-2 (Active)</td>
-              </tr>
-              <tr>
-                <td><b>Location</b></td>
-                <td>Kathmandu, Nepal</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <div class="edu__description">
-            <p>
-              My academic curriculum within the Bachelor of Computer Science in Cyber Security & Network Technology has been rigorous and deeply enriching. During my studies, I have gained extensive hands-on experience in critical areas such as secure network design, modern cryptography, ethical hacking methodologies, and digital forensics.
-            </p>
-            <p>
-              Beyond passing exams, I actively engage with complex laboratory environments, configuring secure Linux servers, managing enterprise-grade firewalls, and deploying containerized applications. This comprehensive education bridges the gap between theoretical computing science and the practical application of cybersecurity strategies, preparing me to tackle the sophisticated cyber threats of tomorrow. I am also currently focusing on mastering low-level systems programming to better understand how vulnerabilities originate at the memory management level.
-            </p>
+            </table>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="experience section" id="experience" aria-labelledby="exp-heading">
+    <section class="section" id="experience" aria-labelledby="experience-heading">
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">03</span>
-          <h2 class="section__title" id="exp-heading">Experience & Practical Learning</h2>
+          <h2 class="section__title" id="experience-heading">Experience</h2>
         </div>
-
-        <div class="exp__list">
-          <div class="exp__card reveal">
-            <h3 class="exp__title">Aspiring Security Intern & Homelab Enthusiast</h3>
-            <p class="exp__date">Open to Opportunities | Continuous Learning</p>
+        <div class="exp__list reveal">
+          <article class="exp__card">
+            <h3 class="exp__title">Cybersecurity Student & Researcher</h3>
+            <span class="exp__date">Ongoing</span>
             <p class="exp__desc">
-              While my formal career is just beginning, my practical experience spans countless hours of independent study, homelab building, and proactive skill development. I am actively seeking a cybersecurity internship where I can immerse myself in real-world environments, contribute to security postures by writing Python automation scripts, and collaborate with seasoned professionals on complex security-focused projects.
+              Dedicated to mastering ethical hacking methodologies, network auditing, and security automation. Actively participating in CTF competitions and building a portfolio of security-focused tools.
             </p>
+          </article>
+          <article class="exp__card">
+            <h3 class="exp__title">Independent Developer</h3>
+            <span class="exp__date">2023 &mdash; Present</span>
             <p class="exp__desc">
-              My daily routine involves engaging with platforms like TryHackMe and HackTheBox to hone my offensive and defensive security skills. I frequently set up virtualized environments using VMware and Docker to simulate enterprise networks, which allows me to safely practice exploitation techniques, analyze malware behaviors, and test intrusion detection systems without risking production environments.
+              Developing open-source Python utilities and exploring containerized infrastructure. Focus on creating tools that streamline security workflows and automate repetitive tasks.
             </p>
-            <p class="exp__desc">
-              Furthermore, I regularly monitor packet traffic using Wireshark to deeply understand protocol vulnerabilities. By treating my home network as a live laboratory, I have cultivated a resilient, problem-solving mindset and a profound respect for the nuances of modern digital infrastructure. This hands-on approach ensures that I am not just learning concepts in theory, but mastering them in execution.
-            </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="skills section" id="skills" aria-labelledby="skills-heading">
+    <section class="section" id="skills" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">04</span>
-          <h2 class="section__title" id="skills-heading">Tech Stack</h2>
+          <h2 class="section__title" id="skills-heading">Technical Skills</h2>
         </div>
-        <div class="skills__grid">
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">Languages</h3>
-            <ul class="skills__list" role="list">
-              <li class="skill--python">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-python" />
-                </svg>
-                Python
-              </li>
-              <li class="skill--cpp">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-cplusplus" />
-                </svg>
-                C++
-              </li>
-              <li class="skill--golang">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-golang" />
-                </svg>
-                GO lang
-              </li>
+        <div class="skills__grid reveal">
+          <div class="skills__group">
+            <span class="skills__group-title">Programming</span>
+            <ul class="skills__list">
+              <li>Python</li>
+              <li>Go</li>
+              <li>JavaScript</li>
+              <li>C++</li>
             </ul>
           </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">Cloud & Deployment</h3>
-            <ul class="skills__list" role="list">
-              <li class="skill--heroku">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-heroku" />
-                </svg>
-                Heroku
-              </li>
-              <li class="skill--render">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-render" />
-                </svg>
-                Render
-              </li>
-              <li class="skill--koyeb">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-koyeb" />
-                </svg>
-                Koyeb
-              </li>
-              <li class="skill--vercel">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-vercel" />
-                </svg>
-                Vercel
-              </li>
-              <li class="skill--netlify">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-netlify" />
-                </svg>
-                Netlify
-              </li>
-              <li class="skill--github">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-github" />
-                </svg>
-                GitHub
-              </li>
+          <div class="skills__group">
+            <span class="skills__group-title">Networking</span>
+            <ul class="skills__list">
+              <li>TCP/IP Protocols</li>
+              <li>Cisco Packet Tracer</li>
+              <li>Linux Administration</li>
+              <li>Network Auditing</li>
             </ul>
           </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">Databases & Storage</h3>
-            <ul class="skills__list" role="list">
-              <li class="skill--mongodb">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-mongodb" />
-                </svg>
-                MongoDB
-              </li>
-              <li class="skill--redis">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-redis" />
-                </svg>
-                Redis
-              </li>
-              <li class="skill--supabase">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-supabase" />
-                </svg>
-                Supabase
-              </li>
-              <li class="skill--firebase">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-firebase" />
-                </svg>
-                Firebase
-              </li>
-              <li class="skill--mysql">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-mysql" />
-                </svg>
-                MySQL (Basic)
-              </li>
-              <li class="skill--sqlite">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-sqlite" />
-                </svg>
-                SQLite (Basic)
-              </li>
-              <li class="skill--postgresql">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-postgresql" />
-                </svg>
-                Postgres
-              </li>
-            </ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">Containerization</h3>
-            <ul class="skills__list" role="list">
-              <li class="skill--docker">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-docker" />
-                </svg>
-                Docker
-              </li>
-            </ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">Operating Systems</h3>
-            <ul class="skills__list" role="list">
-              <li class="skill--windows">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-windows" />
-                </svg>
-                Windows 11
-              </li>
-              <li class="skill--kali">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-kalilinux" />
-                </svg>
-                Kali linux
-              </li>
-            </ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">Networking & Tools</h3>
-            <ul class="skills__list" role="list">
-              <li class="skill--vmware">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-vmware" />
-                </svg>
-                VMWARE workstation
-              </li>
-              <li class="skill--wireshark">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-wireshark" />
-                </svg>
-                Wireshark
-              </li>
-              <li class="skill--cisco">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-cisco" />
-                </svg>
-                Cisco Packet Tracer
-              </li>
-            </ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">Frameworks</h3>
-            <ul class="skills__list" role="list">
-              <li class="skill--flask">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-flask" />
-                </svg>
-                Flask
-              </li>
-              <li class="skill--telegram">
-                <svg class="skill-icon" aria-hidden="true">
-                  <use href="assets/img/icons.svg#icon-telegram" />
-                </svg>
-                Kurigram (Pyrogram)
-              </li>
+          <div class="skills__group">
+            <span class="skills__group-title">Security & Tools</span>
+            <ul class="skills__list">
+              <li>Wireshark</li>
+              <li>Nmap</li>
+              <li>Docker</li>
+              <li>Kali Linux</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <section class="projects section" id="projects" aria-labelledby="projects-heading">
+
+    <section class="section" id="projects" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">05</span>
-          <h2 class="section__title" id="projects-heading">Projects</h2>
+          <h2 class="section__title" id="projects-heading">Selected Projects</h2>
         </div>
-        <div class="projects__grid">
-          <article class="project-item reveal">
-            <p class="project-item__status">In progress</p>
-            <h3 class="project-item__title">
-              <a href="https://github.com/bisug?tab=repositories&q=lab" target="_blank" rel="noopener noreferrer">Security Learning Lab Environment</a>
-            </h3>
-            <p class="project-item__tagline">Networking, Linux administration, web security, and CTF sandbox.</p>
-            <p class="project-details__text">
-              A comprehensive and highly customizable virtual laboratory designed specifically for practicing advanced penetration testing and network defense strategies. This lab includes intentionally vulnerable machines, automated setup scripts using Vagrant and Docker, and a detailed repository of security notes and methodologies. It provides a secure, isolated space to responsibly practice web exploitation and analyze real-world vulnerabilities.
-            </p>
-            <p class="project-stack">Focus: <code>Networking</code> <code>Linux</code> <code>Web Security</code> <code>CTF</code></p>
+        <div class="projects__list reveal">
+
+          <article class="project-item">
+            <div class="project-item__image">
+              <!-- Placeholder for high-quality project image -->
+            </div>
+            <div class="project-item__content">
+              <span class="project-item__tagline">Networking & Web Security</span>
+              <h3 class="project-item__title">Security Learning Lab</h3>
+              <p class="project-item__description">
+                A comprehensive virtual laboratory designed for practicing penetration testing and network defense strategies. Includes vulnerable machines and automated setup scripts.
+              </p>
+              <div class="project-item__meta">
+                <span>Year: 2024</span>
+                <span>Role: Architect</span>
+              </div>
+            </div>
           </article>
 
-          <article class="project-item reveal">
-            <p class="project-item__status">Build track</p>
-            <h3 class="project-item__title">
-              <a href="https://github.com/bisug?tab=repositories&q=python" target="_blank" rel="noopener noreferrer">Python Sec-Automation Tools</a>
-            </h3>
-            <p class="project-item__tagline">Custom Command-Line Interfaces (CLI) for technical workflows.</p>
-            <p class="project-details__text">
-              A suite of lightweight, high-performance Python scripts built to streamline repetitive security tasks. These tools handle complex log parsing, automated endpoint validation, and intelligent data scraping. By leveraging Python's robust standard library, these utilities significantly reduce the time spent on manual reconnaissance and allow security practitioners to focus on high-level threat analysis and remediation.
-            </p>
-            <p class="project-stack">Stack: <code>Python</code> <code>CLI</code> <code>Automation</code></p>
+          <article class="project-item">
+            <div class="project-item__image">
+              <!-- Placeholder for high-quality project image -->
+            </div>
+            <div class="project-item__content">
+              <span class="project-item__tagline">Python & Automation</span>
+              <h3 class="project-item__title">Sec-Automation Tools</h3>
+              <p class="project-item__description">
+                A suite of lightweight Python scripts built to streamline security tasks, handle log parsing, and automate endpoint validation.
+              </p>
+              <div class="project-item__meta">
+                <span>Year: 2024</span>
+                <span>Role: Developer</span>
+              </div>
+            </div>
           </article>
 
-          <article class="project-item reveal">
-            <p class="project-item__status">Deployment practice</p>
-            <h3 class="project-item__title">
-              <a href="https://github.com/bisug?tab=repositories&q=docker" target="_blank" rel="noopener noreferrer">Cloud Architecture & Containers</a>
-            </h3>
-            <p class="project-item__tagline">Infrastructure as Code, orchestration, and managed databases.</p>
-            <p class="project-details__text">
-              An experimental project focused on modern cloud deployment methodologies. It features containerized applications managed via Docker, integrated with continuous deployment pipelines utilizing Render and Vercel. The project also explores secure database provisioning, emphasizing strict access controls, optimized configuration files, and the implementation of robust identity and access management (IAM) policies in distributed environments.
-            </p>
-            <p class="project-stack">Stack: <code>Docker</code> <code>Render</code> <code>Vercel</code> <code>Databases</code></p>
+          <article class="project-item">
+            <div class="project-item__image">
+              <!-- Placeholder for high-quality project image -->
+            </div>
+            <div class="project-item__content">
+              <span class="project-item__tagline">Cloud & Containers</span>
+              <h3 class="project-item__title">Cloud Architecture Lab</h3>
+              <p class="project-item__description">
+                Experimental project focused on modern deployment methodologies, containerized applications, and secure database provisioning.
+              </p>
+              <div class="project-item__meta">
+                <span>Year: 2024</span>
+                <span>Role: Engineer</span>
+              </div>
+            </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="career-goals" aria-labelledby="career-heading">
+    <section class="section" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section__header reveal">
           <span class="section__num">06</span>
-          <h2 class="section__title" id="career-heading">Career Goals & Aspirations</h2>
-        </div>
-        
-        <div class="career-text reveal">
-          <p>
-            My ultimate career objective is to become a highly skilled Security Analyst and, eventually, a professional Penetration Tester. In the short term, over the next twelve months, I am entirely dedicated to completing my degree with honors while simultaneously pursuing industry-recognized certifications such as the CompTIA Security+ and the Certified Ethical Hacker (CEH) credentials. These foundational milestones will validate my technical capabilities and demonstrate my commitment to professional excellence.
-          </p>
-          <p>
-            Looking further ahead, I envision myself architecting resilient security frameworks for large-scale enterprise networks, contributing to open-source security tools, and participating in global bug bounty programs. I firmly believe that the cybersecurity landscape requires constant vigilance and an unwavering desire to learn. By mastering advanced exploitation tactics and understanding the defensive engineering needed to mitigate those attacks, I aim to protect critical infrastructure and foster a safer digital ecosystem for everyone.
-          </p>
-        </div>
-
-        <div class="cyber__grid">
-          <div class="cyber__card reveal">
-            <h3 class="cyber__card-title">Foundations</h3>
-            <table class="cyber__table">
-              <tr>
-                <td>Networking & Protocols</td>
-                <td><span class="badge badge--learning">Learning</span></td>
-              </tr>
-              <tr>
-                <td>Operating Systems & Linux</td>
-                <td><span class="badge badge--learning">Learning</span></td>
-              </tr>
-              <tr>
-                <td>Python for Security</td>
-                <td><span class="badge badge--learning">Learning</span></td>
-              </tr>
-              <tr>
-                <td>C++ & Low-Level</td>
-                <td><span class="badge badge--learning">Learning</span></td>
-              </tr>
-            </table>
-          </div>
-
-          <div class="cyber__card reveal">
-            <h3 class="cyber__card-title">Security Domains</h3>
-            <table class="cyber__table">
-              <tbody>
-                <tr>
-                  <td>Ethical Hacking</td>
-                  <td><span class="badge badge--exploring">Exploring</span></td>
-                </tr>
-                <tr>
-                  <td>CTF Challenges</td>
-                  <td><span class="badge badge--exploring">Exploring</span></td>
-                </tr>
-                <tr>
-                  <td>Web App Security</td>
-                  <td><span class="badge badge--exploring">Exploring</span></td>
-                </tr>
-                <tr>
-                  <td>Cryptography</td>
-                  <td><span class="badge badge--exploring">Exploring</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-
-
-
-      </div>
-    </section>
-
-    <section class="contact section" id="contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__num">07</span>
           <h2 class="section__title" id="contact-heading">Contact</h2>
         </div>
         <div class="contact__inner reveal">
-          <p class="contact__line">
-            Open to cybersecurity internships and collaborative opportunities.
-          </p>
-          <nav class="contact__links" aria-label="Contact links">
-            <a href="mailto:bisu.ghlan@gmail.com?subject=Portfolio%20Inquiry" id="emailLink" data-u="bisu.ghlan" data-d="gmail.com" aria-label="Send email">Send an Email ↗</a>
-            <a href="mailto:bisu.ghlan@gmail.com?subject=Resume%20Request" aria-label="Request resume by email">Request Resume ↗</a>
-            <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+          <h3 class="contact__line">
+            Available for internships and collaboration.
+          </h3>
+          <nav class="contact__links">
+            <a href="mailto:bisu.ghlan@gmail.com">Email <span>↗</span></a>
+            <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
           </nav>
         </div>
       </div>
@@ -586,145 +269,13 @@
 
   </main>
 
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
-      <p class="footer__note"><em>Bisu Ghalan &copy; 2026 &mdash; Student from Nepal pursuing a career in Cybersecurity.</em></p>
+      <p class="footer__note">&copy; 2024 Bisu Ghalan. Built with Swiss Design principles.</p>
+      <p class="footer__note">Kathmandu, Nepal</p>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
-    ↑
-  </a>
-
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": ["Person", "ProfilePage"],
-      "@id": "https://bisu.com.np/#person",
-      "name": "Bisu Ghalan",
-      "givenName": "Bisu",
-      "familyName": "Ghalan",
-      "url": "https://bisu.com.np/",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://bisu.com.np/assets/img/og-preview.png",
-        "width": 1200,
-        "height": 630
-      },
-      "jobTitle": "Aspiring Cybersecurity Professional",
-      "description": "Bisu Ghalan is a student from Nepal pursuing a career in cybersecurity. He studies BCS CSNT (Bachelor of Computer Science — Cyber Security & Network Technology) at Lincoln International College in Kathmandu, builds Python automation tools, Docker deployments, and security utilities, and participates in Capture The Flag (CTF) competitions.",
-      "email": "mailto:bisu.ghlan@gmail.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "bisu.ghlan@gmail.com",
-        "contactType": "professional",
-        "availableLanguage": ["English", "Nepali"]
-      },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Lincoln International College",
-        "url": "https://licnepal.edu.np/",
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "name": "Bachelor of Computer Science Cyber Security & Network Technology (Hons)",
-          "abbreviation": "BCS CSNT",
-          "description": "An undergraduate program that blends computing fundamentals with specialised knowledge in networking and cybersecurity. Prepares students to design, manage, and secure computer networks, with hands-on experience in ethical hacking, encryption, and system protection.",
-          "credentialCategory": "Bachelor's Degree"
-        }
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kathmandu",
-        "addressRegion": "Bagmati Province",
-        "addressCountry": "NP"
-      },
-      "nationality": "Nepali",
-      "knowsAbout": ["Python", "C++", "Go (Golang)", "Cybersecurity", "Docker", "Networking", "Ethical Hacking", "Capture The Flag (CTF)", "MongoDB", "Redis", "PostgreSQL", "Windows 11", "Kali Linux", "VMware Workstation", "Wireshark", "Cisco Packet Tracer", "Flask", "Git", "GitHub"],
-      "knowsLanguage": [
-        { "@type": "Language", "name": "English" },
-        { "@type": "Language", "name": "Nepali" }
-      ],
-      "sameAs": [
-        "https://github.com/bisug",
-        "https://www.linkedin.com/in/bisug/",
-        "https://www.instagram.com/oyeee.bisu/"
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://bisu.com.np/#website",
-      "url": "https://bisu.com.np/",
-      "name": "Bisu Ghalan | Cybersecurity Student & Ethical Hacker | Nepal",
-      "description": "Portfolio of Bisu Ghalan — BSc Cybersecurity & Networking student at Lincoln International College, Kathmandu, Nepal. Python tools, Docker, ethical hacking labs and CTF write-ups.",
-      "inLanguage": "en",
-      "publisher": {
-        "@id": "https://bisu.com.np/#person"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://bisu.com.np/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bisu.com.np/" },
-        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://bisu.com.np/#about" },
-        { "@type": "ListItem", "position": 3, "name": "Projects", "item": "https://bisu.com.np/#projects" },
-        { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://bisu.com.np/#contact" }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Who is Bisu Ghalan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Bisu Ghalan is a BCS CSNT (Bachelor of Computer Science Cyber Security & Network Technology) student at Lincoln International College in Kathmandu, Nepal. He builds Python automation tools, works with Docker, participates in CTF competitions, and uses an AI-augmented workflow for development."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does Bisu Ghalan study?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Bisu Ghalan studies Bachelor of Computer Science Cyber Security & Network Technology (BCS CSNT) (Hons) at Lincoln International College, Kathmandu, Nepal. The program blends computing fundamentals with specialised knowledge in networking and cybersecurity, preparing students for careers in IT security, network administration, and cyber defense. He is currently in Semester 2 and focuses on network security, ethical hacking, and systems."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How can I contact Bisu Ghalan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can contact Bisu Ghalan via email at bisu.ghlan@gmail.com, through his GitHub profile at https://github.com/bisug, or via LinkedIn at https://www.linkedin.com/in/bisug/."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What programming languages does Bisu Ghalan know?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Bisu Ghalan knows Python, C++, Go (Golang), and works with tools like Docker, Flask, Git, and GitHub. He also has hands-on experience with Wireshark, Kali Linux, VMware, and Cisco Packet Tracer."
-          }
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "SpeakableSpecification",
-      "cssSelector": [".about__bio", ".contact__line", ".hero__name"]
-    }
-  ]
-  </script>
-
-  <script src="assets/js/typewriter.js" defer></script>
   <script src="assets/js/scroll.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 

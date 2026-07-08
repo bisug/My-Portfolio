@@ -1,111 +1,54 @@
 /* ============================================================
-   SKILLS - NEO BRUTALISM
+   SKILLS - SWISS STYLE
    ============================================================ */
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
 }
-
 
 .skills__group {
-  padding: var(--space-md);
-  background: var(--clr-surface);
-  border: var(--border-thick);
-  border-radius: var(--radius-sm);
-  box-shadow: 6px 6px 0px var(--clr-shadow);
-  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
-}
-
-.skills__group:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 4px 4px 0px var(--clr-shadow);
+  grid-column: span 4;
+  margin-bottom: var(--space-lg);
 }
 
 .skills__group-title {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  font-size: var(--text-sm);
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--clr-bg);
-  background: var(--clr-text);
-  display: inline-block;
-  padding: 0.2em 0.6em;
-  margin-bottom: var(--space-sm);
-  border-radius: var(--radius-sm);
-  transform: rotate(-2deg);
+  letter-spacing: 0.1em;
+  color: var(--clr-accent);
+  margin-bottom: var(--space-md);
+  display: block;
 }
 
 .skills__list {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.8em;
-  margin-top: 1rem;
-}
-
-.skills__list li {
-  font-family: var(--font-mono);
-  font-size: var(--text-base);
-  font-weight: 700;
-  color: var(--clr-text);
-  padding: 0.4em 1em;
-  border: var(--border-thick);
-  border-radius: var(--radius-sm);
-  background: var(--clr-cyan);
-  box-shadow: 3px 3px 0px var(--clr-shadow);
-  transition: transform var(--dur-fast),
-              box-shadow var(--dur-fast),
-              background var(--dur-fast);
-  cursor: default;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
+.skills__list li {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .skill-icon {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
 }
 
-/* Brand-specific Badge Colors */
-li.skill--python { background: var(--clr-python); color: #fff; }
-li.skill--cpp { background: var(--clr-cpp); color: #fff; }
-li.skill--heroku { background: var(--clr-heroku); color: #fff; }
-li.skill--render { background: var(--clr-render); color: #111; }
-li.skill--koyeb { background: var(--clr-koyeb); color: #111; }
-li.skill--vercel { background: #eeeeee; color: #111; } 
-li.skill--netlify { background: var(--clr-netlify); color: #111; }
-li.skill--github { background: #eeeeee; color: #111; } 
-li.skill--mongodb { background: var(--clr-mongodb); color: #fff; }
-li.skill--redis { background: var(--clr-redis); color: #fff; }
-li.skill--docker { background: var(--clr-docker); color: #fff; }
-li.skill--chatgpt { background: var(--clr-openai); color: #fff; }
-li.skill--anthropic { background: var(--clr-anthropic); color: #fff; }
-li.skill--google { background: var(--clr-google); color: #fff; }
-li.skill--deepseek { background: var(--clr-deepseek); color: #fff; }
-li.skill--windows { background: var(--clr-windows); color: #fff; }
-li.skill--kali { background: var(--clr-kali); color: #fff; }
-li.skill--supabase { background: var(--clr-supabase); color: #fff; }
-li.skill--firebase { background: var(--clr-firebase); color: #111; }
-li.skill--mysql { background: var(--clr-mysql); color: #fff; }
-li.skill--sqlite { background: var(--clr-sqlite); color: #fff; }
-li.skill--postgresql { background: var(--clr-postgresql); color: #fff; }
-
-.skills__list li:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px var(--clr-shadow);
-  filter: brightness(1.1);
-}
-
-.skills__workflow p {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--clr-muted);
-  margin-block: 0.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
+@media (max-width: 768px) {
+  .skills__group {
+    grid-column: span 12;
+  }
 }

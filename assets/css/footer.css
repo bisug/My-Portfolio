@@ -1,37 +1,31 @@
 /* ============================================================
-   FOOTER - NEO BRUTALISM
+   FOOTER - SWISS STYLE
    ============================================================ */
 
 .footer {
-  border-top: var(--border-thick);
-  padding-block: var(--space-md);
-  background: var(--clr-text);
-  color: var(--clr-bg);
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--clr-border);
+  background: var(--clr-bg);
 }
 
 .footer .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  gap: var(--space-sm);
 }
-
-.footer p {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--clr-bg);
-}
-
-
 
 .footer__note {
-  margin-top: 1.5rem;
-  font-size: var(--text-sm);
-  color: var(--clr-bg);
   font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--clr-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
 }

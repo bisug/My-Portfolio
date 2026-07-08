@@ -1,6 +1,5 @@
 /* ============================================================
-   RESET
-   Minimal reset. Keeps browser defaults that make sense.
+   RESET - SWISS STYLE
    ============================================================ */
 
 *, *::before, *::after {
@@ -10,7 +9,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -24,17 +22,18 @@ body {
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 input, button, textarea, select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4 {
+p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-ul {
+ul, ol {
   list-style: none;
 }
 
@@ -49,13 +48,13 @@ button {
   border: none;
 }
 
-/* Base Accessibility / Focus */
+/* Accessibility / Focus */
 :focus-visible {
-  outline: 4px dashed var(--clr-pink);
+  outline: 2px solid var(--clr-accent);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: var(--clr-border);
-  color: var(--clr-accent);
+  background: var(--clr-text);
+  color: var(--clr-bg);
 }

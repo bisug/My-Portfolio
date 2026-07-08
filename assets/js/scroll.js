@@ -1,21 +1,18 @@
 /**
  * scroll.js
- * - Adds .scrolled class to nav when page is scrolled
+ * - Handles scroll progress bar
  * - Triggers .reveal animations via IntersectionObserver
+ * - Highlights active nav link
  */
 
 const ScrollEffects = (() => {
 
   function initScrollHandler() {
-    const nav = document.getElementById('nav');
-    const heroScroll = document.querySelector('.hero__scroll');
     const progressBar = document.getElementById('scrollProgress');
-    const backToTop = document.getElementById('backToTop');
     
     let ticking = false;
     let cachedHeight = 0;
     let cachedViewportHeight = 0;
-    let lastScrollY = window.scrollY || 0;
 
     function updateDimensions() {
       cachedHeight = document.documentElement.scrollHeight;
@@ -29,51 +26,21 @@ const ScrollEffects = (() => {
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
         
-        // Nav state
-        if (nav) {
-          nav.classList.toggle('scrolled', scrollY > 40);
-          
-          if (scrollY > lastScrollY && scrollY > 100) {
-            nav.classList.add('nav-hidden');
-          } else {
-            nav.classList.remove('nav-hidden');
-          }
-        }
-        
-        // Hero explore button
-        if (heroScroll) heroScroll.classList.toggle('hidden', scrollY > 150);
-        
-        // Back to top
-        if (backToTop) backToTop.classList.toggle('visible', scrollY > 400);
-        
         // Progress bar
         if (progressBar) {
           const depth = cachedHeight - cachedViewportHeight;
           progressBar.style.width = (depth > 0 ? (scrollY / depth) * 100 : 0) + '%';
         }
         
-        lastScrollY = scrollY;
         ticking = false;
       });
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', () => {
-      // Small debounce not strictly needed for just height-caching, but good practice
-      updateDimensions();
-    });
+    window.addEventListener('resize', updateDimensions);
 
-    // Postpone initial layout reads to avoid "Forced Synchronous Layout" warnings during bootup
-    const finalizeInit = () => {
-      updateDimensions();
-      onScroll();
-    };
-
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(finalizeInit);
-    } else {
-      setTimeout(finalizeInit, 150);
-    }
+    updateDimensions();
+    onScroll();
   }
 
   function initReveal() {
@@ -85,11 +52,11 @@ const ScrollEffects = (() => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // fire once
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
     items.forEach((el) => {
@@ -109,9 +76,6 @@ const ScrollEffects = (() => {
       });
     };
 
-    // Default: highlight About on initial load
-    setActive('about');
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -126,21 +90,9 @@ const ScrollEffects = (() => {
   }
 
   function init() {
-    // initScrollHandler sets up dimensions and scroll listener
     initScrollHandler();
-    
-    // We defer the rest of the observations to ensure the browser has finished its initial paint
-    // and calculation of style/layout for the hero section.
-    const deferInit = () => {
-      initReveal();
-      initActiveNav();
-    };
-
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(deferInit);
-    } else {
-      setTimeout(deferInit, 200);
-    }
+    initReveal();
+    initActiveNav();
   }
 
   return { init };

@@ -1,109 +1,68 @@
 /* ============================================================
-   DESIGN TOKENS - NEO BRUTALISM
-   All visual decisions live here. Edit this file to retheme.
+   DESIGN TOKENS - SWISS STYLE (INTERNATIONAL TYPOGRAPHIC STYLE)
+   Focused on precision, typography, and mathematical spacing.
    ============================================================ */
 
 :root {
-  /* Palette — Neo Brutalism (Vibrant Light) */
-  --clr-bg:          #FFFAF0;  /* stark off-white/cream */
-  --clr-surface:     #ffffff;
-  --clr-elevated:    #ffffff;
-  --clr-border:      #111111;  /* solid black for all borders */
-  --clr-border-dim:  #111111;
-  --clr-shadow:      #111111;
+  /* Palette — Swiss Minimalist */
+  --clr-bg:          #FFFFFF;  /* Pure White */
+  --clr-surface:     #FFFFFF;
+  --clr-elevated:    #F5F5F5;
+  --clr-border:      #E5E5E5;  /* Subtle divider only */
+  --clr-border-dim:  #EEEEEE;
+  --clr-shadow:      transparent;
 
-  --clr-text:        #111111;
-  --clr-muted:       #333333;
-  --clr-faint:       #555555;
-  --clr-grid:        #e0dcd3; /* Subtle light grid */
+  --clr-text:        #111111;  /* Near Black */
+  --clr-muted:       #666666;
+  --clr-faint:       #999999;
+  --clr-grid:        #F0F0F0;
 
-  /* Vibrant Accents */
-  --clr-accent:      #FFE800;   /* Bright Yellow */
-  --clr-yellow:      #FFE800;
-  --clr-accent-hover:#FFD700;
-  --clr-accent-dim:  #111111;
-  --clr-accent-pale: #FFF480;
+  /* Single Accent Color: Vermillion Red */
+  --clr-accent:      #D83B01;  /* Vermillion Red variant */
+  --clr-accent-hover:#B13000;
+  --clr-accent-pale: #FDE7E9;
 
-  --clr-cyan:        #00E5FF;   /* Bright Cyan */
-  --clr-cyan-pale:   #80F2FF;
-  
-  --clr-pink:        #FF4081;   /* Hot Pink */
-  --clr-green:       #00FF66;   /* Neon Green */
-  --clr-orange:      #FF6D00;   /* Bright Orange */
+  /* Typography - Helvetica-inspired stack */
+  --font-display: 'Inter', 'Geist', 'Neue Haas Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'Geist Mono', 'IBM Plex Mono', 'JetBrains Mono', monospace;
 
-  /* WCAG-AA text-safe variants (≥4.5:1 on --clr-bg) */
-  --clr-green-text:  #008530;   /* 5.1:1 on #FFFAF0 */
-  --clr-pink-text:   #c41959;   /* 5.0:1 on #FFFAF0 */
-  --clr-cyan-text:   #0083a3;   /* 4.6:1 on #FFFAF0 */
+  /* Scale - Editorial Typography */
+  --text-xs:   0.875rem; /* 14px */
+  --text-sm:   1rem;     /* 16px */
+  --text-base: 1.125rem; /* 18px */
+  --text-lg:   1.5rem;   /* 24px */
+  --text-xl:   2rem;     /* 32px */
+  --text-2xl:  clamp(2rem, 5vw, 3rem);     /* 32-48px */
+  --text-3xl:  clamp(3rem, 8vw, 4.5rem);   /* 48-72px */
+  --text-hero: clamp(4rem, 12vw, 7.5rem);  /* 64-120px */
 
-  /* Typography */
-  --font-display: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  /* Spacing — Mathematical & Generous */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+  --space-xxl: 12rem;
 
-  /* Scale */
-  --text-xs:   0.8rem;
-  --text-sm:   0.95rem;
-  --text-base: clamp(0.95rem, 1.5vw, 1.1rem);
-  --text-lg:   1.25rem;
-  --text-xl:   1.5rem;
-  --text-2xl:  clamp(1.5rem, 3vw, 2rem);
-  --text-3xl:  clamp(2rem, 4vw, 2.8rem);
-  --text-4xl:  clamp(2.5rem, 8vw, 3.8rem);
-  --text-hero: clamp(2.5rem, 12vw, 8rem);
-
-  /* Spacing — fluid via clamp() so layout shrinks on small screens automatically */
-  --space-xs:  clamp(0.375rem, 1vw,  0.5rem);
-  --space-sm:  clamp(0.75rem,  2vw,  1rem);
-  --space-md:  clamp(0.75rem,  3vw,  2rem);
-  --space-lg:  clamp(2rem,     5vw,  4rem);
-  --space-xl:  clamp(3.5rem,   8vw,  7rem);
-
-  /* Borders & Shadows (The Brutalist Core) */
-  --border-thick: 3px solid var(--clr-border);
-  --border-thin:  2px solid var(--clr-border);
-  --radius-sm:  0px;  /* Brutalism often uses sharp or slightly rounded corners */
+  /* Borders & Shadows - Minimalist */
+  --border-thin:  1px solid var(--clr-border);
+  --radius-sm:  2px;
   --radius-md:  4px;
-  --radius-lg:  8px;
-  --radius-pill: 999px;
+  --radius-lg:  0px; /* Sharp corners preferred in Swiss style */
   
-  --shadow-hard:        4px 4px 0px var(--clr-shadow);
-  --shadow-hard-sm:     3px 3px 0px var(--clr-shadow);
-  --shadow-hard-hover:  2px 2px 0px var(--clr-shadow); /* "pressed" state */
-  --shadow-hard-lg:     8px 8px 0px var(--clr-shadow);
-
   /* Layout */
   --container: 1200px;
-  --container-wide: 1600px;
-  --nav-h:     clamp(56px, 8vw, 80px);
-  --scroll-progress-h: 10px;
+  --container-wide: 1440px;
+  --nav-h:     80px;
 
-  /* Motion - faster, snappier transitions for brutalism */
-  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-fast:  150ms;
-  --dur-base:  200ms;
-  --dur-slow:  300ms;
+  /* Grid settings */
+  --grid-columns: 12;
+  --grid-gutter: 2rem;
 
-  /* Brand Colors */
-  --clr-python: #3776ab;
-  --clr-cpp: #00599c;
-  --clr-heroku: #430098;
-  --clr-render: #00d2b4;
-  --clr-koyeb: #ffde1a;
-  --clr-vercel: #000000;
-  --clr-netlify: #00c7b7;
-  --clr-github: #181717;
-  --clr-mongodb: #47a248;
-  --clr-redis: #ff4438;
-  --clr-docker: #2496ed;
-  --clr-openai: #10a37f;
-  --clr-anthropic: #d97757;
-  --clr-google: #4285f4;
-  --clr-deepseek: #3d78ff;
-  --clr-windows: #0078d4;
-  --clr-kali: #557c94;
-  --clr-supabase: #3ecf8e;
-  --clr-firebase: #ffca28;
-  --clr-mysql: #4479a1;
-  --clr-sqlite: #003b57;
-  --clr-postgresql: #4169e1;
+  /* Motion - Subtle & Professional */
+  --ease-out:  cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast:  200ms;
+  --dur-base:  400ms;
+  --dur-slow:  600ms;
 }

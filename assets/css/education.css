@@ -1,15 +1,15 @@
 /* ============================================================
-   EDUCATION - NEO BRUTALISM
+   EDUCATION - SWISS STYLE
    ============================================================ */
 
 .edu__meta {
-  background: var(--clr-surface);
-  border: var(--border-thick);
-  box-shadow: 8px 8px 0px var(--clr-shadow);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+}
+
+.edu__table-wrapper {
+  grid-column: span 12;
 }
 
 .edu__table {
@@ -17,36 +17,51 @@
   border-collapse: collapse;
 }
 
+.edu__table tr {
+  border-bottom: 1px solid var(--clr-border);
+}
+
 .edu__table td {
-  padding: var(--space-md);
-  border-bottom: var(--border-thick);
+  padding-block: var(--space-md);
+  vertical-align: top;
+}
+
+.edu__table td:first-child {
+  width: 30%;
   font-family: var(--font-mono);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
+  color: var(--clr-accent);
+  text-transform: uppercase;
 }
 
-.edu__table tr:last-child td {
-  border-bottom: none;
-}
-
-.edu__table tr:nth-child(even) {
-  background: var(--clr-bg);
+.edu__table td:last-child {
+  font-size: var(--text-base);
+  color: var(--clr-text);
 }
 
 .edu__table b {
-  color: var(--clr-pink);
-  text-transform: uppercase;
-  font-size: var(--text-xs);
-  display: block;
-  margin-bottom: 0.2rem;
+  display: none;
 }
 
 .edu__table a {
-  color: var(--clr-cyan-text);
-  text-decoration: none;
-  font-weight: 800;
-  font-size: var(--text-base);
+  color: var(--clr-text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .edu__table a:hover {
-  text-decoration: underline;
+  color: var(--clr-accent);
+}
+
+@media (max-width: 768px) {
+  .edu__table td {
+    display: block;
+    width: 100% !important;
+    padding-bottom: 0;
+  }
+  .edu__table td:last-child {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-md);
+  }
 }
