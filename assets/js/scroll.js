@@ -36,8 +36,14 @@ const ScrollEffects = (() => {
       });
     }
 
+    let resizeTimer;
+    function onResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateDimensions, 100);
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', updateDimensions);
+    window.addEventListener('resize', onResize, { passive: true });
 
     updateDimensions();
     onScroll();

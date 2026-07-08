@@ -52,24 +52,11 @@ a {
   padding-inline: var(--space-lg);
 }
 
-/* ---- The Swiss Grid (12-column) ---- */
+/* ---- The Swiss Grid (12-column) — kept for utility ---- */
 .swiss-grid {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gutter);
-}
-
-/* Helper for columns */
-.col-span-12 { grid-column: span 12; }
-.col-span-8  { grid-column: span 8; }
-.col-span-6  { grid-column: span 6; }
-.col-span-4  { grid-column: span 4; }
-.col-span-3  { grid-column: span 3; }
-
-@media (max-width: 1024px) {
-  .col-span-8, .col-span-6, .col-span-4, .col-span-3 {
-    grid-column: span 12;
-  }
 }
 
 /* ---- Section ---- */
@@ -138,11 +125,23 @@ a {
   transform: translateY(20px);
   transition: opacity var(--dur-base) var(--ease-out),
               transform var(--dur-base) var(--ease-out);
+  will-change: opacity, transform;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html { scroll-behavior: auto; }
 }
 
 /* ---- Scrollbar ---- */
@@ -166,7 +165,8 @@ a {
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
 
-/* Remove background patterns */
-#about, #education, #experience, #skills, #projects, #career-goals, #contact {
-  background-image: none;
+/* ---- Content Visibility (paint offscreen sections lazily) ---- */
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }
