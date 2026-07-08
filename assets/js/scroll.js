@@ -3,12 +3,14 @@
  * - Handles scroll progress bar
  * - Triggers .reveal animations via IntersectionObserver
  * - Highlights active nav link
+ * - Smooth Parallax for Hero
  */
 
 const ScrollEffects = (() => {
 
   function initScrollHandler() {
     const progressBar = document.getElementById('scrollProgress');
+    const heroName = document.querySelector('.hero__name');
     
     let ticking = false;
     let cachedHeight = 0;
@@ -30,6 +32,11 @@ const ScrollEffects = (() => {
         if (progressBar) {
           const depth = cachedHeight - cachedViewportHeight;
           progressBar.style.width = (depth > 0 ? (scrollY / depth) * 100 : 0) + '%';
+        }
+
+        // Subtle Hero Parallax
+        if (heroName && scrollY < cachedViewportHeight) {
+          heroName.style.transform = `translateY(${scrollY * 0.15}px)`;
         }
         
         ticking = false;
@@ -58,11 +65,16 @@ const ScrollEffects = (() => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            // We keep observing for potential re-entry animations if desired,
+            // but for Swiss style, one-time reveal is cleaner.
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px' // Trigger slightly before it hits the viewport
+      }
     );
 
     items.forEach((el) => {
@@ -84,12 +96,13 @@ const ScrollEffects = (() => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           setActive(entry.target.getAttribute('id'));
         }
       });
     }, {
-      rootMargin: '-50% 0px -50% 0px'
+      threshold: [0.1, 0.5, 0.9],
+      rootMargin: '-20% 0px -70% 0px'
     });
 
     sections.forEach(section => observer.observe(section));
