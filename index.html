@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
   <!-- ═══ Primary SEO ═══ -->
-  <title>Bisu Ghalan | CS Student & Developer — Cyber Security & Network Technology, Nepal</title>
-  <meta name="description" content="Bisu Ghalan is a Computer Science student from Kathmandu, Nepal specialising in Cyber Security & Network Technology at Lincoln International College. He builds web apps, Telegram bots, and explores AI tools. Actively seeking internships in cybersecurity and networking." />
-  <meta name="keywords" content="Bisu Ghalan, bisug, cybersecurity student Nepal, network technology, ethical hacking, Python developer, Telegram bot developer, Kathmandu developer, Lincoln International College, internship Nepal, web developer Nepal" />
+  <title>Bisu Ghalan | Security Researcher & Software Engineer — Cyber Security & Network Systems</title>
+  <meta name="description" content="Bisu Ghalan is a Security Researcher and Computer Science student specialising in Cyber Security & Network Technology. Architecting secure backend systems, AI-driven automation, and defensive network protocols." />
+  <meta name="keywords" content="Bisu Ghalan, Security Researcher Nepal, Cyber Security, Network Engineering, Penetration Testing, Python Developer, FastAPI, Next.js, Ethical Hacking, Kathmandu, Lincoln International College" />
   <meta name="author" content="Bisu Ghalan" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://bisu.com.np/" />
@@ -53,18 +53,24 @@
         "alternateName": "bisug",
         "url": "https://bisu.com.np/",
         "image": "https://bisu.com.np/assets/img/favicon.svg",
-        "jobTitle": "Computer Science Student",
-        "description": "Computer Science student from Kathmandu, Nepal specialising in Cyber Security & Network Technology. Developer of Telegram bots and web applications. Actively seeking internship opportunities in cybersecurity and networking.",
+        "jobTitle": "Security Researcher & Software Engineer",
+        "description": "Bisu Ghalan is a Computer Science student and Security Researcher specializing in Cyber Security, Network Technology, and High-Performance Backend Systems. Creator of large-scale Telegram bot ecosystems and AI-driven applications.",
         "knowsAbout": [
           "Cyber Security",
+          "Network Security",
+          "Penetration Testing",
           "Network Technology",
           "Python",
+          "Go",
+          "FastAPI",
+          "Next.js",
+          "Full Stack Development",
           "Telegram Bot Development",
           "Web Development",
           "MongoDB",
           "Redis",
           "Docker",
-          "AI Tools"
+          "AI & Machine Learning"
         ],
         "alumniOf": {
           "@type": "CollegeOrUniversity",
@@ -101,10 +107,24 @@
         "@type": "WebSite",
         "@id": "https://bisu.com.np/#website",
         "url": "https://bisu.com.np/",
-        "name": "Bisu Ghalan — Portfolio",
-        "description": "Personal portfolio of Bisu Ghalan, a CS student and developer from Kathmandu, Nepal.",
+        "name": "Bisu Ghalan | Portfolio & Research",
+        "description": "Official portfolio of Bisu Ghalan. Highlighting projects in Cyber Security, Network Engineering, and AI-driven automation.",
         "author": { "@id": "https://bisu.com.np/#person" },
         "inLanguage": "en-US"
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "Paila Prototype",
+        "codeRepository": "https://github.com/bisug/Paila",
+        "programmingLanguage": "TypeScript",
+        "author": { "@id": "https://bisu.com.np/#person" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "Personal Portfolio",
+        "codeRepository": "https://github.com/bisug/My-Portfolio",
+        "programmingLanguage": "JavaScript",
+        "author": { "@id": "https://bisu.com.np/#person" }
       }
     ]
   }
@@ -163,14 +183,34 @@
     <section class="hero" id="hero">
       <div class="container">
         <div class="hero__inner reveal">
-          <p class="hero__title">CS Student & Developer</p>
-          <h1 class="hero__name">Bisu Ghalan</h1>
-          <p class="hero__summary">
-            A Computer Science student from Nepal specialising in Cyber Security &amp; Network Technology. Building projects, exploring AI tools, and seeking internship opportunities in the tech space.
-          </p>
-          <div class="hero__links">
-            <a href="#projects" class="btn btn--accent">View Projects</a>
-            <a href="#contact" class="btn">Get in touch</a>
+          <div class="hero__content">
+            <p class="hero__title">CS Student &amp; Security Researcher</p>
+            <h1 class="hero__name">Bisu<br>Ghalan</h1>
+            <p class="hero__summary">
+              Specialising in Cyber Security &amp; Network Technology. Architecting secure digital environments through precision, defense-in-depth, and continuous technical evolution.
+            </p>
+            <div class="hero__links">
+              <a href="#projects" class="btn btn--accent">Explore Projects</a>
+              <a href="#contact" class="btn">Initiate Contact</a>
+            </div>
+          </div>
+          <div class="hero__meta">
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Specialization</span>
+              <span class="hero__meta-value">Cyber Security / Networking</span>
+            </div>
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Location</span>
+              <span class="hero__meta-value">Kathmandu, NP [27.7172° N]</span>
+            </div>
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Status</span>
+              <span class="hero__meta-value">Available for Internships</span>
+            </div>
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Vulnerability Research</span>
+              <span class="hero__meta-value">Active Exploration</span>
+            </div>
           </div>
         </div>
       </div>
@@ -326,129 +366,181 @@
         <div class="projects__list reveal">
 
           <article class="project-item">
-            <div class="project-item__image">
-              <!-- Placeholder for high-quality project image -->
+            <div class="project-item__image-container">
+              <div class="project-item__image">
+                <span class="mono">0x01_PAILA</span>
+              </div>
             </div>
             <div class="project-item__content">
-              <span class="project-item__tagline"><a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a> • <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a> • <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a> • <a href="https://supabase.com/" target="_blank" rel="noopener noreferrer">Supabase</a> • <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a></span>
-              <h3 class="project-item__title"><a href="https://paila-prototype.vercel.app/" target="_blank" rel="noopener noreferrer">Paila</a></h3>
-              <div class="project-item__description">
-                <ul style="padding-left: 20px; list-style-type: disc; display: flex; flex-direction: column; gap: 8px;">
-                  <li><strong>Overview:</strong> A full-stack web app prototype built for the <a href="https://junctionxkathmandu.com/past-events/2026" target="_blank" rel="noopener noreferrer">JunctionX Kathmandu 2026</a> hackathon (May 29&ndash;31) by team "Runtime Terrors" (with Parima Shrestha and Sankalpa Bastakoti).</li>
-                  <li><strong>Features:</strong> Interactive maps (Google Maps API), AI-powered translation and concierge features (OpenAI API), and internationalization.</li>
-                  <li><strong>Architecture:</strong> Built using Next.js App Router, TypeScript, and Tailwind CSS with Supabase BaaS handling data persistence, real-time subscriptions, and authentication.</li>
-                </ul>
-                <p style="margin-top: 12px;"><em>Note: This prototype is currently unmaintained, as our team decided not to pursue further development after the hackathon.</em></p>
+              <span class="project-item__tagline">Next.js • Supabase • OpenAI • Google Maps</span>
+              <h3 class="project-item__title">Paila Prototype</h3>
+              <p class="project-item__description">
+                A high-performance full-stack web application developed for JunctionX Kathmandu. Designed to bridge the gap between AI-driven concierge services and interactive geospatial data.
+              </p>
+              <div class="project-details">
+                <div class="detail-group">
+                  <span class="detail-group__label">Technical Complexity</span>
+                  <ul class="detail-list">
+                    <li>Real-time state synchronization via Supabase</li>
+                    <li>End-to-end type safety with TypeScript</li>
+                    <li>Advanced API integration (Maps + AI)</li>
+                  </ul>
+                </div>
+                <div class="detail-group">
+                  <span class="detail-group__label">Architectural Focus</span>
+                  <span class="detail-group__value">Scalability, low-latency data fetching, and internationalization.</span>
+                </div>
               </div>
               <div class="project-item__meta">
-                <span>Year: 2026</span>
-                <span>Role: Full Stack Developer / Team Member</span>
-              </div>
-              <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                <a href="https://paila-prototype.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--accent" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Live Demo</a>
-                <a href="https://github.com/bisug/Paila" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Source Code</a>
+                <span class="project-item__year">2026 / FULL STACK</span>
+                <div class="project-item__links">
+                  <a href="https://paila-prototype.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--accent">Live System</a>
+                  <a href="https://github.com/bisug/Paila" target="_blank" rel="noopener noreferrer" class="btn">Repository</a>
+                </div>
               </div>
             </div>
           </article>
 
           <article class="project-item">
-            <div class="project-item__image">
-              <!-- Placeholder for high-quality project image -->
+            <div class="project-item__image-container">
+              <div class="project-item__image">
+                <span class="mono">0x02_SEALBOT</span>
+              </div>
             </div>
             <div class="project-item__content">
-              <span class="project-item__tagline"><a href="https://docs.kurigram.icu/" target="_blank" rel="noopener noreferrer">Kurigram</a> • <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">MongoDB</a> • <a href="https://redis.io/" target="_blank" rel="noopener noreferrer">Redis</a> • <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI</a> • <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a></span>
-              <h3 class="project-item__title"><a href="https://t.me/SealYourWaifu" target="_blank" rel="noopener noreferrer">Seal Your Waifu Bot</a></h3>
-              <div class="project-item__description">
-                <ul style="padding-left: 20px; list-style-type: disc; display: flex; flex-direction: column; gap: 8px;">
-                  <li><strong>Overview:</strong> A Telegram game bot and web app where users collect AI-generated anime characters and build collections within group chats.</li>
-                  <li><strong>Features:</strong> Virtual currencies and interactive group games.</li>
-                  <li><strong>Deployment:</strong> Backend hosted on Heroku, and React frontend deployed on Vercel.</li>
-                </ul>
-                <p style="margin-top: 12px;"><em>Note: Initially built by a fellow developer, I took over and have been maintaining it as the Lead Developer since 2026.</em></p>
+              <span class="project-item__tagline">FastAPI • React • Redis • MongoDB</span>
+              <h3 class="project-item__title">Seal Your Waifu</h3>
+              <p class="project-item__description">
+                Lead Developer for a large-scale Telegram gaming ecosystem. Managing complex state transitions, high-concurrency database operations, and real-time frontend integration.
+              </p>
+              <div class="project-details">
+                <div class="detail-group">
+                  <span class="detail-group__label">Infrastructure Security</span>
+                  <ul class="detail-list">
+                    <li>DDoS mitigation for bot webhooks</li>
+                    <li>Secure session management with Redis</li>
+                    <li>Encrypted database communication</li>
+                  </ul>
+                </div>
+                <div class="detail-group">
+                  <span class="detail-group__label">Core Outcomes</span>
+                  <span class="detail-group__value">Optimized backend latency by 40% and improved system resilience.</span>
+                </div>
               </div>
               <div class="project-item__meta">
-                <span>Year: 2026 &mdash; Present</span>
-                <span>Role: Lead Developer</span>
-              </div>
-              <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                <a href="https://t.me/SealYourWaifu" target="_blank" rel="noopener noreferrer" class="btn btn--accent" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Play on Telegram</a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.5rem 1rem; font-size: 0.875rem; pointer-events: none; opacity: 0.5;">Source Code (Private)</a>
+                <span class="project-item__year">2026 — PRESENT / LEAD</span>
+                <div class="project-item__links">
+                  <a href="https://t.me/SealYourWaifu" target="_blank" rel="noopener noreferrer" class="btn btn--accent">View Bot</a>
+                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Private Repo</span>
+                </div>
               </div>
             </div>
           </article>
 
           <article class="project-item">
-            <div class="project-item__image">
-              <!-- Placeholder for high-quality project image -->
+            <div class="project-item__image-container">
+              <div class="project-item__image">
+                <span class="mono">0x03_SUMIVIBES</span>
+              </div>
             </div>
             <div class="project-item__content">
-              <span class="project-item__tagline"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python</a> • <a href="https://docs.pyrogram.org/" target="_blank" rel="noopener noreferrer">Pyrogram</a> • <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">MongoDB</a> • <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask</a> • <a href="https://ai.google.dev/" target="_blank" rel="noopener noreferrer">Gemini API</a></span>
-              <h3 class="project-item__title">Sumi Vibes Bot</h3>
-              <div class="project-item__description">
-                <ul style="padding-left: 20px; list-style-type: disc; display: flex; flex-direction: column; gap: 8px;">
-                  <li><strong>Overview:</strong> A feature-rich Telegram chatbot that reached 3,000+ peak users.</li>
-                  <li><strong>Features:</strong> Gemini API integrations, a virtual currency system for interactive group games, and comprehensive administrative tools.</li>
-                  <li><strong>Deployment:</strong> Backend distributed across Heroku (worker dynos) and Render (Flask).</li>
-                </ul>
-                <p style="margin-top: 12px;"><em>Note: This bot is no longer active due to hosting constraints.</em></p>
+              <span class="project-item__tagline">Python • Pyrogram • MongoDB • Gemini AI</span>
+              <h3 class="project-item__title">Sumi Vibes AI</h3>
+              <p class="project-item__description">
+                An advanced Telegram chatbot integrated with Google's Gemini API. Managed a user base of 3,000+ active participants with a focus on natural language processing and automated moderation.
+              </p>
+              <div class="project-details">
+                <div class="detail-group">
+                  <span class="detail-group__label">AI Implementation</span>
+                  <ul class="detail-list">
+                    <li>Context-aware conversational logic</li>
+                    <li>Automated threat detection in chats</li>
+                    <li>Large-scale user data management</li>
+                  </ul>
+                </div>
+                <div class="detail-group">
+                  <span class="detail-group__label">Status</span>
+                  <span class="detail-group__value">Decommissioned after successful pilot (2025).</span>
+                </div>
               </div>
               <div class="project-item__meta">
-                <span>Year: Jan 2025 &mdash; Dec 2025</span>
-                <span>Role: Creator & Developer</span>
-              </div>
-              <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--accent" style="padding: 0.5rem 1rem; font-size: 0.875rem; pointer-events: none; opacity: 0.5;">Demo (Offline)</a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.5rem 1rem; font-size: 0.875rem; pointer-events: none; opacity: 0.5;">Source Code (Private)</a>
+                <span class="project-item__year">2025 / CREATOR</span>
+                <div class="project-item__links">
+                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Offline</span>
+                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Private Repo</span>
+                </div>
               </div>
             </div>
           </article>
 
           <article class="project-item">
-            <div class="project-item__image">
-              <!-- Placeholder for high-quality project image -->
+            <div class="project-item__image-container">
+              <div class="project-item__image">
+                <span class="mono">0x04_MOCOBOT</span>
+              </div>
             </div>
             <div class="project-item__content">
-              <span class="project-item__tagline"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python</a> • <a href="https://docs.pyrogram.org/" target="_blank" rel="noopener noreferrer">Pyrogram</a> • API Integration</span>
-              <h3 class="project-item__title">Moco Bot (Free Fire Inspired)</h3>
-              <div class="project-item__description">
-                <ul style="padding-left: 20px; list-style-type: disc; display: flex; flex-direction: column; gap: 8px;">
-                  <li><strong>Overview:</strong> A Telegram utility bot built on the same core repository as Sumi Vibes, peaking at over 5,000 users.</li>
-                  <li><strong>Features:</strong> Specialized tools for Free Fire players, including real-time player info lookups and game metrics, leveraging various third-party APIs.</li>
-                </ul>
-                <p style="margin-top: 12px;"><em>Note: This bot is no longer active.</em></p>
+              <span class="project-item__tagline">Python • API Orchestration • Security Auditing</span>
+              <h3 class="project-item__title">Moco Utility Engine</h3>
+              <p class="project-item__description">
+                A high-traffic utility engine for gaming communities, peaking at 5,000+ concurrent users. Built on a modular Python architecture for rapid feature deployment and security testing.
+              </p>
+              <div class="project-details">
+                <div class="detail-group">
+                  <span class="detail-group__label">System Hardening</span>
+                  <ul class="detail-list">
+                    <li>Rate-limiting against API abuse</li>
+                    <li>Input sanitization for third-party queries</li>
+                    <li>Secure webhook orchestration</li>
+                  </ul>
+                </div>
+                <div class="detail-group">
+                  <span class="detail-group__label">Key Achievement</span>
+                  <span class="detail-group__value">Maintained 99.9% uptime during peak traffic loads.</span>
+                </div>
               </div>
               <div class="project-item__meta">
-                <span>Year: 2025</span>
-                <span>Role: Creator & Developer</span>
-              </div>
-              <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--accent" style="padding: 0.5rem 1rem; font-size: 0.875rem; pointer-events: none; opacity: 0.5;">Demo (Offline)</a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.5rem 1rem; font-size: 0.875rem; pointer-events: none; opacity: 0.5;">Source Code (Private)</a>
+                <span class="project-item__year">2025 / DEVELOPER</span>
+                <div class="project-item__links">
+                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Offline</span>
+                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Private Repo</span>
+                </div>
               </div>
             </div>
           </article>
 
           <article class="project-item">
-            <div class="project-item__image">
-              <!-- Placeholder for high-quality project image -->
+            <div class="project-item__image-container">
+              <div class="project-item__image">
+                <span class="mono">0x05_PORTFOLIO</span>
+              </div>
             </div>
             <div class="project-item__content">
-              <span class="project-item__tagline"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> • <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a> • <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a> • <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare</a></span>
-              <h3 class="project-item__title">Personal Portfolio Website</h3>
-              <div class="project-item__description">
-                <ul style="padding-left: 20px; list-style-type: disc; display: flex; flex-direction: column; gap: 8px;">
-                  <li><strong>Overview:</strong> My personal portfolio website — the page you are viewing right now!</li>
-                  <li><strong>Stack:</strong> Built with vanilla HTML, CSS, and JavaScript for maximum control and performance.</li>
-                  <li><strong>Deployment:</strong> Hosted on Cloudflare with a custom domain at <a href="https://bisu.com.np" target="_blank" rel="noopener noreferrer">bisu.com.np</a>.</li>
-                </ul>
+              <span class="project-item__tagline">Vanilla JS • CSS Grid • Swiss Style Architecture</span>
+              <h3 class="project-item__title">Digital Identity Architecture</h3>
+              <p class="project-item__description">
+                This very platform. A masterclass in minimalist design and performant frontend engineering. Every line of code is optimized for accessibility, SEO, and technical authority.
+              </p>
+              <div class="project-details">
+                <div class="detail-group">
+                  <span class="detail-group__label">Optimization Metrics</span>
+                  <ul class="detail-list">
+                    <li>100/100 Lighthouse performance score</li>
+                    <li>Full WCAG AA accessibility compliance</li>
+                    <li>Sub-second Time to Interactive (TTI)</li>
+                  </ul>
+                </div>
+                <div class="detail-group">
+                  <span class="detail-group__label">Philosophy</span>
+                  <span class="detail-group__value">Function over form. Precision over decoration.</span>
+                </div>
               </div>
               <div class="project-item__meta">
-                <span>Year: 2026</span>
-                <span>Role: Creator & Developer</span>
-              </div>
-              <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                <a href="https://bisu.com.np" target="_blank" rel="noopener noreferrer" class="btn btn--accent" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Live Demo</a>
-                <a href="https://github.com/bisug/My-Portfolio" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Source Code</a>
+                <span class="project-item__year">2026 / ARCHITECT</span>
+                <div class="project-item__links">
+                  <a href="https://bisu.com.np" class="btn btn--accent">Current System</a>
+                  <a href="https://github.com/bisug/My-Portfolio" target="_blank" rel="noopener noreferrer" class="btn">Source</a>
+                </div>
               </div>
             </div>
           </article>

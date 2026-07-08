@@ -1,40 +1,58 @@
 /* ============================================================
    RESPONSIVE - SWISS STYLE
+   Enhanced for ultra-wide and mobile performance.
    ============================================================ */
 
-@media (max-width: 1024px) {
+/* Large Desktops / Ultra-wide */
+@media (min-width: 1600px) {
   :root {
-    --space-lg: 2rem;
-    --space-xl: 4rem;
-    --space-xxl: 6rem;
-  }
-
-  .container {
-    padding-inline: var(--space-md);
+    --space-unit: 0.625rem; /* Slightly larger scale for massive screens */
   }
 }
 
+/* Tablets / Small Laptops */
+@media (max-width: 1024px) {
+  :root {
+    --space-lg: var(--space-48);
+    --space-xl: var(--space-64);
+    --space-xxl: var(--space-96);
+  }
+
+  .container {
+    padding-inline: var(--space-32);
+  }
+
+  .section__title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Mobile Devices */
 @media (max-width: 768px) {
   :root {
     --nav-h: 64px;
-    --text-hero: 3.5rem;
-    --text-3xl: 2.5rem;
-    --text-2xl: 2rem;
+    --space-lg: var(--space-32);
+    --space-xl: var(--space-48);
+    --space-xxl: var(--space-64);
+  }
+
+  .container {
+    padding-inline: var(--space-16);
   }
 
   .nav__links {
     position: fixed;
-    top: var(--nav-h);
-    left: 0;
+    top: 0;
+    right: 0;
     width: 100%;
-    height: calc(100vh - var(--nav-h));
+    height: 100vh;
     background: var(--clr-bg);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-32);
     transform: translateX(100%);
-    transition: transform var(--dur-base) var(--ease-out);
+    transition: transform var(--dur-base) var(--ease-swiss);
     z-index: 999;
   }
 
@@ -44,28 +62,43 @@
 
   .nav__links a {
     font-size: var(--text-lg);
+    font-weight: 800;
   }
 
   .section {
-    padding-block: var(--space-xl);
+    padding-block: var(--space-lg);
+  }
+
+  .section__title {
+    font-size: var(--text-lg);
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
   :root {
-    --text-hero: 2.75rem;
-    --text-xl: 1.5rem;
-  }
-
-  .hero {
-    padding-top: calc(var(--nav-h) + var(--space-lg));
+    --text-hero: 4rem;
   }
 
   .hero__links {
     flex-direction: column;
+    width: 100%;
   }
 
   .btn {
     width: 100%;
+  }
+}
+
+/* Orientation helpers */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-xl);
+  }
+
+  .nav__links {
+    flex-direction: row;
+    padding-top: var(--nav-h);
   }
 }

@@ -1,68 +1,83 @@
 /* ============================================================
    DESIGN TOKENS - SWISS STYLE (INTERNATIONAL TYPOGRAPHIC STYLE)
-   Focused on precision, typography, and mathematical spacing.
+   Refined for a Senior Cybersecurity Professional.
+   Focused on precision, clarity, and mathematical rigor.
    ============================================================ */
 
 :root {
-  /* Palette — Swiss Minimalist */
-  --clr-bg:          #FFFFFF;  /* Pure White */
-  --clr-surface:     #FFFFFF;
-  --clr-elevated:    #F5F5F5;
-  --clr-border:      #E5E5E5;  /* Subtle divider only */
-  --clr-border-dim:  #EEEEEE;
-  --clr-shadow:      transparent;
+  /* Palette — Pure Swiss Minimalist */
+  --clr-bg:          #FFFFFF;  /* High-white */
+  --clr-surface:     #FAFAFA;
+  --clr-elevated:    #F0F0F0;
+  --clr-border:      #000000;  /* Sharp black borders for precision */
+  --clr-border-dim:  #E5E5E5;
+  --clr-shadow:      rgba(0, 0, 0, 0.05);
 
-  --clr-text:        #111111;  /* Near Black */
-  --clr-muted:       #666666;
-  --clr-faint:       #999999;
-  --clr-grid:        #F0F0F0;
+  --clr-text:        #000000;  /* Absolute Black */
+  --clr-muted:       #444444;
+  --clr-faint:       #888888;
+  --clr-grid:        #F5F5F5;
 
-  /* Single Accent Color: Vermillion Red */
-  --clr-accent:      #D83B01;  /* Vermillion Red variant */
-  --clr-accent-hover:#B13000;
-  --clr-accent-pale: #FDE7E9;
+  /* Single Accent Color: International Vermillion */
+  --clr-accent:      #FF3B30;  /* Classic Swiss Red */
+  --clr-accent-hover:#D70015;
+  --clr-accent-pale: #FFF0F0;
 
-  /* Typography - Helvetica-inspired stack */
-  --font-display: 'Inter', 'Geist', 'Neue Haas Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono:    'Geist Mono', 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  /* Typography - The heart of Swiss Style */
+  /* Prioritizing Inter and JetBrains Mono for a clean, technical look */
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", "Fira Code", "Menlo", "Monaco", "Consolas", monospace;
 
-  /* Scale - Editorial Typography */
-  --text-xs:   0.875rem; /* 14px */
-  --text-sm:   1rem;     /* 16px */
-  --text-base: 1.125rem; /* 18px */
-  --text-lg:   1.5rem;   /* 24px */
-  --text-xl:   2rem;     /* 32px */
-  --text-2xl:  clamp(2rem, 5vw, 3rem);     /* 32-48px */
-  --text-3xl:  clamp(3rem, 8vw, 4.5rem);   /* 48-72px */
-  --text-hero: clamp(4rem, 12vw, 7.5rem);  /* 64-120px */
+  /* Scale - 8pt Grid System Typography */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md:   1.25rem;   /* 20px */
+  --text-lg:   1.5rem;    /* 24px */
+  --text-xl:   2.25rem;   /* 36px */
+  --text-2xl:  clamp(2.5rem, 6vw, 4rem);    /* 40-64px */
+  --text-3xl:  clamp(4rem, 10vw, 8rem);     /* 64-128px */
+  --text-hero: clamp(5rem, 15vw, 12rem);    /* 80-192px */
 
-  /* Spacing — Mathematical & Generous */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  2rem;
-  --space-lg:  4rem;
-  --space-xl:  8rem;
-  --space-xxl: 12rem;
+  /* Spacing — Mathematical & Rigid */
+  --space-unit: 0.5rem; /* 8px */
+  --space-4:   calc(var(--space-unit) * 0.5); /* 4px */
+  --space-8:   var(--space-unit);             /* 8px */
+  --space-16:  calc(var(--space-unit) * 2);   /* 16px */
+  --space-24:  calc(var(--space-unit) * 3);   /* 24px */
+  --space-32:  calc(var(--space-unit) * 4);   /* 32px */
+  --space-48:  calc(var(--space-unit) * 6);   /* 48px */
+  --space-64:  calc(var(--space-unit) * 8);   /* 64px */
+  --space-96:  calc(var(--space-unit) * 12);  /* 96px */
+  --space-128: calc(var(--space-unit) * 16);  /* 128px */
+  --space-160: calc(var(--space-unit) * 20);  /* 160px */
 
-  /* Borders & Shadows - Minimalist */
-  --border-thin:  1px solid var(--clr-border);
-  --radius-sm:  2px;
-  --radius-md:  4px;
-  --radius-lg:  0px; /* Sharp corners preferred in Swiss style */
+  /* Spacing Aliases */
+  --space-xs:  var(--space-8);
+  --space-sm:  var(--space-16);
+  --space-md:  var(--space-32);
+  --space-lg:  var(--space-64);
+  --space-xl:  var(--space-96);
+  --space-xxl: var(--space-160);
+
+  /* Borders & Sharpness */
+  --border-width: 1px;
+  --radius-none: 0px;
+  --radius-sm: 2px;
   
-  /* Layout */
-  --container: 1200px;
-  --container-wide: 1440px;
-  --nav-h:     80px;
+  /* Layout Controls */
+  --container-max: 1600px; /* Increased for ultra-wide */
+  --nav-h: 72px;
 
   /* Grid settings */
   --grid-columns: 12;
-  --grid-gutter: 2rem;
+  --grid-gutter: var(--space-32);
 
-  /* Motion - Subtle & Professional */
-  --ease-out:  cubic-bezier(0.2, 0, 0, 1);
-  --dur-fast:  200ms;
-  --dur-base:  400ms;
-  --dur-slow:  600ms;
+  /* Motion - Linear and Fast (Precision) */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-swiss:  cubic-bezier(0.25, 0.1, 0.25, 1);
+  --dur-fast:    150ms;
+  --dur-base:    300ms;
+  --dur-slow:    500ms;
 }
