@@ -321,3 +321,16 @@ li.skill--wireshark{background:#1679a7;color:#fff}
 li.skill--cisco{background:#1ba0d7;color:#fff}
 li.skill--flask{background:#000000;color:#fff}
 li.skill--telegram{background:#26a5e4;color:#fff}
+
+/* ============================================================
+   PERFORMANCE: content-visibility
+   Skips layout + paint for sections outside the viewport until
+   the user scrolls near them. Each section gets a placeholder
+   size so the scrollbar doesn't jump on reveal.
+   ============================================================ */
+#education   { content-visibility: auto; contain-intrinsic-size: 0 420px; }
+#experience  { content-visibility: auto; contain-intrinsic-size: 0 320px; }
+#skills      { content-visibility: auto; contain-intrinsic-size: 0 600px; }
+#projects    { content-visibility: auto; contain-intrinsic-size: 0 500px; }
+#career-goals{ content-visibility: auto; contain-intrinsic-size: 0 480px; }
+#contact     { content-visibility: auto; contain-intrinsic-size: 0 380px; }
