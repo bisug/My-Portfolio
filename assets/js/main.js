@@ -53,16 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Email Obfuscation
-    const emailLink = document.getElementById('emailLink');
-    if (emailLink) {
-      emailLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        const u = emailLink.dataset.u;
-        const d = emailLink.dataset.d;
-        window.location.href = `mailto:${u}@${d}`;
-      });
-    }
   };
 
   if ('requestIdleCallback' in window) {
