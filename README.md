@@ -100,6 +100,14 @@ Want to run this project locally? It's completely static, so no build tools are 
    ```
 4. **Open your browser** and visit `http://localhost:3000`
 
+> **Editing styles or scripts?** The page loads bundled, minified assets
+> (`assets/css/style.min.css`, `assets/js/*.min.js`). After changing any file in
+> `assets/css/` or `assets/js/`, regenerate them with:
+> ```sh
+> node build.js
+> ```
+> and commit the updated `.min` files alongside your source changes.
+
 ---
 
 ## <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/magnifying-glass-chart.svg" width="24" height="24" alt="SEO"> Google Search Console Setup
