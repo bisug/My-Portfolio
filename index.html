@@ -31,8 +31,10 @@
   </script>
 
   <!-- ═══ Primary SEO ═══ -->
-  <title>Bisu Ghalan | Security Researcher & Software Engineer — Cyber Security & Network Systems</title>
-  <meta name="description" content="Bisu Ghalan is a Security Researcher and Computer Science student specialising in Cyber Security & Network Technology. Architecting secure backend systems, AI-driven automation, and defensive network protocols." />
+  <!-- Title trimmed to ~59 chars so Google doesn't truncate; name + primary keyword + geo front-loaded. -->
+  <title>Bisu Ghalan — Cyber Security Researcher & CS Student, Nepal</title>
+  <!-- Description ~157 chars: name, role, location, and what he builds, all before the ~160 truncation point. -->
+  <meta name="description" content="Bisu Ghalan — Cyber Security & Network Technology student and security researcher in Kathmandu, Nepal. Builds secure backends, AI automation & Telegram bots." />
   <meta name="keywords" content="Bisu Ghalan, Security Researcher Nepal, Cyber Security, Network Engineering, Penetration Testing, Python Developer, FastAPI, Next.js, Ethical Hacking, Kathmandu, Lincoln International College" />
   <meta name="author" content="Bisu Ghalan" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -45,9 +47,13 @@
 
   <!-- ═══ Open Graph (Facebook / LinkedIn / WhatsApp) ═══ -->
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Bisu Ghalan | CS Student & Developer from Nepal" />
+  <meta property="og:title" content="Bisu Ghalan — Cyber Security Researcher & CS Student" />
   <meta property="og:description" content="Computer Science student specialising in Cyber Security & Network Technology. Building web apps and Telegram bots. Seeking internship opportunities." />
   <meta property="og:image" content="https://bisu.com.np/assets/img/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bisu Ghalan — Cyber Security Researcher & CS Student, Kathmandu, Nepal" />
   <meta property="og:url" content="https://bisu.com.np/" />
   <meta property="og:site_name" content="Bisu Ghalan — Portfolio" />
   <meta property="og:locale" content="en_US" />
@@ -57,11 +63,12 @@
 
   <!-- ═══ Twitter / X Card ═══ -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bisu Ghalan | CS Student & Developer from Nepal" />
+  <meta name="twitter:title" content="Bisu Ghalan — Cyber Security Researcher & CS Student" />
   <meta name="twitter:description" content="Computer Science student specialising in Cyber Security & Network Technology. Building web apps and Telegram bots. Seeking internship opportunities." />
   <meta name="twitter:site" content="@bisug" />
   <meta name="twitter:creator" content="@bisug" />
   <meta name="twitter:image" content="https://bisu.com.np/assets/img/og-image.png" />
+  <meta name="twitter:image:alt" content="Bisu Ghalan — Cyber Security Researcher & CS Student, Kathmandu, Nepal" />
 
   <!-- ═══ Theme & App ═══ -->
   <meta name="theme-color" content="#FFFFFF" />
@@ -124,11 +131,36 @@
           "addressLocality": "Kathmandu",
           "addressCountry": "NP"
         },
+        "nationality": { "@type": "Country", "name": "Nepal" },
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kathmandu",
+            "addressCountry": "NP"
+          }
+        },
+        "seeks": {
+          "@type": "Demand",
+          "name": "Internship opportunities in Cyber Security and Network Technology"
+        },
         "sameAs": [
           "https://github.com/bisug",
           "https://www.linkedin.com/in/bisug/"
         ],
         "email": "mailto:bisu.ghlan@gmail.com"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://bisu.com.np/#webpage",
+        "url": "https://bisu.com.np/",
+        "name": "Bisu Ghalan — Cyber Security Researcher & CS Student, Nepal",
+        "isPartOf": { "@id": "https://bisu.com.np/#website" },
+        "about": { "@id": "https://bisu.com.np/#person" },
+        "mainEntity": { "@id": "https://bisu.com.np/#person" },
+        "datePublished": "2026-01-08",
+        "dateModified": "2026-07-12",
+        "inLanguage": "en-US"
       },
       {
         "@type": "WebSite",
@@ -140,15 +172,66 @@
         "inLanguage": "en-US"
       },
       {
+        "@type": "FAQPage",
+        "@id": "https://bisu.com.np/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who is Bisu Ghalan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bisu Ghalan is a Computer Science student and security researcher from Kathmandu, Nepal, specialising in Cyber Security and Network Technology. He builds secure backend systems, AI-driven automation, and large-scale Telegram bot ecosystems."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Bisu Ghalan specialise in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "He specialises in Cyber Security and Network Technology — including penetration testing, network auditing, and defensive protocols — alongside full-stack development with Python, FastAPI, Next.js, MongoDB, and Redis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Bisu Ghalan available for internships or hire?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Bisu Ghalan is actively seeking internship opportunities in cyber security, cyber ethics, and networking technology. He can be reached at bisu.ghlan@gmail.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Bisu Ghalan based?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bisu Ghalan is based in Kathmandu, Nepal, and studies at Lincoln International College, affiliated with Lincoln University College, Malaysia."
+            }
+          }
+        ]
+      },
+      {
         "@type": "SoftwareSourceCode",
         "name": "Paila Prototype",
+        "description": "Full-stack AI concierge web app with interactive geospatial data, built for JunctionX Kathmandu.",
+        "url": "https://paila-prototype.vercel.app/",
         "codeRepository": "https://github.com/bisug/Paila",
         "programmingLanguage": "TypeScript",
         "author": { "@id": "https://bisu.com.np/#person" }
       },
       {
+        "@type": "SoftwareApplication",
+        "name": "Seal Your Waifu",
+        "description": "Large-scale Telegram gaming ecosystem with high-concurrency state management, built on FastAPI, React, Redis, and MongoDB.",
+        "url": "https://t.me/SealYourWaifu",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Telegram",
+        "author": { "@id": "https://bisu.com.np/#person" }
+      },
+      {
         "@type": "SoftwareSourceCode",
         "name": "Personal Portfolio",
+        "description": "Minimalist Swiss-style portfolio engineered in vanilla JS and CSS Grid for accessibility, SEO, and performance.",
+        "url": "https://bisu.com.np/",
         "codeRepository": "https://github.com/bisug/My-Portfolio",
         "programmingLanguage": "JavaScript",
         "author": { "@id": "https://bisu.com.np/#person" }
@@ -162,6 +245,10 @@
 
   <!-- No-JS fallback: reveal content that is otherwise hidden until scroll.js runs -->
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+  <!-- Warm DNS for the analytics host so the lazy GA fetch is faster once it fires
+       (no connection opened up front — keeps first paint unblocked). -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
   <!-- ═══ Stylesheets — single minified bundle built by build.js ═══ -->
   <link rel="stylesheet" href="assets/css/style.min.css" />
