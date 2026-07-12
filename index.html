@@ -5,6 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DMS6BKK3N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3DMS6BKK3N');
+  </script>
+
   <!-- ═══ Primary SEO ═══ -->
   <title>Bisu Ghalan | Security Researcher & Software Engineer — Cyber Security & Network Systems</title>
   <meta name="description" content="Bisu Ghalan is a Security Researcher and Computer Science student specialising in Cyber Security & Network Technology. Architecting secure backend systems, AI-driven automation, and defensive network protocols." />
@@ -22,6 +32,7 @@
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Bisu Ghalan | CS Student & Developer from Nepal" />
   <meta property="og:description" content="Computer Science student specialising in Cyber Security & Network Technology. Building web apps and Telegram bots. Seeking internship opportunities." />
+  <meta property="og:image" content="https://bisu.com.np/assets/img/favicon.svg" />
   <meta property="og:url" content="https://bisu.com.np/" />
   <meta property="og:site_name" content="Bisu Ghalan — Portfolio" />
   <meta property="og:locale" content="en_US" />
@@ -35,6 +46,7 @@
   <meta name="twitter:description" content="Computer Science student specialising in Cyber Security & Network Technology. Building web apps and Telegram bots. Seeking internship opportunities." />
   <meta name="twitter:site" content="@bisug" />
   <meta name="twitter:creator" content="@bisug" />
+  <meta name="twitter:image" content="https://bisu.com.np/assets/img/favicon.svg" />
 
   <!-- ═══ Theme & App ═══ -->
   <meta name="theme-color" content="#0a0a0a" />
@@ -139,14 +151,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- ═══ Critical CSS preload ═══ -->
-  <link rel="preload" href="assets/css/style.css" as="style" />
+  <link rel="preload" href="assets/css/variables.css" as="style" />
+  <link rel="preload" href="assets/css/base.css" as="style" />
 
   <!-- ═══ Google Fonts — non-blocking ═══ -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" /></noscript>
 
   <!-- ═══ Stylesheets ═══ -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="stylesheet" href="assets/css/education.css" />
+  <link rel="stylesheet" href="assets/css/experience.css" />
+  <link rel="stylesheet" href="assets/css/skills.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
 
   <!-- ═══ Icons ═══ -->
@@ -154,6 +179,7 @@
 </head>
 
 <body id="top">
+  <a href="#main" class="sr-only sr-only-focusable" style="position: absolute; left: 0; top: 0; padding: 1rem; background: var(--clr-bg); color: var(--clr-text); z-index: 10000; outline: 2px solid var(--clr-accent);">Skip to main content</a>
 
   <div class="scroll-progress-container">
     <div class="scroll-progress-bar" id="scrollProgress"></div>
@@ -162,7 +188,7 @@
   <nav class="nav" id="navbar">
     <div class="container">
       <a href="#top" class="nav__brand">Bisu Ghalan</a>
-      <button class="nav__toggle" aria-label="Toggle menu" id="navToggle">
+      <button class="nav__toggle" aria-expanded="false" aria-label="Toggle menu" id="navToggle">
         <span></span>
         <span></span>
         <span></span>
