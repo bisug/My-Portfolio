@@ -217,3 +217,24 @@ a:focus-visible {
   white-space: nowrap;
   border: 0;
 }
+
+/* Visually reveal an .sr-only element when it receives keyboard focus
+   (e.g. the "Skip to main content" link). */
+.sr-only-focusable:focus,
+.sr-only-focusable:focus-within {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 1rem;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  outline: 2px solid var(--clr-accent);
+  z-index: 10000;
+}
