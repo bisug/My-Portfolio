@@ -1,6 +1,4 @@
-/* ============================================================
-   EXPERIENCE - SWISS STYLE
-   ============================================================ */
+/* Experience */
 
 .exp__list {
   display: flex;
@@ -37,7 +35,7 @@
 .exp__date {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--clr-accent);
+  color: var(--clr-accent-text);
   text-transform: uppercase;
   margin-bottom: var(--space-md);
   display: block;

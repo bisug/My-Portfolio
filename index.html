@@ -5,14 +5,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DMS6BKK3N"></script>
+  <!-- Google Analytics — lazy-loaded on first interaction or browser idle so it
+       never blocks first paint / main thread on low-end devices. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3DMS6BKK3N');
+    (function () {
+      var loaded = false;
+      function loadGA() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-3DMS6BKK3N';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-3DMS6BKK3N');
+      }
+      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
+        window.addEventListener(e, loadGA, { once: true, passive: true });
+      });
+      if ('requestIdleCallback' in window) requestIdleCallback(loadGA, { timeout: 6000 });
+      else setTimeout(loadGA, 4000);
+    })();
   </script>
 
   <!-- ═══ Primary SEO ═══ -->
@@ -41,7 +56,7 @@
   <meta property="profile:username" content="bisug" />
 
   <!-- ═══ Twitter / X Card ═══ -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Bisu Ghalan | CS Student & Developer from Nepal" />
   <meta name="twitter:description" content="Computer Science student specialising in Cyber Security & Network Technology. Building web apps and Telegram bots. Seeking internship opportunities." />
   <meta name="twitter:site" content="@bisug" />
@@ -49,8 +64,8 @@
   <meta name="twitter:image" content="https://bisu.com.np/assets/img/og-image.png" />
 
   <!-- ═══ Theme & App ═══ -->
-  <meta name="theme-color" content="#0a0a0a" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="color-scheme" content="light" />
   <meta name="application-name" content="Bisu Ghalan Portfolio" />
 
   <!-- ═══ JSON-LD Structured Data (AEO) ═══ -->
@@ -142,26 +157,18 @@
   }
   </script>
 
-  <!-- ═══ DNS Prefetch ═══ -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <!-- ═══ Self-hosted font — preload the one same-origin Inter file ═══ -->
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-  <!-- ═══ Preconnect for performance ═══ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <!-- ═══ Critical CSS preload ═══ -->
-  <link rel="preload" href="assets/css/style.min.css" as="style" />
-
-  <!-- ═══ Google Fonts — non-blocking ═══ -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" /></noscript>
+  <!-- No-JS fallback: reveal content that is otherwise hidden until scroll.js runs -->
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 
   <!-- ═══ Stylesheets — single minified bundle built by build.js ═══ -->
   <link rel="stylesheet" href="assets/css/style.min.css" />
 
   <!-- ═══ Icons ═══ -->
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
 </head>
 
 <body id="top">
@@ -174,7 +181,7 @@
   <nav class="nav" id="navbar">
     <div class="container">
       <a href="#top" class="nav__brand">Bisu Ghalan</a>
-      <button class="nav__toggle" aria-expanded="false" aria-label="Toggle menu" id="navToggle">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" id="navToggle">
         <span></span>
         <span></span>
         <span></span>
@@ -290,7 +297,7 @@
           <h2 class="section__title" id="experience-heading">Experience</h2>
         </div>
         <div class="exp__list reveal">
-          <article class="exp__card" style="border-left-color: var(--accent);">
+          <article class="exp__card">
             <h3 class="exp__title">Seeking Internship Opportunities</h3>
             <span class="exp__date">Currently Available</span>
             <p class="exp__desc">
@@ -443,7 +450,7 @@
                 <span class="project-item__year">2026 — PRESENT / LEAD</span>
                 <div class="project-item__links">
                   <a href="https://t.me/SealYourWaifu" target="_blank" rel="noopener noreferrer" class="btn btn--accent">View Bot</a>
-                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Private Repo</span>
+                  <span class="btn btn--disabled">Private Repo</span>
                 </div>
               </div>
             </div>
@@ -478,8 +485,8 @@
               <div class="project-item__meta">
                 <span class="project-item__year">2025 / CREATOR</span>
                 <div class="project-item__links">
-                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Offline</span>
-                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Private Repo</span>
+                  <span class="btn btn--disabled">Offline</span>
+                  <span class="btn btn--disabled">Private Repo</span>
                 </div>
               </div>
             </div>
@@ -514,8 +521,8 @@
               <div class="project-item__meta">
                 <span class="project-item__year">2025 / DEVELOPER</span>
                 <div class="project-item__links">
-                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Offline</span>
-                  <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Private Repo</span>
+                  <span class="btn btn--disabled">Offline</span>
+                  <span class="btn btn--disabled">Private Repo</span>
                 </div>
               </div>
             </div>
@@ -558,8 +565,8 @@
           </article>
 
         </div>
-        <div class="reveal" style="text-align: center; margin-top: 3rem;">
-          <p style="margin-bottom: 1.25rem; opacity: 0.7;">Want to see more? Check out my other repositories and experiments.</p>
+        <div class="reveal text-center mt-48">
+          <p class="mb-16 text-muted">Want to see more? Check out my other repositories and experiments.</p>
           <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer" class="btn btn--accent">Explore my GitHub ↗</a>
         </div>
       </div>

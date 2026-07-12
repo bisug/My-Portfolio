@@ -1,6 +1,11 @@
-/* ============================================================
-   FONTS
-   Loaded via Google Fonts CDN for reliability and performance.
-   ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap');
+/* Self-hosted Inter (variable, latin subset). One same-origin ~48KB file covers
+   every weight 100-900 — no third-party font handshake, no render-blocking CDN.
+   font-display: swap keeps text visible on slow/low-end devices while the font
+   loads. Non-latin glyphs fall back to the system stack (site is English). */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin.woff2") format("woff2");
+}

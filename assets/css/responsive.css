@@ -1,12 +1,9 @@
-/* ============================================================
-   RESPONSIVE - SWISS STYLE
-   Enhanced for ultra-wide and mobile performance.
-   ============================================================ */
+/* Responsive overrides — ultra-wide down to small mobile */
 
-/* Large Desktops / Ultra-wide */
+/* Ultra-wide */
 @media (min-width: 1600px) {
   :root {
-    --space-unit: 0.625rem; /* Slightly larger scale for massive screens */
+    --space-unit: 0.625rem;
   }
 }
 
@@ -40,17 +37,33 @@
     padding-inline: var(--space-16);
   }
 
+  /* Collapse 12-col grids to a single track so the 11 fixed column gaps
+     (11 x 32px = 352px) can't overflow narrow viewports (<=384px). */
+  .hero__inner,
+  .about__grid,
+  .skills__grid,
+  .edu__meta,
+  .contact__inner {
+    grid-template-columns: 1fr;
+  }
+
   .nav__links {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background: var(--clr-bg);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: var(--space-32);
+    /* Keep the full-screen overlay clear of the notch/status bar and home
+       indicator on devices with viewport-fit=cover. */
+    padding-top: calc(var(--nav-h) + env(safe-area-inset-top));
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
     transform: translateX(100%);
     transition: transform var(--dur-base) var(--ease-swiss);
     z-index: 999;
@@ -63,6 +76,7 @@
   .nav__links a {
     font-size: var(--text-lg);
     font-weight: 800;
+    padding: var(--space-8) var(--space-16); /* >=44px touch target */
   }
 
   .section {
@@ -76,29 +90,39 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
-  :root {
-    --text-hero: 4rem;
-  }
-
   .hero__links {
     flex-direction: column;
     width: 100%;
   }
 
-  .btn {
+  /* Full-width applies ONLY to the stacked hero CTAs — not every .btn, or the
+     project-card / footer buttons would wrap and misalign. */
+  .hero__links .btn {
     width: 100%;
   }
 }
 
-/* Orientation helpers */
+/* Orientation helpers — scoped to mobile so the padding-top only ever
+   hits the fixed full-screen overlay menu, never the desktop in-bar nav. */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero {
+    /* Only relax min-height. Do NOT reset padding-block — the shorthand would
+       wipe the base calc(nav-h + space) top offset and slide content under the
+       fixed nav on short landscape phones. */
     min-height: auto;
-    padding-block: var(--space-xl);
   }
+}
 
+@media (max-width: 768px) and (max-height: 500px) and (orientation: landscape) {
   .nav__links {
     flex-direction: row;
-    padding-top: var(--nav-h);
+    flex-wrap: wrap;
+    align-content: center;
+    gap: var(--space-16);
+    padding-block: calc(var(--nav-h) + env(safe-area-inset-top)) var(--space-16);
+  }
+
+  .nav__links a {
+    font-size: var(--text-md);
   }
 }

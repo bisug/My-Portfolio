@@ -1,6 +1,4 @@
-/* ============================================================
-   SKILLS - SWISS STYLE
-   ============================================================ */
+/* Skills */
 
 .skills__grid {
   display: grid;
@@ -19,7 +17,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--clr-accent);
+  color: var(--clr-accent-text);
   margin-bottom: var(--space-md);
   display: block;
 }
@@ -41,10 +39,10 @@
   gap: 0.75rem;
 }
 
-.skill-icon {
-  width: 16px;
-  height: 16px;
-  opacity: 0.7;
+@media (max-width: 1024px) {
+  .skills__group {
+    grid-column: span 6;
+  }
 }
 
 @media (max-width: 768px) {

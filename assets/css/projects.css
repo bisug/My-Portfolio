@@ -1,7 +1,4 @@
-/* ============================================================
-   PROJECTS - SWISS STYLE
-   A technical, high-precision layout for project showcasing.
-   ============================================================ */
+/* Projects */
 
 .projects__list {
   display: flex;
@@ -32,7 +29,7 @@
   overflow: hidden;
 }
 
-/* Technical Pattern Background for missing images */
+/* Dot-grid placeholder pattern */
 .project-item__image-container::before {
   content: "";
   position: absolute;
@@ -69,8 +66,8 @@
 
 .project-item__tagline {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--clr-accent);
+  font-size: var(--text-2xs);
+  color: var(--clr-accent-text);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: var(--space-16);
@@ -88,10 +85,9 @@
   font-size: var(--text-base);
   color: var(--clr-muted);
   margin-bottom: var(--space-32);
-  line-height: 1.4;
+  line-height: var(--leading-body);
 }
 
-/* Technical Details for Senior Positioning */
 .project-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -103,7 +99,7 @@
 
 .detail-group__label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--text-2xs);
   color: var(--clr-faint);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -156,12 +152,12 @@
 
 .project-item__links .btn {
   padding: 0.5rem 1rem;
-  font-size: 10px;
+  font-size: var(--text-2xs);
 }
 
 @media (max-width: 1200px) {
   .project-item__content {
-    padding: var(--space-32) var(--space-40);
+    padding: var(--space-32) var(--space-48);
   }
 }
 
@@ -189,5 +185,24 @@
 
   .project-item__content {
     padding: var(--space-32) var(--space-16);
+  }
+
+  /* Enlarge the tiny 10px pill buttons to a >=44px touch target. */
+  .project-item__links .btn {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Year + links can't fit one row on small mobile — drop the links below. */
+  .project-item__meta {
+    flex-wrap: wrap;
+    gap: var(--space-16);
+  }
+
+  .project-item__links {
+    width: 100%;
   }
 }

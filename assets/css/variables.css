@@ -1,46 +1,50 @@
-/* ============================================================
-   DESIGN TOKENS - SWISS STYLE (INTERNATIONAL TYPOGRAPHIC STYLE)
-   Refined for a Senior Cybersecurity Professional.
-   Focused on precision, clarity, and mathematical rigor.
-   ============================================================ */
+/* Design tokens: colors, type scale, spacing, motion. */
 
 :root {
-  /* Palette — Pure Swiss Minimalist */
-  --clr-bg:          #FFFFFF;  /* High-white */
+  /* Palette */
+  --clr-bg:          #FFFFFF;
   --clr-surface:     #FAFAFA;
-  --clr-elevated:    #F0F0F0;
-  --clr-border:      #000000;  /* Sharp black borders for precision */
+  --clr-border:      #000000;
   --clr-border-dim:  #E5E5E5;
   --clr-shadow:      rgba(0, 0, 0, 0.05);
+  --nav-shadow:      rgba(0, 0, 0, 0.10);       /* nav shadow on scroll */
 
-  --clr-text:        #000000;  /* Absolute Black */
+  --clr-text:        #000000;
   --clr-muted:       #444444;
-  --clr-faint:       #888888;
+  --clr-faint:       #757575;  /* 4.6:1 on white — WCAG AA */
   --clr-grid:        #F5F5F5;
 
-  /* Single Accent Color: International Vermillion */
-  --clr-accent:      #FF3B30;  /* Classic Swiss Red */
-  --clr-accent-hover:#D70015;
-  --clr-accent-pale: #FFF0F0;
+  /* Accent — decorative fills only (bars, dots, rules) */
+  --clr-accent:      #FF3B30;
+  --clr-accent-text: #D70015;  /* 5.4:1 — use for accent TEXT and fills behind white text */
+  --clr-on-accent:   #FFFFFF;
 
-  /* Typography - The heart of Swiss Style */
-  /* Prioritizing Inter and JetBrains Mono for a clean, technical look */
+  /* Error-page theme accents (used only by 404/403/500 inline styles) */
+  --clr-green:  #1FB574;
+  --clr-pink:   #FF4FA3;
+  --clr-cyan:   #1FB6CE;
+
+  /* Typography */
   --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono:    "JetBrains Mono", "SF Mono", "Fira Code", "Menlo", "Monaco", "Consolas", monospace;
+  --font-mono:    ui-monospace, "SF Mono", "Fira Code", "Menlo", "Monaco", "Consolas", monospace;
 
-  /* Scale - 8pt Grid System Typography */
+  /* Type scale — consistent ~1.25 modular ramp (Major Third) for the static
+     steps; fluid clamp() for the display sizes.
+     16 -> 20 -> 24 -> 32 (1.25 / 1.2 / 1.33). xs/sm are the small-label floor. */
+  --text-2xs:  0.625rem;  /* 10px — smallest mono label */
   --text-xs:   0.75rem;   /* 12px */
   --text-sm:   0.875rem;  /* 14px */
   --text-base: 1rem;      /* 16px */
   --text-md:   1.25rem;   /* 20px */
   --text-lg:   1.5rem;    /* 24px */
-  --text-xl:   2.25rem;   /* 36px */
+  --text-xl:   2rem;      /* 32px */
   --text-2xl:  clamp(2.5rem, 6vw, 4rem);    /* 40-64px */
-  --text-3xl:  clamp(4rem, 10vw, 8rem);     /* 64-128px */
-  --text-hero: clamp(5rem, 15vw, 12rem);    /* 80-192px */
+  --text-hero: clamp(2.75rem, 9vw, 7rem);    /* 44-112px — was 80-192px */
 
-  /* Spacing — Mathematical & Rigid */
+  --leading-body:  1.6;
+
+  /* Spacing — 8px base unit */
   --space-unit: 0.5rem; /* 8px */
   --space-4:   calc(var(--space-unit) * 0.5); /* 4px */
   --space-8:   var(--space-unit);             /* 8px */
@@ -50,10 +54,9 @@
   --space-48:  calc(var(--space-unit) * 6);   /* 48px */
   --space-64:  calc(var(--space-unit) * 8);   /* 64px */
   --space-96:  calc(var(--space-unit) * 12);  /* 96px */
-  --space-128: calc(var(--space-unit) * 16);  /* 128px */
   --space-160: calc(var(--space-unit) * 20);  /* 160px */
 
-  /* Spacing Aliases */
+  /* Spacing aliases */
   --space-xs:  var(--space-8);
   --space-sm:  var(--space-16);
   --space-md:  var(--space-32);
@@ -61,21 +64,13 @@
   --space-xl:  var(--space-96);
   --space-xxl: var(--space-160);
 
-  /* Borders & Sharpness */
+  /* Layout */
   --border-width: 1px;
-  --radius-none: 0px;
-  --radius-sm: 2px;
-  
-  /* Layout Controls */
-  --container-max: 1600px; /* Increased for ultra-wide */
+  --container-max: 1600px;
   --nav-h: 72px;
-
-  /* Grid settings */
-  --grid-columns: 12;
   --grid-gutter: var(--space-32);
 
-  /* Motion - Linear and Fast (Precision) */
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Motion */
   --ease-swiss:  cubic-bezier(0.25, 0.1, 0.25, 1);
   --dur-fast:    150ms;
   --dur-base:    300ms;

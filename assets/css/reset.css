@@ -1,6 +1,4 @@
-/* ============================================================
-   RESET - SWISS STYLE
-   ============================================================ */
+/* Reset */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -14,6 +12,7 @@ html {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,13 +47,12 @@ button {
   border: none;
 }
 
-/* Accessibility / Focus */
 :focus-visible {
   outline: 2px solid var(--clr-accent);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: var(--clr-text);
-  color: var(--clr-bg);
+  background: var(--clr-accent-text);
+  color: var(--clr-on-accent);
 }

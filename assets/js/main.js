@@ -5,18 +5,51 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ---- Navigation Logic (Hamburger Menu) ----
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   const navbar = document.getElementById('navbar');
 
   if (navToggle && navLinks) {
+    // Element that had focus before the menu opened (to restore on close)
+    let lastFocused = null;
+
+    const focusable = () =>
+      [...navLinks.querySelectorAll('a'), navToggle]
+        .filter(el => el.offsetParent !== null);
+
+    const trapFocus = (e) => {
+      if (e.key !== 'Tab' || !navLinks.classList.contains('open')) return;
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
     const toggleMenu = (forceClose = false) => {
       const isOpen = forceClose ? false : !navLinks.classList.contains('open');
       navLinks.classList.toggle('open', isOpen);
       navToggle.classList.toggle('open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
+
+      if (isOpen) {
+        lastFocused = document.activeElement;
+        const firstLink = navLinks.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+        lastFocused = null;
+      }
     };
 
     navToggle.addEventListener('click', () => toggleMenu());
@@ -27,20 +60,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') toggleMenu(true);
+      else trapFocus(e);
     });
   }
 
-  // ---- Navbar Scroll Effect ----
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll <= 0) {
-      navbar.style.boxShadow = 'none';
-    } else {
-      navbar.style.boxShadow = '0 10px 30px -10px rgba(0,0,0,0.1)';
+  // ---- Navbar Scroll Effect: shadow on scroll + hide on scroll-down / show on scroll-up ----
+  if (navbar) {
+    let lastY = window.pageYOffset;
+    let ticking = false;
+    function onNavScroll() {
+      const y = window.pageYOffset;
+      const goingDown = y > lastY;
+      if (y <= 0) {
+        navbar.classList.remove('nav--hidden');
+        navbar.style.boxShadow = 'none';
+      } else {
+        navbar.style.boxShadow = '0 10px 30px -10px var(--nav-shadow)';
+        // Hide only once past the header; never while the mobile menu is open.
+        if (goingDown && y > 80 && (!navLinks || !navLinks.classList.contains('open'))) {
+          navbar.classList.add('nav--hidden');
+        } else if (!goingDown) {
+          navbar.classList.remove('nav--hidden');
+        }
+      }
+      lastY = y;
+      ticking = false;
     }
-    lastScroll = currentScroll;
-  }, { passive: true });
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(onNavScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+    onNavScroll();
+  }
 
   // ---- Initialize Scroll Effects ----
   if (typeof ScrollEffects !== 'undefined') ScrollEffects.init();
@@ -53,19 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
+        navbar.classList.remove('nav--hidden');
         const navHeight = navbar.offsetHeight;
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
         window.scrollTo({
           top: targetPosition,
-          behavior: 'smooth'
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
         });
       }
     });
   });
-
-  // ---- Hover Sound / Haptic Simulation (Optional & Subtle) ----
-  // Can be added here for a more "premium" feel if requested,
-  // but for now we focus on visual precision.
 
 });

@@ -1,32 +1,9 @@
-/* ============================================================
-   BASE - SWISS STYLE
-   Global typography, layout, and grid system.
-   Focused on precision, accessibility, and high contrast.
-   ============================================================ */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base Grain Overlay for Depth */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.02;
-  pointer-events: none;
-  z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
+/* Base: page typography, layout, buttons, utilities.
+   Reset-level rules live in reset.css. */
 
 html {
   scroll-behavior: smooth;
-  font-size: 100%; /* 16px */
+  font-size: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -35,22 +12,15 @@ body {
   color: var(--clr-text);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.5; /* Tightened for Swiss style */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Selection Branding */
-::selection {
-  background-color: var(--clr-accent);
-  color: #FFFFFF;
-}
-
 /* ---- Typography ---- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 800; /* Extra bold for Swiss impact */
+  font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--clr-text);
@@ -58,19 +28,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  max-width: 60ch; /* Slightly shorter for better readability */
+  max-width: 60ch;
   margin-bottom: var(--space-16);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: all var(--dur-fast) var(--ease-swiss);
+  transition: color var(--dur-fast) var(--ease-swiss);
   outline: none;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--clr-accent);
+  outline: 2px solid var(--clr-accent-text);
   outline-offset: 4px;
 }
 
@@ -107,13 +77,13 @@ a:focus-visible {
 .section__num {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--clr-accent);
+  color: var(--clr-accent-text);
   font-weight: 700;
 }
 
 .section__title {
   font-size: var(--text-2xl);
-  margin-left: -0.05em; /* Optical alignment */
+  margin-left: -0.05em; /* optical alignment */
 }
 
 /* ---- Buttons ---- */
@@ -131,7 +101,9 @@ a:focus-visible {
   border: var(--border-width) solid var(--clr-text);
   color: var(--clr-text);
   cursor: pointer;
-  transition: all var(--dur-fast) var(--ease-swiss);
+  transition: background-color var(--dur-fast) var(--ease-swiss),
+              color var(--dur-fast) var(--ease-swiss),
+              border-color var(--dur-fast) var(--ease-swiss);
   position: relative;
   overflow: hidden;
 }
@@ -142,14 +114,20 @@ a:focus-visible {
 }
 
 .btn--accent {
-  border-color: var(--clr-accent);
-  color: var(--clr-accent);
+  border-color: var(--clr-accent-text);
+  color: var(--clr-accent-text);
 }
 
 .btn--accent:hover {
-  background-color: var(--clr-accent);
-  border-color: var(--clr-accent);
-  color: #FFFFFF;
+  background-color: var(--clr-accent-text);
+  border-color: var(--clr-accent-text);
+  color: var(--clr-on-accent);
+}
+
+.btn--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* ---- Reveal Animations ---- */
@@ -158,18 +136,12 @@ a:focus-visible {
   transform: translateY(30px);
   transition: opacity var(--dur-base) var(--ease-swiss),
               transform var(--dur-base) var(--ease-swiss);
-  will-change: opacity, transform;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Staggered Reveals */
-.stagger-1 { transition-delay: 100ms; }
-.stagger-2 { transition-delay: 200ms; }
-.stagger-3 { transition-delay: 300ms; }
 
 /* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
@@ -194,16 +166,12 @@ a:focus-visible {
 }
 
 /* ---- Utility Classes ---- */
-.text-accent { color: var(--clr-accent); }
 .text-muted { color: var(--clr-muted); }
-.text-faint { color: var(--clr-faint); }
-.uppercase { text-transform: uppercase; }
-.bold { font-weight: 700; }
-
-.mb-8 { margin-bottom: var(--space-8); }
+.text-center { text-align: center; }
 .mb-16 { margin-bottom: var(--space-16); }
-.mb-32 { margin-bottom: var(--space-32); }
-.mb-64 { margin-bottom: var(--space-64); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mt-48 { margin-top: var(--space-48); }
 
 /* ---- Accessibility Helpers ---- */
 .sr-only {
@@ -235,6 +203,6 @@ a:focus-visible {
   white-space: normal;
   background: var(--clr-bg);
   color: var(--clr-text);
-  outline: 2px solid var(--clr-accent);
+  outline: 2px solid var(--clr-accent-text);
   z-index: 10000;
 }

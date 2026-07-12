@@ -8,6 +8,8 @@
 
 const ScrollEffects = (() => {
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function initScrollHandler() {
     const progressBar = document.getElementById('scrollProgress');
     const heroName = document.querySelector('.hero__name');
@@ -34,8 +36,8 @@ const ScrollEffects = (() => {
           progressBar.style.width = (depth > 0 ? (scrollY / depth) * 100 : 0) + '%';
         }
 
-        // Subtle Hero Parallax
-        if (heroName && scrollY < cachedViewportHeight) {
+        // Subtle Hero Parallax (skipped when the user prefers reduced motion)
+        if (heroName && !reduceMotion && scrollY < cachedViewportHeight) {
           heroName.style.transform = `translateY(${scrollY * 0.15}px)`;
         }
         
@@ -65,9 +67,7 @@ const ScrollEffects = (() => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // We keep observing for potential re-entry animations if desired,
-            // but for Swiss style, one-time reveal is cleaner.
-            observer.unobserve(entry.target);
+            observer.unobserve(entry.target); // one-time reveal
           }
         });
       },

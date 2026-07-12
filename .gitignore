@@ -6,6 +6,16 @@ dist/
 build/
 .vscode/
 
+# local IDE/agent settings
+.claude/
+
+# smoke test artifacts
+.smoke/
+
+# logs
+*.log
+npm-debug.log*
+
 # wrangler files
 .wrangler
 .dev.vars*

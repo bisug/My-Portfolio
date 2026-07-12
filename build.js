@@ -4,30 +4,22 @@ const path = require('path');
 const cssDir = path.join(__dirname, 'assets', 'css');
 const jsDir = path.join(__dirname, 'assets', 'js');
 
-// Simple CSS minifier.
-// Safe for this codebase: calc() operators (* - /) and spaces inside them are
-// preserved because only spaces around { } : ; , are removed, and there are no
-// data: URIs or multi-word content strings that would be corrupted.
+// CSS minifier. Only strips spaces around { } : ; , so calc() operators stay
+// intact. Safe here: no data: URIs or multi-word content strings.
 function minifyCSS(css) {
     return css
-        .replace(/\/\*[\s\S]*?\*\//g, '') // Remove comments
-        .replace(/\s+/g, ' ') // Collapse whitespace
-        .replace(/\s*([{}:;,])\s*/g, '$1') // Remove spaces around syntax
+        .replace(/\/\*[\s\S]*?\*\//g, '') // strip comments
+        .replace(/\s+/g, ' ')             // collapse whitespace
+        .replace(/\s*([{}:;,])\s*/g, '$1')
         .trim();
 }
 
-// String/template/comment-aware JS minifier for hand-written vanilla JS.
-// It strips comments and collapses whitespace WITHOUT touching the contents of
-// string or template literals, so URLs like 'https://…' and template spaces are
-// never corrupted. Whitespace runs collapse to a single '\n' when they contain a
-// newline (preserving automatic-semicolon-insertion boundaries) or a single ' '
-// otherwise (preserving token boundaries like `const x`).
-//
-// Limitations (none present in this codebase): regex literals and division are
-// both spelled '/', so a regex literal could be misread; and `${…}` expressions
-// inside template literals are copied verbatim rather than minified. Neither
-// occurs here — division only ever appears as `a / b` (a space follows the '/'),
-// and template expressions contain no comments.
+// JS minifier for hand-written vanilla JS. Strips comments and collapses
+// whitespace, but copies string/template literals verbatim so URLs and template
+// spaces survive. Whitespace runs collapse to '\n' if they span a newline (keeps
+// ASI boundaries) else ' ' (keeps token boundaries).
+// Limitation (absent here): regex literals could be misread as division, and
+// ${...} expressions aren't minified.
 function minifyJS(js) {
     let out = '';
     let i = 0;

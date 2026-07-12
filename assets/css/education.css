@@ -1,6 +1,4 @@
-/* ============================================================
-   EDUCATION - SWISS STYLE
-   ============================================================ */
+/* Education */
 
 .edu__meta {
   display: grid;
@@ -30,17 +28,13 @@
   width: 30%;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--clr-accent);
+  color: var(--clr-accent-text);
   text-transform: uppercase;
 }
 
 .edu__table td:last-child {
   font-size: var(--text-base);
   color: var(--clr-text);
-}
-
-.edu__table b {
-  display: none;
 }
 
 .edu__table a {

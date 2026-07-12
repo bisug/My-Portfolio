@@ -1,6 +1,4 @@
-/* ============================================================
-   ABOUT - SWISS STYLE
-   ============================================================ */
+/* About */
 
 .about__grid {
   display: grid;
@@ -14,7 +12,7 @@
 
 .about__bio p {
   font-size: var(--text-base);
-  line-height: 1.8;
+  line-height: var(--leading-body);
   color: var(--clr-text);
   margin-bottom: var(--space-md);
 }
@@ -33,9 +31,11 @@
   border-left: 1px solid var(--clr-border);
 }
 
-@media (max-width: 1024px) {
+/* Keep the 8/4 split through tablet — it fits comfortably to 769px. Collapse
+   only at <=768px where responsive.css already switches the grid to 1fr. */
+@media (max-width: 768px) {
   .about__bio, .about__sidebar {
-    grid-column: span 12;
+    grid-column: 1 / -1;
   }
   .about__sidebar {
     padding-left: 0;
