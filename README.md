@@ -6,7 +6,7 @@
     <br />
     <br />
     <a href="https://bisu.com.np">
-      <img src="https://img.shields.io/badge/Live_Site-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Site">
+      <img src="https://img.shields.io/badge/Live_Site-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Live Site">
     </a>
     <a href="https://github.com/bisug">
       <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
@@ -50,7 +50,7 @@ This is my personal portfolio website built to showcase my projects, skills, and
 
 **Hosting & Deployment**
 <br>
-<img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify">
+<img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare">
 
 <br>
 
@@ -107,6 +107,20 @@ Want to run this project locally? It's completely static, so no build tools are 
 > node build.js
 > ```
 > and commit the updated `.min` files alongside your source changes.
+
+### Deploying to Cloudflare
+
+This site is hosted on **Cloudflare Pages** (see `wrangler.jsonc`). To deploy or preview:
+
+```sh
+# Local preview
+npx wrangler pages dev .
+
+# Production deploy
+npx wrangler pages deploy .
+```
+
+The build output is the repository root (static `index.html` + `assets/`), so no framework build step is required.
 
 ---
 

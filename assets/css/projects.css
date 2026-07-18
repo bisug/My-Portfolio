@@ -169,12 +169,29 @@
   }
 }
 
+/* Keep the side-by-side image/content split down through tablet — only stack
+   on true mobile (<=768px). The old rule collapsed to a single 1fr column at
+   <=1024px, which made the image's "span 5" meaningless and blew it up to a
+   full-width 16:9 block. */
 @media (max-width: 1024px) {
+  .project-item__content {
+    grid-column: 6 / span 7;
+    padding: var(--space-32) var(--space-48);
+  }
+
+  .project-item__image-container {
+    grid-column: 1 / span 5;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 768px) {
   .project-item {
     grid-template-columns: 1fr;
   }
 
   .project-item__image-container {
+    grid-column: 1 / span 1;
     border-right: none;
     border-bottom: var(--border-width) solid var(--clr-border);
     aspect-ratio: 16 / 9;
@@ -182,17 +199,12 @@
 
   .project-item__content {
     grid-column: 1 / span 1;
+    padding: var(--space-32) var(--space-16);
   }
-}
 
-@media (max-width: 768px) {
   .project-details {
     grid-template-columns: 1fr;
     gap: var(--space-24);
-  }
-
-  .project-item__content {
-    padding: var(--space-32) var(--space-16);
   }
 
   /* Enlarge the tiny 10px pill buttons to a >=44px touch target. */
@@ -212,6 +224,9 @@
 
   .project-item__links {
     width: 100%;
+    /* Allow the buttons + status tags to wrap instead of overflowing the
+       viewport (the base rule is nowrap, which pushed "Private Repo" off-screen). */
+    flex-wrap: wrap;
   }
 
   /* Stack the two project CTAs full-width so they're easy to tap and align. */
