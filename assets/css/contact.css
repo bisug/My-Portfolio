@@ -6,8 +6,14 @@
   gap: var(--grid-gutter);
 }
 
-.contact__line {
+.contact__head {
   grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.contact__line {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   line-height: 1.1;
@@ -15,6 +21,37 @@
   text-transform: uppercase;
   letter-spacing: -0.04em;
   overflow-wrap: break-word;
+}
+
+/* Availability status pill */
+.contact__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-accent-text);
+  border: 1px solid var(--clr-accent);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+}
+
+.contact__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--clr-accent-text);
+  box-shadow: 0 0 0 0 var(--clr-accent-text);
+  animation: contact-pulse 2s infinite var(--ease-swiss);
+}
+
+@keyframes contact-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--clr-accent-text) 60%, transparent); }
+  70%  { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 
 .contact__links {
@@ -39,32 +76,93 @@
               border-color var(--dur-fast) var(--ease-swiss);
 }
 
-.contact__links a:hover {
+.contact__links a:hover,
+.contact__links a:focus-visible {
   color: var(--clr-accent);
   border-color: var(--clr-accent);
 }
 
-.contact__copy {
+.contact__links a:focus-visible {
+  outline: 2px solid var(--clr-accent-text);
+  outline-offset: 4px;
+}
+
+/* Animated arrow on hover/focus */
+.contact__arrow {
+  display: inline-block;
+  transition: transform var(--dur-fast) var(--ease-swiss);
+}
+
+.contact__links a:hover .contact__arrow,
+.contact__links a:focus-visible .contact__arrow {
+  transform: translate(4px, -4px);
+}
+
+/* Email row: mailto link + copy button share one divider line */
+.contact__email-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  border-bottom: 1px solid var(--clr-border);
+  padding-block: 0.5rem;
+  transition: border-color var(--dur-fast) var(--ease-swiss);
+}
+
+.contact__email-row:hover,
+.contact__email-row:focus-within {
+  border-color: var(--clr-accent);
+}
+
+.contact__email-link {
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 500;
   color: var(--clr-text);
-  border-bottom: 1px solid var(--clr-border);
-  padding-block: 0.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: var(--space-16);
+  gap: var(--space-8);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-swiss);
+}
+
+.contact__email-link:hover,
+.contact__email-link:focus-visible {
+  color: var(--clr-accent);
+}
+
+.contact__email-link:focus-visible {
+  outline: 2px solid var(--clr-accent-text);
+  outline-offset: 4px;
+}
+
+.contact__copy {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-accent-text);
+  border: 1px solid var(--clr-accent);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
   background: none;
   cursor: pointer;
-  text-align: left;
-  transition: color var(--dur-fast) var(--ease-swiss),
-              border-color var(--dur-fast) var(--ease-swiss);
+  white-space: nowrap;
+  transition: background-color var(--dur-fast) var(--ease-swiss),
+              color var(--dur-fast) var(--ease-swiss);
 }
 
 .contact__copy:hover {
-  color: var(--clr-accent);
-  border-color: var(--clr-accent);
+  background: var(--clr-accent);
+  color: var(--clr-on-accent);
+}
+
+.contact__copy:focus-visible {
+  outline: 2px solid var(--clr-accent-text);
+  outline-offset: 4px;
 }
 
 .contact__copy-status {
@@ -76,11 +174,21 @@
 }
 
 @media (max-width: 768px) {
-  .contact__line, .contact__links {
+  .contact__head, .contact__links {
     grid-column: span 12;
   }
 
   .contact__line {
     font-size: var(--text-xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__status-dot {
+    animation: none;
+  }
+
+  .contact__arrow {
+    transition: none;
   }
 }

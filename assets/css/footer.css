@@ -2,7 +2,7 @@
 
 .footer {
   padding-block: var(--space-lg);
-  border-top: 1px solid var(--clr-border);
+  border-top: var(--border-width) solid var(--clr-border);
   background: var(--clr-bg);
 }
 
@@ -10,6 +10,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-24);
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .footer__note {
@@ -20,11 +28,53 @@
   letter-spacing: 0.05em;
 }
 
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.footer__links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--clr-faint);
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-swiss),
+              border-color var(--dur-fast) var(--ease-swiss),
+              background-color var(--dur-fast) var(--ease-swiss);
+}
+
+.footer__icon {
+  display: block;
+}
+
+.footer__links a:hover,
+.footer__links a:focus-visible {
+  color: var(--clr-on-accent);
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+}
+
+.footer__links a:focus-visible {
+  outline: 2px solid var(--clr-accent-text);
+  outline-offset: 4px;
+}
+
 @media (max-width: 768px) {
   .footer .container {
     flex-direction: column;
-    gap: var(--space-sm);
     align-items: flex-start;
+    gap: var(--space-16);
+  }
+
+  .footer__links {
+    flex-wrap: wrap;
+    gap: var(--space-16);
   }
 }
 
