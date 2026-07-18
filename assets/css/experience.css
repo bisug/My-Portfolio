@@ -46,3 +46,19 @@
   color: var(--clr-muted);
   max-width: 60ch;
 }
+
+.exp__desc strong {
+  color: var(--clr-accent-text);
+  font-weight: 700;
+}
+
+.exp__desc a {
+  color: var(--clr-accent-text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.exp__desc a:hover {
+  color: var(--clr-accent);
+}

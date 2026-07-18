@@ -42,6 +42,7 @@
   .hero__inner,
   .about__grid,
   .skills__grid,
+  .ai__grid,
   .edu__meta,
   .contact__inner {
     grid-template-columns: 1fr;

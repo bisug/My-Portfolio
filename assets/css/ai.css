@@ -1,0 +1,57 @@
+/* AI & Tooling */
+
+.ai__intro {
+  grid-column: 1 / -1;
+  font-size: var(--text-base);
+  color: var(--clr-muted);
+  max-width: 70ch;
+  margin-bottom: var(--space-xl);
+}
+
+.ai__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+}
+
+.ai__group {
+  grid-column: span 6;
+  margin-bottom: var(--space-lg);
+}
+
+.ai__group-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-accent-text);
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.ai__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ai__list li {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ai__list a {
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+.ai__list a:hover {
+  color: var(--clr-accent-text);
+}
