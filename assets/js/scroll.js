@@ -62,6 +62,21 @@ const ScrollEffects = (() => {
     const items = document.querySelectorAll('.reveal');
     if (!items.length) return;
 
+    // Safety net: if IntersectionObserver is unsupported or never fires (e.g. a
+    // section already in view at load on an odd browser), reveal everything
+    // after a short delay so content can never get stuck invisible.
+    let revealed = false;
+    const revealAll = () => {
+      if (revealed) return;
+      revealed = true;
+      items.forEach((el) => el.classList.add('visible'));
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      revealAll();
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -80,12 +95,15 @@ const ScrollEffects = (() => {
     items.forEach((el) => {
       observer.observe(el);
     });
+
+    // Fallback in case the observer never reports (rare engine quirks).
+    setTimeout(revealAll, 2500);
   }
 
   function initActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
-    
+
     if (!sections.length || !navLinks.length) return;
 
     const setActive = (id) => {
@@ -100,15 +118,19 @@ const ScrollEffects = (() => {
       });
     };
 
+    // A thin horizontal band ~40% down the viewport. A section is "active" when
+    // it crosses that band. Using isIntersecting (not a ratio threshold) means
+    // even sections taller than the viewport activate correctly as you scroll
+    // through them — the old 0.5-ratio rule silently failed on tall sections.
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        if (entry.isIntersecting) {
           setActive(entry.target.getAttribute('id'));
         }
       });
     }, {
-      threshold: [0.1, 0.5, 0.9],
-      rootMargin: '-20% 0px -70% 0px'
+      rootMargin: '-40% 0px -55% 0px',
+      threshold: 0
     });
 
     sections.forEach(section => observer.observe(section));

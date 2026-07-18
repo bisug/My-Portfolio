@@ -34,12 +34,15 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  /* minmax(0,1fr) lets tracks shrink below min-content so a long word
+     (e.g. the hero name) can't blow the grid wider than the viewport. */
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--grid-gutter);
 }
 
 .hero__content {
   grid-column: 1 / span 10;
+  min-width: 0;
 }
 
 .hero__avatar {
@@ -94,6 +97,7 @@
   margin-bottom: var(--space-24);
   color: var(--clr-text);
   word-break: break-word;
+  min-width: 0;
 }
 
 .hero__title {
@@ -178,6 +182,16 @@
 @media (max-width: 768px) {
   .hero {
     padding-top: calc(var(--nav-h) + var(--space-lg) + env(safe-area-inset-top));
+  }
+
+  .hero__name {
+    /* Tighten the very large display size a touch on phones so "Bisu Ghalan"
+       fits comfortably without awkward wrapping. */
+    font-size: clamp(2.5rem, 16vw, 4.5rem);
+  }
+
+  .hero__summary {
+    margin-bottom: var(--space-32);
   }
 
   .hero__meta {

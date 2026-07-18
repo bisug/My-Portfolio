@@ -7,7 +7,7 @@
 
 .project-item {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   border-bottom: var(--border-width) solid var(--clr-border);
   transition: background-color var(--dur-base) var(--ease-swiss);
 }
@@ -58,16 +58,6 @@
   height: 100%;
   object-fit: contain;
   display: block;
-}
-
-.project-item__image-label {
-  position: absolute;
-  left: var(--space-16);
-  bottom: var(--space-16);
-  background: var(--clr-bg);
-  padding: 0.25rem 0.5rem;
-  border: var(--border-width) solid var(--clr-border);
-  z-index: 2;
 }
 
 .project-item:hover .project-item__image {
@@ -168,8 +158,9 @@
 }
 
 .project-item__links .btn {
-  padding: 0.5rem 1rem;
+  padding: 0.35rem 0.75rem;
   font-size: var(--text-2xs);
+  letter-spacing: 0.03em;
 }
 
 @media (max-width: 1200px) {
@@ -221,5 +212,10 @@
 
   .project-item__links {
     width: 100%;
+  }
+
+  /* Stack the two project CTAs full-width so they're easy to tap and align. */
+  .project-item__links .btn {
+    flex: 1 1 auto;
   }
 }

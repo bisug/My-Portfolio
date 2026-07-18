@@ -31,8 +31,9 @@
 /* Back-to-top floating control */
 .to-top {
   position: fixed;
-  right: var(--space-24);
-  bottom: var(--space-24);
+  /* Respect notches / home indicators on devices with viewport-fit=cover. */
+  right: calc(var(--space-24) + env(safe-area-inset-right));
+  bottom: calc(var(--space-24) + env(safe-area-inset-bottom));
   width: 48px;
   height: 48px;
   display: flex;

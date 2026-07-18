@@ -31,6 +31,9 @@
     --space-lg: var(--space-32);
     --space-xl: var(--space-48);
     --space-xxl: var(--space-64);
+    /* 11 gutters × 32px = 352px would overflow a ~278px phone container.
+       Shrink the gutter so the 12-col grids can actually fit. */
+    --grid-gutter: var(--space-16);
   }
 
   .container {
@@ -61,14 +64,21 @@
     height: 100dvh;
     background: var(--clr-bg);
     flex-direction: column;
-    justify-content: center;
+    /* `safe` keeps the top reachable when the list is taller than the
+       viewport (otherwise centered + overflow clips the first items). */
+    justify-content: safe center;
     align-items: center;
     gap: var(--space-32);
     /* Keep the full-screen overlay clear of the notch/status bar and home
        indicator on devices with viewport-fit=cover. */
     padding-top: calc(var(--nav-h) + env(safe-area-inset-top));
     padding-bottom: env(safe-area-inset-bottom);
-    padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+    padding-inline: calc(var(--space-16) + env(safe-area-inset-left))
+                     calc(var(--space-16) + env(safe-area-inset-right));
+    /* If the link list is taller than the viewport (small phones / large text /
+       zoomed in), let it scroll instead of clipping the last items. */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transform: translateX(100%);
     transition: transform var(--dur-base) var(--ease-swiss);
     z-index: 999;

@@ -3,8 +3,17 @@
 
 html {
   scroll-behavior: smooth;
+  /* Offset in-page anchors so the fixed nav never covers a section heading. */
+  scroll-padding-top: calc(var(--nav-h) + var(--space-16) + env(safe-area-inset-top));
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+/* If JS fails to load (or is blocked), the .reveal elements would otherwise
+   stay invisible forever. This guard reveals them so content is never lost. */
+html:not(.js) .reveal {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 body {
@@ -25,6 +34,28 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.04em;
   color: var(--clr-text);
   text-transform: uppercase;
+  /* Nicer line breaks on multi-word headings across viewports. */
+  text-wrap: balance;
+}
+
+/* Grid/flex children default to min-width:auto, which lets long unbreakable
+   content (URLs, mono strings) blow out the track and cause horizontal
+   overflow. This is the standard guard against that. */
+.hero__inner,
+.about__grid,
+.skills__grid,
+.ai__grid,
+.edu__meta,
+.contact__inner,
+.project-item,
+.project-item__content,
+.project-details,
+.exp__card,
+.skills__group,
+.ai__group,
+.contact__links,
+.hero__meta {
+  min-width: 0;
 }
 
 p {
@@ -91,12 +122,12 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 0.65rem 1.4rem;
   font-family: var(--font-display);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   background-color: transparent;
   border: var(--border-width) solid var(--clr-text);
   color: var(--clr-text);

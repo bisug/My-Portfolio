@@ -5,6 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+  <!-- Mark JS as available before first paint. The CSS uses html:not(.js) to
+       keep .reveal content visible if scripts are disabled/blocked, so content
+       is never lost. Without this, a no-JS visitor would see a blank page. -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <!-- Google Analytics — lazy-loaded on first interaction or browser idle so it
        never blocks first paint / main thread on low-end devices. -->
   <script>
@@ -71,8 +76,9 @@
   <meta name="twitter:image:alt" content="Bisu Ghalan — Cyber Security Researcher & CS Student, Kathmandu, Nepal" />
 
   <!-- ═══ Theme & App ═══ -->
-  <meta name="theme-color" content="#FFFFFF" />
-  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
   <meta name="application-name" content="Bisu Ghalan Portfolio" />
 
   <!-- ═══ JSON-LD Structured Data (AEO) ═══ -->
@@ -547,7 +553,6 @@
             <div class="project-item__image-container">
               <div class="project-item__image">
                 <img src="assets/img/project-default.svg" alt="Paila Prototype — AI concierge with interactive geospatial data" loading="lazy" width="800" height="800" />
-                <span class="mono project-item__image-label">0x01_PAILA</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -584,7 +589,6 @@
             <div class="project-item__image-container">
               <div class="project-item__image">
                 <img src="assets/img/project-default.svg" alt="Seal Your Waifu — large-scale Telegram gaming ecosystem" loading="lazy" width="800" height="800" />
-                <span class="mono project-item__image-label">0x02_SEALBOT</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -621,7 +625,6 @@
             <div class="project-item__image-container">
               <div class="project-item__image">
                 <img src="assets/img/project-default.svg" alt="Sumi Vibes AI — Telegram chatbot with Google Gemini integration" loading="lazy" width="800" height="800" />
-                <span class="mono project-item__image-label">0x03_SUMIVIBES</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -658,8 +661,6 @@
             <div class="project-item__image-container">
               <div class="project-item__image">
                 <img src="assets/img/project-default.svg" alt="Moco Utility Engine — high-traffic Python utility bot" loading="lazy" width="800" height="800" />
-                <span class="mono project-item__image-label">0x04_MOCOBOT</span>
-              </div>
             </div>
             <div class="project-item__content">
               <span class="project-item__tagline">Python • API Orchestration • Security Auditing</span>
@@ -695,9 +696,7 @@
             <div class="project-item__image-container">
               <div class="project-item__image">
                 <img src="assets/img/project-default.svg" alt="Personal Portfolio Website — this portfolio" loading="lazy" width="800" height="800" />
-                <span class="mono project-item__image-label">0x05_PORTFOLIO</span>
               </div>
-            </div>
             <div class="project-item__content">
               <span class="project-item__tagline">HTML • CSS • Vanilla JavaScript</span>
               <h3 class="project-item__title">Personal Portfolio Website</h3>

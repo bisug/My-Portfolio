@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.classList.toggle('open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
+      syncToTop();
 
       if (isOpen) {
         lastFocused = document.activeElement;
@@ -87,6 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Back-to-top button ----
   const toTop = document.getElementById('toTop');
+  // Hide the FAB while the full-screen mobile menu is open so it doesn't
+  // overlap the overlay (it sits at z-index 1050, above the menu's 999).
+  const syncToTop = () => {
+    if (!toTop) return;
+    if (navLinks && navLinks.classList.contains('open')) {
+      toTop.setAttribute('hidden', '');
+    } else if (window.pageYOffset > 600) {
+      toTop.removeAttribute('hidden');
+    }
+  };
   if (toTop) {
     let toTopTicking = false;
     const onToTopScroll = () => {
@@ -100,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toTopTicking = true;
       }
     }, { passive: true });
+    syncToTop();
     toTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
