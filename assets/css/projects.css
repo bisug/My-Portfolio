@@ -53,6 +53,23 @@
   transition: transform var(--dur-slow) var(--ease-swiss);
 }
 
+.project-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.project-item__image-label {
+  position: absolute;
+  left: var(--space-16);
+  bottom: var(--space-16);
+  background: var(--clr-bg);
+  padding: 0.25rem 0.5rem;
+  border: var(--border-width) solid var(--clr-border);
+  z-index: 2;
+}
+
 .project-item:hover .project-item__image {
   transform: scale(0.98) rotate(-1deg);
 }

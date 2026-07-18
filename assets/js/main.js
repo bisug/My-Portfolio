@@ -12,6 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
   const navbar = document.getElementById('navbar');
 
+  // ---- Copy email to clipboard ----
+  const copyEmail = document.getElementById('copyEmail');
+  if (copyEmail) {
+    const status = copyEmail.querySelector('.contact__copy-status');
+    copyEmail.addEventListener('click', async () => {
+      const email = copyEmail.getAttribute('data-email');
+      try {
+        await navigator.clipboard.writeText(email);
+        if (status) {
+          status.textContent = 'Copied';
+          setTimeout(() => { status.textContent = ''; }, 2000);
+        }
+      } catch (e) {
+        if (status) status.textContent = 'Copy failed';
+      }
+    });
+  }
+
+  // ---- Theme toggle (dark / light) ----
+  // (Manual toggle removed; dark mode follows the OS preference via CSS.)
+
   if (navToggle && navLinks) {
     // Element that had focus before the menu opened (to restore on close)
     let lastFocused = null;
@@ -62,6 +83,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') toggleMenu(true);
       else trapFocus(e);
     });
+  }
+
+  // ---- Back-to-top button ----
+  const toTop = document.getElementById('toTop');
+  if (toTop) {
+    let toTopTicking = false;
+    const onToTopScroll = () => {
+      if (window.pageYOffset > 600) toTop.removeAttribute('hidden');
+      else toTop.setAttribute('hidden', '');
+      toTopTicking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!toTopTicking) {
+        requestAnimationFrame(onToTopScroll);
+        toTopTicking = true;
+      }
+    }, { passive: true });
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+    onToTopScroll();
   }
 
   // ---- Navbar Scroll Effect: shadow on scroll + hide on scroll-down / show on scroll-up ----

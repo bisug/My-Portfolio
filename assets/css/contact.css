@@ -44,6 +44,37 @@
   border-color: var(--clr-accent);
 }
 
+.contact__copy {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--clr-text);
+  border-bottom: 1px solid var(--clr-border);
+  padding-block: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-16);
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--dur-fast) var(--ease-swiss),
+              border-color var(--dur-fast) var(--ease-swiss);
+}
+
+.contact__copy:hover {
+  color: var(--clr-accent);
+  border-color: var(--clr-accent);
+}
+
+.contact__copy-status {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-accent-text);
+}
+
 @media (max-width: 768px) {
   .contact__line, .contact__links {
     grid-column: span 12;

@@ -130,6 +130,35 @@ a:focus-visible {
   pointer-events: none;
 }
 
+/* ---- Status tag (non-interactive label, e.g. "Private Repo") ---- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-display);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: var(--border-width) solid var(--clr-border-dim);
+  color: var(--clr-faint);
+  background: transparent;
+  line-height: 1;
+}
+
+.tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clr-faint);
+}
+
+.tag--accent::before {
+  background: var(--clr-accent);
+}
+
 /* ---- Reveal Animations ---- */
 .reveal {
   opacity: 0;

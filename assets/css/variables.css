@@ -76,3 +76,56 @@
   --dur-base:    300ms;
   --dur-slow:    500ms;
 }
+
+/* ═══ Dark theme ═══
+   No manual toggle — the theme follows the OS preference automatically
+   (see the prefers-color-scheme block below). The [data-theme="dark"] rule
+   is kept so a future toggle (or forced override) can opt in. Tokens mirror
+   the light set but invert surface/text and soften the accent for legibility
+   on near-black. */
+:root[data-theme="dark"] {
+  --clr-bg:          #0A0A0A;
+  --clr-surface:     #141414;
+  --clr-border:      #FFFFFF;
+  --clr-border-dim:  #2A2A2A;
+  --clr-shadow:      rgba(255, 255, 255, 0.06);
+  --nav-shadow:      rgba(0, 0, 0, 0.60);
+
+  --clr-text:        #FFFFFF;
+  --clr-muted:       #B5B5B5;
+  --clr-faint:       #8A8A8A;  /* 5.0:1 on #0A0A0A — WCAG AA */
+  --clr-grid:        #1A1A1A;
+
+  --clr-accent:      #FF453A;
+  --clr-accent-text: #FF6B61;  /* 5.6:1 on #0A0A0A */
+  --clr-on-accent:   #0A0A0A;
+
+  --clr-green:  #2FD08A;
+  --clr-pink:   #FF6FB5;
+  --clr-cyan:   #3FD3E8;
+}
+
+/* OS-preference fallback only when no explicit choice is stored. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --clr-bg:          #0A0A0A;
+    --clr-surface:     #141414;
+    --clr-border:      #FFFFFF;
+    --clr-border-dim:  #2A2A2A;
+    --clr-shadow:      rgba(255, 255, 255, 0.06);
+    --nav-shadow:      rgba(0, 0, 0, 0.60);
+
+    --clr-text:        #FFFFFF;
+    --clr-muted:       #B5B5B5;
+    --clr-faint:       #8A8A8A;
+    --clr-grid:        #1A1A1A;
+
+    --clr-accent:      #FF453A;
+    --clr-accent-text: #FF6B61;
+    --clr-on-accent:   #0A0A0A;
+
+    --clr-green:  #2FD08A;
+    --clr-pink:   #FF6FB5;
+    --clr-cyan:   #3FD3E8;
+  }
+}

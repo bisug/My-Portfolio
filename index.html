@@ -268,11 +268,6 @@
   <nav class="nav" id="navbar">
     <div class="container">
       <a href="#top" class="nav__brand">Bisu Ghalan</a>
-      <button class="nav__toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <div class="nav__links" id="navLinks">
         <a href="#about">About</a>
         <a href="#education">Education</a>
@@ -281,6 +276,11 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -299,6 +299,12 @@
               <a href="#projects" class="btn btn--accent">Explore Projects</a>
               <a href="#contact" class="btn">Initiate Contact</a>
             </div>
+          </div>
+          <div class="hero__avatar" aria-hidden="true">
+            <div class="hero__avatar-frame">
+              <span class="mono">BG</span>
+            </div>
+            <span class="hero__avatar-caption mono">Kathmandu · NP</span>
           </div>
           <div class="hero__meta">
             <div class="hero__meta-item">
@@ -391,6 +397,38 @@
               Actively searching for internship opportunities to apply and further develop my knowledge in cyber security, cyber ethics, and networking technology. I am eager to gain real-world experience that aligns with my academic focus as well as my personal interests and hobbies in the tech space.
             </p>
           </article>
+
+          <article class="exp__card">
+            <h3 class="exp__title">Lead Developer — Seal Your Waifu</h3>
+            <span class="exp__date">2026 — Present</span>
+            <p class="exp__desc">
+              Architected a large-scale Telegram gaming ecosystem on FastAPI, React, Redis, and MongoDB. Hardened webhook infrastructure against DDoS, cut backend latency by 40%, and managed high-concurrency state for thousands of concurrent players.
+            </p>
+          </article>
+
+          <article class="exp__card">
+            <h3 class="exp__title">Creator — Sumi Vibes AI</h3>
+            <span class="exp__date">2025</span>
+            <p class="exp__desc">
+              Built a Gemini-powered Telegram chatbot serving 3,000+ active users with context-aware conversation and automated moderation. Ran a successful pilot before decommissioning in late 2025.
+            </p>
+          </article>
+
+          <article class="exp__card">
+            <h3 class="exp__title">Developer — Moco Utility Engine</h3>
+            <span class="exp__date">2025</span>
+            <p class="exp__desc">
+              Developed a modular Python utility engine peaking at 5,000+ concurrent users. Implemented rate-limiting, input sanitization, and secure webhook orchestration, sustaining 99.9% uptime under peak load.
+            </p>
+          </article>
+
+          <article class="exp__card">
+            <h3 class="exp__title">Hackathon Finalist — JunctionX Kathmandu</h3>
+            <span class="exp__date">2026</span>
+            <p class="exp__desc">
+              Co-built Paila Prototype, a full-stack AI concierge with interactive geospatial data, using Next.js, Supabase, and the OpenAI and Google Maps APIs. Shipped a working product under a tight timebox.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -474,7 +512,8 @@
           <article class="project-item">
             <div class="project-item__image-container">
               <div class="project-item__image">
-                <span class="mono">0x01_PAILA</span>
+                <img src="assets/img/project-default.svg" alt="Paila Prototype — AI concierge with interactive geospatial data" loading="lazy" width="800" height="800" />
+                <span class="mono project-item__image-label">0x01_PAILA</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -510,7 +549,8 @@
           <article class="project-item">
             <div class="project-item__image-container">
               <div class="project-item__image">
-                <span class="mono">0x02_SEALBOT</span>
+                <img src="assets/img/project-default.svg" alt="Seal Your Waifu — large-scale Telegram gaming ecosystem" loading="lazy" width="800" height="800" />
+                <span class="mono project-item__image-label">0x02_SEALBOT</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -537,7 +577,7 @@
                 <span class="project-item__year">2026 — PRESENT / LEAD</span>
                 <div class="project-item__links">
                   <a href="https://t.me/SealYourWaifu" target="_blank" rel="noopener noreferrer" class="btn btn--accent">View Bot</a>
-                  <span class="btn btn--disabled">Private Repo</span>
+                  <span class="tag">Private Repo</span>
                 </div>
               </div>
             </div>
@@ -546,7 +586,8 @@
           <article class="project-item">
             <div class="project-item__image-container">
               <div class="project-item__image">
-                <span class="mono">0x03_SUMIVIBES</span>
+                <img src="assets/img/project-default.svg" alt="Sumi Vibes AI — Telegram chatbot with Google Gemini integration" loading="lazy" width="800" height="800" />
+                <span class="mono project-item__image-label">0x03_SUMIVIBES</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -572,8 +613,8 @@
               <div class="project-item__meta">
                 <span class="project-item__year">2025 / CREATOR</span>
                 <div class="project-item__links">
-                  <span class="btn btn--disabled">Offline</span>
-                  <span class="btn btn--disabled">Private Repo</span>
+                  <span class="tag">Offline</span>
+                  <span class="tag">Private Repo</span>
                 </div>
               </div>
             </div>
@@ -582,7 +623,8 @@
           <article class="project-item">
             <div class="project-item__image-container">
               <div class="project-item__image">
-                <span class="mono">0x04_MOCOBOT</span>
+                <img src="assets/img/project-default.svg" alt="Moco Utility Engine — high-traffic Python utility bot" loading="lazy" width="800" height="800" />
+                <span class="mono project-item__image-label">0x04_MOCOBOT</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -608,8 +650,8 @@
               <div class="project-item__meta">
                 <span class="project-item__year">2025 / DEVELOPER</span>
                 <div class="project-item__links">
-                  <span class="btn btn--disabled">Offline</span>
-                  <span class="btn btn--disabled">Private Repo</span>
+                  <span class="tag">Offline</span>
+                  <span class="tag">Private Repo</span>
                 </div>
               </div>
             </div>
@@ -618,7 +660,8 @@
           <article class="project-item">
             <div class="project-item__image-container">
               <div class="project-item__image">
-                <span class="mono">0x05_PORTFOLIO</span>
+                <img src="assets/img/project-default.svg" alt="Digital Identity Architecture — this portfolio" loading="lazy" width="800" height="800" />
+                <span class="mono project-item__image-label">0x05_PORTFOLIO</span>
               </div>
             </div>
             <div class="project-item__content">
@@ -670,7 +713,11 @@
             Available for internships and collaboration.
           </h3>
           <nav class="contact__links">
-            <a href="mailto:bisu.ghlan@gmail.com">Email <span>↗</span></a>
+            <a href="mailto:bisu.ghlan@gmail.com" id="emailLink">Email <span>↗</span></a>
+            <button class="contact__copy" id="copyEmail" type="button" data-email="bisu.ghlan@gmail.com" aria-label="Copy email address">
+              <span class="contact__copy-text">bisu.ghlan@gmail.com</span>
+              <span class="contact__copy-status" aria-live="polite"></span>
+            </button>
             <a href="https://github.com/bisug" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
             <a href="https://www.linkedin.com/in/bisug/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
           </nav>
@@ -686,6 +733,10 @@
       <p class="footer__note">Kathmandu, Nepal</p>
     </div>
   </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
 
   <script src="assets/js/scroll.min.js" defer></script>
   <script src="assets/js/main.min.js" defer></script>

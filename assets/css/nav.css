@@ -66,10 +66,14 @@
   background: var(--clr-accent);
 }
 
+/* ---- Theme toggle (lives inside .nav__links) ----
+   (Manual toggle removed; dark mode follows OS preference via CSS.) */
+
 .nav__links {
   display: flex;
   align-items: center;
   gap: var(--space-32);
+  margin-left: auto;
 }
 
 .nav__links a {
