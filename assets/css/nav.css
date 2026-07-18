@@ -66,8 +66,73 @@
   background: var(--clr-accent);
 }
 
-/* ---- Theme toggle (lives inside .nav__links) ----
-   (Manual toggle removed; dark mode follows OS preference via CSS.) */
+/* ---- Theme toggle button ---- */
+.nav__theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0;
+  cursor: pointer;
+  color: var(--clr-muted);
+  background: none;
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  transition: color var(--dur-fast) var(--ease-swiss),
+              border-color var(--dur-fast) var(--ease-swiss),
+              background-color var(--dur-fast) var(--ease-swiss);
+}
+
+.nav__theme:hover,
+.nav__theme:focus-visible {
+  color: var(--clr-on-accent);
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+}
+
+.nav__theme:focus-visible {
+  outline: 2px solid var(--clr-accent-text);
+  outline-offset: 4px;
+}
+
+/* Icon shows the mode the button will switch TO.
+   Default (no explicit choice): follow the OS via prefers-color-scheme —
+   moon when the system is light (click → dark), sun when the system is dark
+   (click → light). Once the user picks, the explicit data-theme wins. */
+.nav__theme-icon {
+  display: none;
+}
+
+/* Explicit light → show moon (click → dark). */
+:root[data-theme="light"] .nav__theme-icon--moon {
+  display: block;
+}
+
+/* Explicit dark → show sun (click → light). */
+:root[data-theme="dark"] .nav__theme-icon--sun {
+  display: block;
+}
+
+/* No explicit choice: mirror the OS preference. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav__theme-icon--sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .nav__theme-icon--moon {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .nav__theme-icon--moon {
+    display: block;
+  }
+  :root:not([data-theme="dark"]) .nav__theme-icon--sun {
+    display: none;
+  }
+}
 
 .nav__links {
   display: flex;

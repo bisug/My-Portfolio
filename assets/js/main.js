@@ -31,7 +31,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Theme toggle (dark / light) ----
-  // (Manual toggle removed; dark mode follows the OS preference via CSS.)
+  // By default the theme follows the OS preference via the CSS
+  // prefers-color-scheme media query (data-theme is left unset). Only when the
+  // user clicks do we set an explicit data-theme and persist it to
+  // localStorage, which then overrides the OS.
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    const root = document.documentElement;
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Effective theme: explicit choice wins, otherwise the OS preference.
+    const effectiveIsDark = () => {
+      const saved = root.getAttribute('data-theme');
+      if (saved === 'dark') return true;
+      if (saved === 'light') return false;
+      return mq.matches;
+    };
+
+    const syncThemeButton = () => {
+      const isDark = effectiveIsDark();
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.setAttribute(
+        'aria-label',
+        isDark ? 'Switch to light mode' : 'Switch to dark mode'
+      );
+    };
+
+    syncThemeButton();
+    // Keep the button label/state in sync if the OS preference changes while
+    // the user hasn't made an explicit choice (CSS handles the colors).
+    if (mq.addEventListener) mq.addEventListener('change', syncThemeButton);
+    else if (mq.addListener) mq.addListener(syncThemeButton);
+
+    themeToggle.addEventListener('click', () => {
+      const next = effectiveIsDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      syncThemeButton();
+    });
+  }
 
   if (navToggle && navLinks) {
     // Element that had focus before the menu opened (to restore on close)

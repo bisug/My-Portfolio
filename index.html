@@ -10,6 +10,20 @@
        is never lost. Without this, a no-JS visitor would see a blank page. -->
   <script>document.documentElement.classList.add('js');</script>
 
+  <!-- Apply the saved theme (if any) before first paint to avoid a flash of
+       the wrong theme. When nothing is stored we leave data-theme unset so the
+       CSS prefers-color-scheme fallback picks the OS preference. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Google Analytics — lazy-loaded on first interaction or browser idle so it
        never blocks first paint / main thread on low-end devices. -->
   <script>
@@ -283,6 +297,10 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+      <button class="nav__theme" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+        <svg class="nav__theme-icon nav__theme-icon--sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="nav__theme-icon nav__theme-icon--moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <button class="nav__toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" id="navToggle">
         <span></span>
         <span></span>
